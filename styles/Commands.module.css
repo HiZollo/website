@@ -1,3 +1,22 @@
+.slashlist-title, .helplist-title {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.slashlist-table, .helplist-table {
+  width: 100%;
+}
+
+.slashlist-table td, .helplist-table td {
+  padding: 3.5px;
+}
+
+.slashlist-header, .helplist-header {
+  border-bottom: #7777FF 3px solid;
+  font-size: 15px;
+  color: #DDDDFF;
+}
+
 .helplist-title {
   margin-top: 25px;
   margin-bottom: 10px;
@@ -11,12 +30,6 @@
   padding: 3.5px;
 }
 
-.helplist-header {
-  border-bottom: #7777FF 3px solid;
-  font-size: 15px;
-  color: #DDDDFF;
-}
-
 .helplist-table tr:first-child td:nth-child(1) {
   width: 20%;
 }
@@ -28,6 +41,14 @@
 }
 .helplist-table tr:first-child td:nth-child(4) {
   width: 36%;
+}
+
+.slashlist-table tr:first-child td:nth-child(1) {
+  width: 30%;
+}
+
+.slashlist-table tr:first-child td:nth-child(2) {
+  width: 70%;
 }
 
 .dc-mention {
