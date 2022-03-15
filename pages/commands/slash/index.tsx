@@ -354,16 +354,6 @@ function TableHeader () {
 }
 
 function CommandInfo (props: SlashCommandInfoProps) {
-  let outputAliases = '';
-  let outputUsage = '';
-  if (!props.aliases?.length) outputAliases = '-'
-  else for (const alias of props.aliases)
-    outputAliases += `<code>z!${alias}</code><br />`;
-
-  if (!props.usage?.length) outputUsage = '-'
-  else for (const usage of props.usage)
-    outputUsage += `<code>z!${props.cmd} ${usage}</code><br />`;
-
   return (
     <tr>
       <td><Cmd cmd={props.cmd} /></td>
