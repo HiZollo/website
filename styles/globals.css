@@ -42,7 +42,12 @@ header > a:hover {
   }
 }
 
+#wordmark-large {
+  width: 300px;
+}
+
 #wordmark {
+  display: none;
   width: 200px;
 }
 
@@ -92,4 +97,13 @@ a:hover {
 .dc-mention:hover {
   color: #FFFFFF;
   background-color: #566AEA;
+}
+
+@media (max-width: 940px) {
+  #wordmark-large {
+    display: none;
+  }
+  #wordmark {
+    display: inherit;
+  }
 }
