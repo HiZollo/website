@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../../../styles/Commands.module.css';
 
-const MessageCommands: NextPage = () => {
+const SlashCommands: NextPage = () => {
   return (
     <>
       <Head>
@@ -328,7 +328,7 @@ function SubcommandTable() {
   );
 }
 
-export default MessageCommands;
+export default SlashCommands;
 
 /***** Utils *****/
 interface CommandNameProps {
