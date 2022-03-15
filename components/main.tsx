@@ -1,10 +1,18 @@
 import type { NextPage } from 'next'
 import Link from 'next/link';
+import wordmark from '../public/wordmark.png';
+import Image from 'next/image'
 
 const Layout: NextPage = ({ children }) => {
   return (
     <>
       <header>
+        <div id="wordmark">
+          <Link href="/">
+            <a><Image src={wordmark} alt="Junior HiZollo" /></a>
+          </Link>
+        </div>
+        <div id="blank" />
         <Link href="/commands">
           <a>指令列表</a>
         </Link>

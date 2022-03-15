@@ -9,13 +9,13 @@ body {
 
 header {
   background-color: black;
-  height: 30px;
-  line-height: 30px;
+  height: 70px;
+  line-height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   gap: 30px;
-  padding: 25px;
+  padding: 5px 25px;
   margin-bottom: 20px;
 }
 
@@ -32,7 +32,6 @@ header > a:hover {
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: both;
-
 }
 
 @keyframes header-link-shiny {
@@ -41,6 +40,14 @@ header > a:hover {
   } to {
     color: #94B4FA;
   }
+}
+
+#wordmark {
+  width: 200px;
+}
+
+#blank {
+  flex-grow: 1;
 }
 
 main {
