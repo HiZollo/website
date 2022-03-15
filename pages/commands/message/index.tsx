@@ -1,15 +1,18 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import Header from '../../../components/head';
 import Link from 'next/link';
 import styles from '../../../styles/Commands.module.css';
+import { TableHeader } from '../../../components/commandTableHeader';
+import { Cmd, CommandInfo } from '../../../components/commandInfo';
 
 const MessageCommands: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Junior HiZollo｜指令列表</title>
-      </Head>
-      <h1>HiZollo 的指令列表</h1>
+      <Header
+        title = "訊息指令列表"
+        description = "這是 HiZollo 的訊息指令列表，你可以在這裡找到 HiZollo 全部的訊息指令名稱以及相關說明"
+      />
+      <h1>HiZollo 的訊息指令列表</h1>
       <strong>訊息指令</strong>｜<Link href="/commands/slash"><a>斜線指令</a></Link><br />
       這個指令列表能用 <Cmd cmd="help" /> 取得，且能使用 <Cmd cmd="help [指令名稱]" /> 獲得更詳細的說明。
       <InfoTable />
@@ -216,17 +219,17 @@ function CommandGroupTable() {
         <CommandInfo
           cmd = "minecraft"
           aliases = {['mc']}
-          description = '顯示 <a href="/commands/message/diep">minecrafr 指令群列表</a>或執行群組指令'
+          description = '顯示 <a href="/commands/message/minecraft">minecraft 指令群列表</a>或執行群組指令'
         />
         <CommandInfo
           cmd = "music"
           aliases = {['m']}
-          description = '顯示 <a href="/commands/message/diep">music 指令群列表</a>或執行群組指令'
+          description = '顯示 <a href="/commands/message/music">music 指令群列表</a>或執行群組指令'
         />
         <CommandInfo
           cmd = "osu"
           aliases = {['o']}
-          description = '顯示 <a href="/commands/message/diep">osu 指令群列表</a>或執行群組指令'
+          description = '顯示 <a href="/commands/message/osu">osu 指令群列表</a>或執行群組指令'
         />
       </table>
     </>
@@ -368,58 +371,3 @@ function MiscellaneousTable() {
 }
 
 export default MessageCommands;
-
-/***** Utils *****/
-interface CommandNameProps {
-  cmd: string;
-}
-
-interface CommandInfoProps {
-  cmd: string;
-  aliases?: string[];
-  description: string;
-  usage?: string[];
-}
-
-function Cmd (props: CommandNameProps) {
-  return <code>z!{props.cmd}</code>
-}
-
-function TableHeader () {
-  return (
-    <tr>
-      <td className={styles['helplist-header']}><strong>指令</strong></td>
-      <td className={styles['helplist-header']}><strong>替代指令</strong></td>
-      <td className={styles['helplist-header']}><strong>指令說明</strong></td>
-      <td className={styles['helplist-header']}><strong>範例</strong></td>
-    </tr>
-  )
-}
-
-function CommandInfo (props: CommandInfoProps) {
-  let outputAliases = '';
-  let outputUsage = '';
-  if (!props.aliases?.length) outputAliases = '-'
-  else for (const alias of props.aliases)
-    outputAliases += `<code>z!${alias}</code><br />`;
-
-  if (!props.usage?.length) outputUsage = '-'
-  else for (const usage of props.usage)
-    outputUsage += `<code>z!${props.cmd} ${usage}</code><br />`;
-
-  return (
-    <tr>
-      <td><Cmd cmd={props.cmd} /></td>
-      <td dangerouslySetInnerHTML={{
-        __html: outputAliases
-      }}></td>
-      <td  dangerouslySetInnerHTML={{
-        __html: props.description
-      }}></td>
-      <td dangerouslySetInnerHTML={{
-        __html: outputUsage
-      }}></td>
-    </tr>
-  )
-}
-/**/
