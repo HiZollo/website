@@ -260,7 +260,7 @@ function EntertainTable() {
         />
         <CommandInfo
           cmd = "fact"
-          description = {['查看一個事實，可鍵入分類以查看特定種類的事實，目前有 anecdote、discord、human、hz、math、nature、subject、world 共 8 種分類']}
+          description = "查看一個事實，可鍵入分類以查看特定種類的事實，目前有 anecdote、discord、human、hz、math、nature、subject、world 共 8 種分類"
           usage = {['', 'anecdote hz']}
         />
         <CommandInfo
@@ -370,7 +370,18 @@ function MiscellaneousTable() {
 export default MessageCommands;
 
 /***** Utils *****/
-function Cmd (props) {
+interface CommandNameProps {
+  cmd: string;
+}
+
+interface CommandInfoProps {
+  cmd: string;
+  aliases?: string[];
+  description: string;
+  usage?: string[];
+}
+
+function Cmd (props: CommandNameProps) {
   return <code>z!{props.cmd}</code>
 }
 
@@ -385,7 +396,7 @@ function TableHeader () {
   )
 }
 
-function CommandInfo (props) {
+function CommandInfo (props: CommandInfoProps) {
   let outputAliases = '';
   let outputUsage = '';
   if (!props.aliases?.length) outputAliases = '-'
