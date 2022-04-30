@@ -121,7 +121,7 @@ function ManageTable() {
         />
         <SlashCommandInfo
           cmd = "unban"
-          description = "解除封鎖一位用戶\n（由於無法 tag 他，必須使用 ID）"
+          description = "解除封鎖一位用戶<br />（由於無法 tag 他，必須使用 ID）"
         />
       </table>
     </>
