@@ -116,14 +116,6 @@ function ManageTable() {
           description = "為使用者新增身份"
         />
         <SlashCommandInfo
-          cmd = "ban"
-          description = "封鎖一位用戶"
-        />
-        <SlashCommandInfo
-          cmd = "kick"
-          description = "踢出一位用戶"
-        />
-        <SlashCommandInfo
           cmd = "removerole"
           description = "把一位使用者的身份移除"
         />

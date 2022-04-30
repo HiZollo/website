@@ -125,16 +125,6 @@ function ManageTable() {
           usage = {['<span class="dc-mention">@AC0xRPFS001</span> 管理員']}
         />
         <CommandInfo
-          cmd = "ban"
-          description = "封鎖一位用戶"
-          usage = {['<span class="dc-mention">@Eric</span>']}
-        />
-        <CommandInfo
-          cmd = "kick"
-          description = "踢出一位用戶"
-          usage = {['<span class="dc-mention">@Zollo757347</span> 太吵']}
-        />
-        <CommandInfo
           cmd = "removerole"
           description = "把一位使用者的身份移除"
           usage = {['<span class="dc-mention">@Rick</span> 警告中']}
@@ -215,11 +205,6 @@ function CommandGroupTable() {
           cmd = "diep"
           aliases = {['d']}
           description = '顯示 <a href="/commands/message/diep">diep 指令群列表</a>或執行群組指令'
-        />
-        <CommandInfo
-          cmd = "minecraft"
-          aliases = {['mc']}
-          description = '顯示 <a href="/commands/message/minecraft">minecraft 指令群列表</a>或執行群組指令'
         />
         <CommandInfo
           cmd = "music"
