@@ -1,0 +1,82 @@
+.block {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 500px auto;
+  gap: 10px;
+
+}
+
+.block1 {
+  font-size: 100px;
+  font-weight: bolder;
+  text-align: center;
+  line-height: 125px;
+}
+
+.p {
+  padding: 125px;
+}
+
+.function-block {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 500px;
+}
+
+.function-block-buttons {
+  display: flex;
+  flex-direction: rows;
+  gap: 50px;
+  justify-content: center;
+}
+
+.function-block-buttons > div {
+  flex: 1 1 100px;
+}
+
+.button {
+  height: 40px;
+  text-align: center;
+  color: black;
+  padding: 0;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  background-color: #94B4FA;
+}
+
+.button:hover {
+  filter: brightness(1.2) contrast(1.05);
+}
+
+@media (max-width: 1100px) {
+  .block {
+    grid-template-columns: 300px auto;
+  }
+
+  .p { padding: 50px; }
+
+  .block1 {
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 95px;
+  }
+}
+
+.hr {
+  margin-top: 100px;
+}
+
+@media (max-width: 800px) {
+  .block {
+    /* 置中 => lr-margin = 全部 - 自己一半寬度 - main padding */
+    margin: auto calc(50vw - 200px - 100px);
+    grid-template-columns: 400px;
+    grid-template-rows: 400px auto;
+  }
+
+  #block1-img {
+    width: 400px;
+  }
+}

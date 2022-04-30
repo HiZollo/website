@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@discord-message-components/react", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:0.2.1"],\
             ["@types/node", "npm:17.0.21"],\
             ["@types/react", "npm:17.0.40"],\
             ["eslint", "npm:8.11.0"],\
@@ -63,6 +64,54 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/runtime-corejs3", "npm:7.17.2"],\
             ["core-js-pure", "npm:3.21.1"],\
             ["regenerator-runtime", "npm:0.13.9"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@discord-message-components/core", [\
+        ["npm:0.2.1", {\
+          "packageLocation": "./.yarn/cache/@discord-message-components-core-npm-0.2.1-073d93b9e0-59febcdf6f.zip/node_modules/@discord-message-components/core/",\
+          "packageDependencies": [\
+            ["@discord-message-components/core", "npm:0.2.1"],\
+            ["@discord-message-components/markdown", "npm:0.2.0"],\
+            ["color-rgba", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@discord-message-components/markdown", [\
+        ["npm:0.2.0", {\
+          "packageLocation": "./.yarn/cache/@discord-message-components-markdown-npm-0.2.0-a1e7e80d2c-1348cfd57c.zip/node_modules/@discord-message-components/markdown/",\
+          "packageDependencies": [\
+            ["@discord-message-components/markdown", "npm:0.2.0"],\
+            ["simple-markdown", "npm:0.7.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@discord-message-components/react", [\
+        ["npm:0.2.1", {\
+          "packageLocation": "./.yarn/cache/@discord-message-components-react-npm-0.2.1-aa8822925c-154fbddbf9.zip/node_modules/@discord-message-components/react/",\
+          "packageDependencies": [\
+            ["@discord-message-components/react", "npm:0.2.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:0.2.1", {\
+          "packageLocation": "./.yarn/__virtual__/@discord-message-components-react-virtual-ef0ac41e17/0/cache/@discord-message-components-react-npm-0.2.1-aa8822925c-154fbddbf9.zip/node_modules/@discord-message-components/react/",\
+          "packageDependencies": [\
+            ["@discord-message-components/react", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:0.2.1"],\
+            ["@discord-message-components/core", "npm:0.2.1"],\
+            ["@types/react", "npm:17.0.40"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:17.0.2"],\
+            ["react-dom", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:17.0.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -336,6 +385,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-npm-17.0.40-7487e5fdd0-24d1b210b5.zip/node_modules/@types/react/",\
           "packageDependencies": [\
             ["@types/react", "npm:17.0.40"],\
+            ["@types/prop-types", "npm:15.7.4"],\
+            ["@types/scheduler", "npm:0.16.2"],\
+            ["csstype", "npm:3.0.11"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.0.8", {\
+          "packageLocation": "./.yarn/cache/@types-react-npm-18.0.8-0373db5974-12d0e6bc39.zip/node_modules/@types/react/",\
+          "packageDependencies": [\
+            ["@types/react", "npm:18.0.8"],\
             ["@types/prop-types", "npm:15.7.4"],\
             ["@types/scheduler", "npm:0.16.2"],\
             ["csstype", "npm:3.0.11"]\
@@ -881,6 +940,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/color-name-npm-1.1.4-025792b0ea-b044585952.zip/node_modules/color-name/",\
           "packageDependencies": [\
             ["color-name", "npm:1.1.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["color-parse", [\
+        ["npm:1.4.2", {\
+          "packageLocation": "./.yarn/cache/color-parse-npm-1.4.2-bd4a4dff72-3ed5916f87.zip/node_modules/color-parse/",\
+          "packageDependencies": [\
+            ["color-parse", "npm:1.4.2"],\
+            ["color-name", "npm:1.1.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["color-rgba", [\
+        ["npm:2.4.0", {\
+          "packageLocation": "./.yarn/cache/color-rgba-npm-2.4.0-b26bc15fea-a72b1001af.zip/node_modules/color-rgba/",\
+          "packageDependencies": [\
+            ["color-rgba", "npm:2.4.0"],\
+            ["color-parse", "npm:1.4.2"],\
+            ["color-space", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["color-space", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/color-space-npm-2.0.0-3fb0e00514-2abfa96412.zip/node_modules/color-space/",\
+          "packageDependencies": [\
+            ["color-space", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2513,6 +2602,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["m", "workspace:."],\
+            ["@discord-message-components/react", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:0.2.1"],\
             ["@types/node", "npm:17.0.21"],\
             ["@types/react", "npm:17.0.40"],\
             ["eslint", "npm:8.11.0"],\
@@ -3577,6 +3667,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["decompress-response", "npm:6.0.0"],\
             ["once", "npm:1.4.0"],\
             ["simple-concat", "npm:1.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["simple-markdown", [\
+        ["npm:0.7.3", {\
+          "packageLocation": "./.yarn/cache/simple-markdown-npm-0.7.3-e03c2d7dd0-165941899f.zip/node_modules/simple-markdown/",\
+          "packageDependencies": [\
+            ["simple-markdown", "npm:0.7.3"],\
+            ["@types/react", "npm:18.0.8"]\
           ],\
           "linkType": "HARD"\
         }]\

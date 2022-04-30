@@ -24,6 +24,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@discord-message-components/core@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "@discord-message-components/core@npm:0.2.1"
+  dependencies:
+    "@discord-message-components/markdown": ^0.2.0
+    color-rgba: ^2.2.3
+  checksum: 59febcdf6f500e8ebbfd1000937097e1fe9857fb7c84e1edae416c70aa746241611d569ea9507bf82ef0c93bf317a71353d1f111a17e7ed6e20565dcc2d2f7d3
+  languageName: node
+  linkType: hard
+
+"@discord-message-components/markdown@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@discord-message-components/markdown@npm:0.2.0"
+  dependencies:
+    simple-markdown: ^0.7.3
+  checksum: 1348cfd57cd18369f503271d0f1aa7456146b30780e61d508a5dfa890e3904761aaf0ae4e1085eeed9527a10cc1c624301fc3e8e43f9dee26564f74b6892638e
+  languageName: node
+  linkType: hard
+
+"@discord-message-components/react@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "@discord-message-components/react@npm:0.2.1"
+  dependencies:
+    "@discord-message-components/core": ^0.2.1
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  checksum: 154fbddbf948f9e49d1d273e5c6dc6f0a79be553aefc87a1acdca79a6c37cc6108d5dfcb00b056cde49dee6a3fdeb0fc0f4140f6d9da9858b8d78c7840887983
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^1.2.1":
   version: 1.2.1
   resolution: "@eslint/eslintrc@npm:1.2.1"
@@ -249,6 +280,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 24d1b210b5bf3c7d49f9a7fe5490db02e005a1d989045a2d67528347557dd0bcb0d7bcf96088152697e97521ac4c9506d1357ee48a2b7d4e701c70d838dc7284
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:>=16.0.0":
+  version: 18.0.8
+  resolution: "@types/react@npm:18.0.8"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 12d0e6bc390709926d8eaeb7d2edb4ef9c9fbe8eac41cb0619d958386700547bff91c880c2a12a9eb1e0d09afa4f1e86fd1b93164c627824465b72123f149f3b
   languageName: node
   linkType: hard
 
@@ -689,6 +731,32 @@ __metadata:
   version: 1.1.4
   resolution: "color-name@npm:1.1.4"
   checksum: b0445859521eb4021cd0fb0cc1a75cecf67fceecae89b63f62b201cca8d345baf8b952c966862a9d9a2632987d4f6581f0ec8d957dfacece86f0a7919316f610
+  languageName: node
+  linkType: hard
+
+"color-parse@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "color-parse@npm:1.4.2"
+  dependencies:
+    color-name: ^1.0.0
+  checksum: 3ed5916f873e55637c4c3ccf663de64d125c5a445ec081e08f596c625fb8cee32b9c9fc9437073e88d8565cc7ce542d35bef3a0d16bd922839e0c436c3f6f11a
+  languageName: node
+  linkType: hard
+
+"color-rgba@npm:^2.2.3":
+  version: 2.4.0
+  resolution: "color-rgba@npm:2.4.0"
+  dependencies:
+    color-parse: ^1.4.2
+    color-space: ^2.0.0
+  checksum: a72b1001af4bed60d4677f6e368e3ea44fd228f6f3098182dd8d8d612165cb847f0792252539b36aa238840f45f1c644b8d7ed867e3d735d67d4e4b107384279
+  languageName: node
+  linkType: hard
+
+"color-space@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "color-space@npm:2.0.0"
+  checksum: 2abfa964121c665090873860e0fe4c6b2e9752da30e4ef71d989ade516ecde972e80479b0f99334685022ff085772f8267c8549990aa1607ef3ab24677367420
   languageName: node
   linkType: hard
 
@@ -2007,6 +2075,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "m@workspace:."
   dependencies:
+    "@discord-message-components/react": ^0.2.1
     "@types/node": 17.0.21
     "@types/react": 17.0.40
     eslint: 8.11.0
@@ -2985,6 +3054,15 @@ __metadata:
     once: ^1.3.1
     simple-concat: ^1.0.0
   checksum: e4132fd27cf7af230d853fa45c1b8ce900cb430dd0a3c6d3829649fe4f2b26574c803698076c4006450efb0fad2ba8c5455fbb5755d4b0a5ec42d4f12b31d27e
+  languageName: node
+  linkType: hard
+
+"simple-markdown@npm:^0.7.3":
+  version: 0.7.3
+  resolution: "simple-markdown@npm:0.7.3"
+  dependencies:
+    "@types/react": ">=16.0.0"
+  checksum: 165941899fddfaa7c398410f8ce6941109bc86fbc9abb17f8b6be7a9ac8ae36c0af643a3e0adcba60053a9f1eaecdd4016d46d79eef39b8ae04982d2bd52bbc9
   languageName: node
   linkType: hard
 

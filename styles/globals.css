@@ -99,11 +99,19 @@ a:hover {
   background-color: #566AEA;
 }
 
+.discord-embed-footer {
+  color: white !important;
+}
+
 @media (max-width: 940px) {
   #wordmark-large {
     display: none;
   }
   #wordmark {
     display: inherit;
+  }
+
+  header {
+    gap: 20px;
   }
 }
