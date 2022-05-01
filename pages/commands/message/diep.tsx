@@ -19,29 +19,31 @@ const DiepCommand: NextPage = () => {
       這個指令列表能用 <Cmd cmd="diep" /> 取得並獲得更詳細的說明。
       <table className={styles['helplist-table']}>
         <TableHeader />
-        <CommandInfo
-          cmd = "diep fact"
-          description = "獲得一個 Diep.io 的小知識"
-        />
-        <CommandInfo
-          cmd = "diep random"
-          aliases = {['diep rt']}
-          description = "隨機抽取 Diep.io 的坦克，需指定分類"
-          usage = {['diep rt normal']}
-        />
-        <CommandInfo
-          cmd = "diep server"
-          aliases = {['diep discord']}
-          description = "Diep.io 繁中維基的官方 Discord 群組邀請"
-        />
-        <CommandInfo
-          cmd = "diep tank"
-          description = "查看一台 Diep.io 坦克的資訊"
-        />
-        <CommandInfo
-          cmd = "diep wiki"
-          description = "獲得 Diep.io 繁中維基的連結"
-        />
+        <tbody>
+          <CommandInfo
+            cmd = "diep fact"
+            description = "獲得一個 Diep.io 的小知識"
+          />
+          <CommandInfo
+            cmd = "diep random"
+            aliases = {['diep rt']}
+            description = "隨機抽取 Diep.io 的坦克，需指定分類"
+            usage = {['diep rt normal']}
+          />
+          <CommandInfo
+            cmd = "diep server"
+            aliases = {['diep discord']}
+            description = "Diep.io 繁中維基的官方 Discord 群組邀請"
+          />
+          <CommandInfo
+            cmd = "diep tank"
+            description = "查看一台 Diep.io 坦克的資訊"
+          />
+          <CommandInfo
+            cmd = "diep wiki"
+            description = "獲得 Diep.io 繁中維基的連結"
+          />
+        </tbody>
       </table>
     </>
   )

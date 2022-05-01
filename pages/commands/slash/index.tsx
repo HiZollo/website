@@ -42,30 +42,32 @@ function InfoTable () {
       <h2>資訊</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "announcement"
-          description = "閱讀官方公告"
-        />
-        <SlashCommandInfo
-          cmd = "botinfo"
-          description = "查看機器人資訊"
-        />
-        <SlashCommandInfo
-          cmd = "dev"
-          description = "檢視開發團隊清單"
-        />
-        <SlashCommandInfo
-          cmd = "help"
-          description = "開啟指令清單"
-        />
-        <SlashCommandInfo
-          cmd = "links"
-          description = "取得機器人相關連結"
-        />
-        <SlashCommandInfo
-          cmd = "name"
-          description = "機器人叫什麼名字呢"
-        />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "announcement"
+            description = "閱讀官方公告"
+          />
+          <SlashCommandInfo
+            cmd = "botinfo"
+            description = "查看機器人資訊"
+          />
+          <SlashCommandInfo
+            cmd = "dev"
+            description = "檢視開發團隊清單"
+          />
+          <SlashCommandInfo
+            cmd = "help"
+            description = "開啟指令清單"
+          />
+          <SlashCommandInfo
+            cmd = "links"
+            description = "取得機器人相關連結"
+          />
+          <SlashCommandInfo
+            cmd = "name"
+            description = "機器人叫什麼名字呢"
+          />
+        </tbody>
       </table>
     </>
   );
@@ -77,14 +79,16 @@ function ContactTable() {
       <h2>聯繫</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "bug"
-          description = "回報錯誤"
-        />
-        <SlashCommandInfo
-          cmd = "suggest"
-          description = "傳送建議到後台"
-        />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "bug"
+            description = "回報錯誤"
+          />
+          <SlashCommandInfo
+            cmd = "suggest"
+            description = "傳送建議到後台"
+          />
+        </tbody>
       </table>
     </>
   );
@@ -96,10 +100,12 @@ function NetworkTable() {
       <h2>HiZollo 聯絡網</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "guildrop"
-          description = "傳送訊息至指定伺服器"
-        />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "guildrop"
+            description = "傳送訊息至指定伺服器"
+          />
+        </tbody>
       </table>
     </>
   )
@@ -111,18 +117,20 @@ function ManageTable() {
       <h2>管理</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "addrole"
-          description = "為使用者新增身份"
-        />
-        <SlashCommandInfo
-          cmd = "removerole"
-          description = "把一位使用者的身份移除"
-        />
-        <SlashCommandInfo
-          cmd = "unban"
-          description = "解除封鎖一位用戶<br />（由於無法 tag 他，必須使用 ID）"
-        />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "addrole"
+            description = "為使用者新增身份"
+          />
+          <SlashCommandInfo
+            cmd = "removerole"
+            description = "把一位使用者的身份移除"
+          />
+          <SlashCommandInfo
+            cmd = "unban"
+            description = "解除封鎖一位用戶<br />（由於無法 tag 他，必須使用 ID）"
+          />
+        </tbody>
       </table>
     </>
   );
@@ -134,38 +142,40 @@ function FunctionTable() {
       <h2>功能</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "avatar"
-          description = "顯示一或多名用戶的頭像"
-        />
-        <SlashCommandInfo
-          cmd = "calc"
-          description = "計算一串算式"
-        />
-        <SlashCommandInfo
-          cmd = "choose"
-          description = "多選一"
-        />
-        <SlashCommandInfo
-          cmd = "getmsg"
-          description = "將伺服器最近訊息匯出為指定格式的檔案，可以是文字檔或 JSON 檔案"
-        />
-        <SlashCommandInfo
-          cmd = "purge"
-          description = "刪除指定數量的訊息"
-        />
-        <SlashCommandInfo
-          cmd = "server"
-          description = "取得伺服器資訊"
-        />
-        <SlashCommandInfo
-          cmd = "userinfo"
-          description = "取得用戶資訊"
-        />
-        <SlashCommandInfo
-          cmd = "vote"
-          description = "讓 HiZollo 幫你發起一個投票"
-        />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "avatar"
+            description = "顯示一或多名用戶的頭像"
+          />
+          <SlashCommandInfo
+            cmd = "calc"
+            description = "計算一串算式"
+          />
+          <SlashCommandInfo
+            cmd = "choose"
+            description = "多選一"
+          />
+          <SlashCommandInfo
+            cmd = "getmsg"
+            description = "將伺服器最近訊息匯出為指定格式的檔案，可以是文字檔或 JSON 檔案"
+          />
+          <SlashCommandInfo
+            cmd = "purge"
+            description = "刪除指定數量的訊息"
+          />
+          <SlashCommandInfo
+            cmd = "server"
+            description = "取得伺服器資訊"
+          />
+          <SlashCommandInfo
+            cmd = "userinfo"
+            description = "取得用戶資訊"
+          />
+          <SlashCommandInfo
+            cmd = "vote"
+            description = "讓 HiZollo 幫你發起一個投票"
+          />
+        </tbody>
       </table>
     </>
   );
@@ -177,46 +187,48 @@ function EntertainTable() {
       <h2>娛樂</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "8ball"
-          description = "詢問神奇的八號球"
-        />
-        <SlashCommandInfo
-          cmd = "coin"
-          description = "擲一枚硬幣"
-        />
-        <SlashCommandInfo
-          cmd = "confession"
-          description = "向伺服器中的一位用戶告白"
-        />
-        <SlashCommandInfo
-          cmd = "dice"
-          description = "擲骰子"
-        />
-        <SlashCommandInfo
-          cmd = "fact"
-          description = "查看一個事實，可鍵入分類以查看特定種類的事實，目前有 anecdote、discord、human、hz、math、nature、subject、world 共 8 種分類"
-        />
-        <SlashCommandInfo
-          cmd = "react"
-          description = "讓 HiZollo 為前一則訊息反應個表情"
-        />
-        <SlashCommandInfo
-          cmd = "repeat"
-          description = "讓機器人複讀你的話"
-        />
-        <SlashCommandInfo
-          cmd = "say"
-          description = "讓機器人說一句指定的話"
-        />
-        <SlashCommandInfo
-          cmd = "throwball"
-          description = "把球砸向你討厭的人"
-        />
-        <SlashCommandInfo
-          cmd = "youtube"
-          description = "跟朋友一起在 Discord 中觀看 Youtube 的影片"
-        />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "8ball"
+            description = "詢問神奇的八號球"
+          />
+          <SlashCommandInfo
+            cmd = "coin"
+            description = "擲一枚硬幣"
+          />
+          <SlashCommandInfo
+            cmd = "confession"
+            description = "向伺服器中的一位用戶告白"
+          />
+          <SlashCommandInfo
+            cmd = "dice"
+            description = "擲骰子"
+          />
+          <SlashCommandInfo
+            cmd = "fact"
+            description = "查看一個事實，可鍵入分類以查看特定種類的事實，目前有 anecdote、discord、human、hz、math、nature、subject、world 共 8 種分類"
+          />
+          <SlashCommandInfo
+            cmd = "react"
+            description = "讓 HiZollo 為前一則訊息反應個表情"
+          />
+          <SlashCommandInfo
+            cmd = "repeat"
+            description = "讓機器人複讀你的話"
+          />
+          <SlashCommandInfo
+            cmd = "say"
+            description = "讓機器人說一句指定的話"
+          />
+          <SlashCommandInfo
+            cmd = "throwball"
+            description = "把球砸向你討厭的人"
+          />
+          <SlashCommandInfo
+            cmd = "youtube"
+            description = "跟朋友一起在 Discord 中觀看 Youtube 的影片"
+          />
+        </tbody>
       </table>
     </>
   );
@@ -228,57 +240,61 @@ function GameTable() {
       <h2>遊戲</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "fliptrip"
-          description = "遊玩指定棋子數量的 Flip Trip"
-        />
-        <SlashCommandInfo
-          cmd = "gomoku"
-          description = "	與朋友遊玩 13x13 的五子棋"
-        />
-        <SlashCommandInfo
-          cmd = "guessab"
-          description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
-        />
-        <SlashCommandInfo
-          cmd = "lightsup"
-          description = "遊玩一場點燈遊戲"
-        />
-        <SlashCommandInfo
-          cmd = "tictactoe"
-          description = "跟 HiZollo 或是另一位用戶遊玩井字遊戲"
-        />
-      </table>
-    </>
-  )
-}
+        <tbody>
+            <SlashCommandInfo
+              cmd = "fliptrip"
+              description = "遊玩指定棋子數量的 Flip Trip"
+            />
+            <SlashCommandInfo
+              cmd = "gomoku"
+              description = "	與朋友遊玩 13x13 的五子棋"
+            />
+            <SlashCommandInfo
+              cmd = "guessab"
+              description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
+            />
+            <SlashCommandInfo
+              cmd = "lightsup"
+              description = "遊玩一場點燈遊戲"
+            />
+            <SlashCommandInfo
+              cmd = "tictactoe"
+              description = "跟 HiZollo 或是另一位用戶遊玩井字遊戲"
+            />
+          </tbody>
+        </table>
+      </>
+    )
+  }
 
-function MiscellaneousTable() {
-  return (
-    <>
-      <h2>雜項</h2>
-      <table className={styles['slashlist-table']}>
-        <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "ping"
-          description = "傳送訊息至指定伺服器"
-        />
-        <SlashCommandInfo
-          cmd = "refresh"
-          description = "重刷 HiZollo 的動態"
-        />
-        <SlashCommandInfo
-          cmd = "rip"
-          description = "Rest In Peace!"
-        />
-        <SlashCommandInfo
-          cmd = "thinking"
-          description = "讓機器人送出一個表情庫的思考中表情，你也可以鍵入種類讓他輸出特定的思考表情"
-        />
-        <SlashCommandInfo
-          cmd = "useless"
-          description = "Useless."
-        />
+  function MiscellaneousTable() {
+    return (
+      <>
+        <h2>雜項</h2>
+        <table className={styles['slashlist-table']}>
+          <SlashTableHeader />
+          <tbody>
+            <SlashCommandInfo
+              cmd = "ping"
+              description = "傳送訊息至指定伺服器"
+            />
+            <SlashCommandInfo
+              cmd = "refresh"
+              description = "重刷 HiZollo 的動態"
+            />
+            <SlashCommandInfo
+              cmd = "rip"
+              description = "Rest In Peace!"
+            />
+            <SlashCommandInfo
+              cmd = "thinking"
+              description = "讓機器人送出一個表情庫的思考中表情，你也可以鍵入種類讓他輸出特定的思考表情"
+            />
+            <SlashCommandInfo
+              cmd = "useless"
+              description = "Useless."
+            />
+          </tbody>
       </table>
     </>
   )
@@ -290,34 +306,36 @@ function SubcommandTable() {
       <h2>指令群</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
-        <SlashCommandInfo
-          cmd = "diep fact"
-          description = "獲得一個 Diep.io 的小知識"
-        />
-        <SlashCommandInfo
-          cmd = "diep random"
-          description = "隨機抽取一台 Diep.io 的坦克"
-        />
-        <SlashCommandInfo
-          cmd = "diep server"
-          description = "顯示 Diep.io 繁中維基的官方伺服器連結"
-        />
-        <SlashCommandInfo
-          cmd = "diep tank"
-          description = "查看一台 Diep.io 的坦克資訊"
-        />
-        <SlashCommandInfo
-          cmd = "diep wiki"
-          description = "取得 Diep.io 繁中維基的連結"
-        />
-        <SlashCommandInfo
-          cmd = "osu best"
-          description = "取得一名玩家在 osu! 上最高成績的資料"
-        />
-        <SlashCommandInfo
-          cmd = "osu user"
-          description = "取得一名玩家的 osu! 資料"
-        />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "diep fact"
+            description = "獲得一個 Diep.io 的小知識"
+          />
+          <SlashCommandInfo
+            cmd = "diep random"
+            description = "隨機抽取一台 Diep.io 的坦克"
+          />
+          <SlashCommandInfo
+            cmd = "diep server"
+            description = "顯示 Diep.io 繁中維基的官方伺服器連結"
+          />
+          <SlashCommandInfo
+            cmd = "diep tank"
+            description = "查看一台 Diep.io 的坦克資訊"
+          />
+          <SlashCommandInfo
+            cmd = "diep wiki"
+            description = "取得 Diep.io 繁中維基的連結"
+          />
+          <SlashCommandInfo
+            cmd = "osu best"
+            description = "取得一名玩家在 osu! 上最高成績的資料"
+          />
+          <SlashCommandInfo
+            cmd = "osu user"
+            description = "取得一名玩家的 osu! 資料"
+          />
+        </tbody>
       </table>
     </>
   );

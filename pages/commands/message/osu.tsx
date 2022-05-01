@@ -19,18 +19,20 @@ const DiepCommand: NextPage = () => {
       這個指令列表能用 <Cmd cmd="osu" /> 取得並獲得更詳細的說明。
       <table className={styles['helplist-table']}>
         <TableHeader />
-        <CommandInfo
-          cmd = "osu best"
-          aliases = {['osu bp']}
-          description = "查詢一位 Osu! 玩家的 BP 榜前十的數據"
-          usage = {['chocomint']}
-        />
-        <CommandInfo
-          cmd = "osu user"
-          aliases = {['osu u']}
-          description = "查詢一位 Osu! 玩家的個人檔案"
-          usage = {['AC0xRPFS001']}
-        />
+        <tbody>
+          <CommandInfo
+            cmd = "osu best"
+            aliases = {['osu bp']}
+            description = "查詢一位 Osu! 玩家的 BP 榜前十的數據"
+            usage = {['chocomint']}
+          />
+          <CommandInfo
+            cmd = "osu user"
+            aliases = {['osu u']}
+            description = "查詢一位 Osu! 玩家的個人檔案"
+            usage = {['AC0xRPFS001']}
+          />
+        </tbody>
       </table>
     </>
   )

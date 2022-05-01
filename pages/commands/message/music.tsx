@@ -19,32 +19,34 @@ const DiepCommand: NextPage = () => {
       這個指令列表能用 <Cmd cmd="music" /> 取得並獲得更詳細的說明。
       <table className={styles['helplist-table']}>
         <TableHeader />
-        <CommandInfo
-          cmd = "music join"
-          description = "加入指令使用者所在的語音頻道，若加入的是舞台頻道，可以額外指定 false 參數讓機器人只有播歌時成為發言者"
-          usage = {['', 'false']}
-        />
-        <CommandInfo
-          cmd = "music leave"
-          aliases = {['music l']}
-          description = "讓機器人離開語音頻道"
-        />
-        <CommandInfo
-          cmd = "music play"
-          aliases = {['music p']}
-          description = "播放指定 Youtube 影片的聲音，也可以搜尋或播放整個清單"
-          usage = {['Hanon x Kotoha']}
-        />
-        <CommandInfo
-          cmd = "music playlist"
-          aliases = {['music pl']}
-          description = "顯示目前的播放清單"
-        />
-        <CommandInfo
-          cmd = "music remove"
-          description = "移除隊列中的歌曲"
-          usage = {['', '2']}
-        />
+        <tbody>
+          <CommandInfo
+            cmd = "music join"
+            description = "加入指令使用者所在的語音頻道，若加入的是舞台頻道，可以額外指定 false 參數讓機器人只有播歌時成為發言者"
+            usage = {['', 'false']}
+          />
+          <CommandInfo
+            cmd = "music leave"
+            aliases = {['music l']}
+            description = "讓機器人離開語音頻道"
+          />
+          <CommandInfo
+            cmd = "music play"
+            aliases = {['music p']}
+            description = "播放指定 Youtube 影片的聲音，也可以搜尋或播放整個清單"
+            usage = {['Hanon x Kotoha']}
+          />
+          <CommandInfo
+            cmd = "music playlist"
+            aliases = {['music pl']}
+            description = "顯示目前的播放清單"
+          />
+          <CommandInfo
+            cmd = "music remove"
+            description = "移除隊列中的歌曲"
+            usage = {['', '2']}
+          />
+        </tbody>
       </table>
     </>
   )
