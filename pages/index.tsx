@@ -81,8 +81,8 @@ function Functions() {
   }
 
   useEffect(() => {
-    document.querySelector(`hr + div > div > div:nth-child(${last+1})`).classList.remove("function-button-choosing");
-    document.querySelector(`hr + div > div > div:nth-child(${context+1})`).classList.add("function-button-choosing");
+    document?.querySelector(`hr + div > div > div:nth-child(${last+1})`)?.classList.remove("function-button-choosing");
+    document?.querySelector(`hr + div > div > div:nth-child(${context+1})`)?.classList.add("function-button-choosing");
   }, [context, last]);
 
   const buttonTexts = ["基本功能", "斜線指令", "音樂功能", "HiZollo 聯絡網", "迷你遊戲"]
@@ -92,7 +92,7 @@ function Functions() {
       <div className={style['function-block-buttons']}>
         {
           buttonTexts.map((v, i) => {
-            return <Button text={v} key={i} value={i} id={`function-button-${i}`} onValueChange={handleClick} />
+            return <Button text={v} key={i} value={i} onValueChange={handleClick} />
           })
         }
       </div>
