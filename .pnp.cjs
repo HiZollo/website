@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.1.0"],\
             ["react-dom", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:18.1.0"],\
             ["sharp", "npm:0.30.4"],\
+            ["styled-jsx", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:5.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"]\
           ],\
           "linkType": "SOFT"\
@@ -3594,6 +3595,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.1.0"],\
             ["react-dom", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:18.1.0"],\
             ["sharp", "npm:0.30.4"],\
+            ["styled-jsx", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:5.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"]\
           ],\
           "linkType": "SOFT"\
@@ -4963,10 +4965,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["npm:5.0.2", {\
+          "packageLocation": "./.yarn/cache/styled-jsx-npm-5.0.2-aff4f13ebf-86d55819eb.zip/node_modules/styled-jsx/",\
+          "packageDependencies": [\
+            ["styled-jsx", "npm:5.0.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["virtual:afc56854762a7d7b4af4a9f525868234658fb43da393e10180cfa7e1d09ff667cb3bc29a4ed760312a4e34114fa0a2e71f0304d0a3c4f1b143c9ccbe796e8684#npm:5.0.1", {\
           "packageLocation": "./.yarn/__virtual__/styled-jsx-virtual-bc1589f1a6/0/cache/styled-jsx-npm-5.0.1-c0b078fc05-b85eb03da7.zip/node_modules/styled-jsx/",\
           "packageDependencies": [\
             ["styled-jsx", "virtual:afc56854762a7d7b4af4a9f525868234658fb43da393e10180cfa7e1d09ff667cb3bc29a4ed760312a4e34114fa0a2e71f0304d0a3c4f1b143c9ccbe796e8684#npm:5.0.1"],\
+            ["@babel/core", null],\
+            ["@types/babel-plugin-macros", null],\
+            ["@types/babel__core", null],\
+            ["@types/react", "npm:18.0.8"],\
+            ["babel-plugin-macros", null],\
+            ["react", "npm:18.1.0"]\
+          ],\
+          "packagePeers": [\
+            "@babel/core",\
+            "@types/babel-plugin-macros",\
+            "@types/babel__core",\
+            "@types/react",\
+            "babel-plugin-macros",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:5.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/styled-jsx-virtual-1cc539ce20/0/cache/styled-jsx-npm-5.0.2-aff4f13ebf-86d55819eb.zip/node_modules/styled-jsx/",\
+          "packageDependencies": [\
+            ["styled-jsx", "virtual:dd52843e720e78f89975b21ef96e35a3bbd3d11ce322c648e064149127ca70dd0e3e108bb25dd19e3407179f02ec577a55c16e9270f51393ae75bed55771e4b2#npm:5.0.2"],\
             ["@babel/core", null],\
             ["@types/babel-plugin-macros", null],\
             ["@types/babel__core", null],\

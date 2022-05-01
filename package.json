@@ -17,7 +17,8 @@
     "next": "^12.1.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "sharp": "^0.30.4"
+    "sharp": "^0.30.4",
+    "styled-jsx": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "17.0.21",

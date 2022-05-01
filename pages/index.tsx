@@ -6,6 +6,7 @@ const {
   DiscordMessages,
   DiscordMention,
   DiscordEmbed,
+  DiscordReply,
   DiscordButtons,
   DiscordButton,
   DiscordMarkdown,
@@ -15,7 +16,7 @@ const {
 } = require('@discord-message-components/react');
 import '@discord-message-components/react/styles'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import style from '../styles/Mainpage.module.css';
 
@@ -31,19 +32,23 @@ const discordOptions = {
 		hizollo: {
 			author: 'Junior HiZollo',
 			avatar: hizolloAvatar.src,
+      roleColor: "#E3D547",
       bot: true
 		},
     ac: {
       author: 'AC0xRPFS001',
-      avatar: acAvatar.src
+      avatar: acAvatar.src,
+      roleColor: "#657C89"
     },
     zollo: {
       author: 'Zollo757347',
-      avatar: zolloAvatar.src
+      avatar: zolloAvatar.src,
+      roleColor: "#65C87A"
     },
     chocomint: {
       author: 'chocomint',
-      avatar: chocomintAvatar.src
+      avatar: chocomintAvatar.src,
+      roleColor: "#E3F0F7"
     }
 	},
 }
@@ -68,10 +73,17 @@ const Home: NextPage = () => {
 
 function Functions() {
   const [context, setContext] = useState(0);
+  const [last, setLast] = useState(context);
 
   const handleClick = (value: number) => {
+    setLast(context);
     setContext(value);
   }
+
+  useEffect(() => {
+    document.querySelector(`hr + div > div > div:nth-child(${last+1})`).classList.remove("function-button-choosing");
+    document.querySelector(`hr + div > div > div:nth-child(${context+1})`).classList.add("function-button-choosing");
+  }, [context, last]);
 
   const buttonTexts = ["基本功能", "斜線指令", "音樂功能", "HiZollo 聯絡網", "迷你遊戲"]
 
@@ -80,7 +92,7 @@ function Functions() {
       <div className={style['function-block-buttons']}>
         {
           buttonTexts.map((v, i) => {
-            return <Button text={v} key={i} value={i} onValueChange={handleClick} />
+            return <Button text={v} key={i} value={i} id={`function-button-${i}`} onValueChange={handleClick} />
           })
         }
       </div>
@@ -228,6 +240,9 @@ function Functions() {
               </div>
             </DiscordMessage>
             <DiscordMessage profile="hizollo">
+            <div slot="interactions">
+              <DiscordInteraction profile="hizollo" reply edited></DiscordInteraction>
+            </div>
             <DiscordMarkdown>
               恭喜 <DiscordMention profile="zollo" />（符號 ❌）獲勝！<br />
               **遊玩時間**：1 分 8 秒<br />

@@ -103,6 +103,14 @@ a:hover {
   color: white !important;
 }
 
+.discord-markdown-content code {
+  background-color: black !important;
+}
+
+.function-button-choosing {
+  filter: brightness(0.9) contrast(2);
+}
+
 @media (max-width: 940px) {
   #wordmark-large {
     display: none;
