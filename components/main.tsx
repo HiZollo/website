@@ -47,16 +47,16 @@ const Layout: NextPage<{ children: ReactElement }> = ({ children }) => {
           </Link>
         </HeaderMenu>
         <HeaderMenu id="links" text="相關連結">
-          <Link href="/redirects/invite" passHref>
+          <Link href="/invite" passHref>
             <MenuItem onClick={handleClose}>邀請 HiZollo</MenuItem>
           </Link>
-          <Link href="/redirects/server" passHref>
+          <Link href="/server" passHref>
             <MenuItem onClick={handleClose}>支援伺服器</MenuItem>
           </Link>
-          <Link href="/redirects/dst" passHref>
+          <Link href="/dst" passHref>
             <MenuItem onClick={handleClose}>DST 頁面</MenuItem>
           </Link>
-          <Link href="/redirects/repo" passHref>
+          <Link href="/repo" passHref>
             <MenuItem onClick={handleClose}>網站原始碼</MenuItem>
           </Link>
         </HeaderMenu>
