@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import Header from '../../components/head';
 
 
-const paths = {
+const paths: { [key: string]: string } = {
   'invite': 'https://discord.com/oauth2/authorize?client_id=584677291318312963&permissions=1636382010871&scope=bot+applications.commands',
   'server': 'https://discord.com/invite/xUXTrYG2MZ',
   'dst': 'https://discordservers.tw/bots/584677291318312963',
@@ -22,15 +22,17 @@ const Invite: NextPage = () => {
     url === 'dst' ? ['DST 頁面', 'HiZollo 在 DiscordTw 上的介紹頁面，請為我們投下你神聖的一票！'] :
     url === 'repo' ? ['官方網站原始碼', '想一窺 HiZollo 的官方網站是怎麼寫的嗎？你可以在這裡它的原始碼'] : ['重定向', '無效的重定向頁面'];
 
+  const destUrl = paths[url as string] ?? '/';
+
   useEffect(() => {
-    window.location.href = paths[url] ?? '/';
+    window.location.href = destUrl;
   });
 
   return (
     <>
       <Header title={title} description={description} />
-      <h3>正在將你重定向至：<a href={paths[url] ?? '/'}>{paths[url] ?? '/'}</a></h3>
-      <h3>如果沒有成功，請<a href={paths[url] ?? '/'}>點此</a>跳轉</h3>
+      <h3>正在將你重定向至：<a href={destUrl}>{destUrl}</a></h3>
+      <h3>如果沒有成功，請<a href={destUrl}>點此</a>跳轉</h3>
     </>
   )
 }
