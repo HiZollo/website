@@ -19,19 +19,25 @@ header {
   margin-bottom: 20px;
 }
 
-header > a {
+header a {
   color: white;
+  cursor: pointer;
   text-decoration: none;
   font-size: 18px;
 }
 
-header > a:hover {
+header a:hover {
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-name: header-link-shiny;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: both;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
 }
 
 @keyframes header-link-shiny {
@@ -109,6 +115,10 @@ a:hover {
 
 .function-button-choosing {
   filter: brightness(0.9) contrast(2);
+}
+
+div.MuiPaper-root {
+  transform: translate(-5px) !important;
 }
 
 @media (max-width: 940px) {
