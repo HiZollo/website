@@ -145,16 +145,36 @@ function Functions() {
             </DiscordMessage>
             <DiscordMessage profile="hizollo">
               <DiscordEmbed
-                slot = "footer"
                 authorIcon = {hizolloAvatar.src}
                 authorName = "HiZollo 的音樂中心"
+                borderColor = "#94B4FA"
+              >
+                <DiscordMarkdown>
+                  已加入 `聽歌`
+                </DiscordMarkdown>
+              </DiscordEmbed>
+              <DiscordEmbed
+                slot = "embeds"
+                authorIcon = {hizolloAvatar.src}
+                authorName = "HiZollo 的音樂中心"
+                borderColor = "#94B4FA"
                 thumbnail = "https://i.ytimg.com/vi_webp/TZC02UdbStM/maxresdefault.webp"
                 footerIcon = {chocomintAvatar.src}
-                embedFooter = "由 chocomint 指定的歌曲"
               >
-                已將 <a href="https://www.youtube.com/watch?v=TZC02UdbStM">群青 / YOASOBI【Covered by Kotoha】</a> 加入隊列
-                <div slot = "footer">由 chocomint 指定的樂曲</div>
+                目前正在播放： <a href="https://www.youtube.com/watch?v=TZC02UdbStM">群青 / YOASOBI【Covered by Kotoha】</a>
+                <div slot="footer">由 chocomint 指定的樂曲</div>
               </DiscordEmbed>
+              <div slot="actions">
+                <DiscordButtons>
+                  <DiscordButton>暫停</DiscordButton>
+                  <DiscordButton disabled>繼續</DiscordButton>
+                  <DiscordButton type="secondary">正常播放</DiscordButton>
+                  <DiscordButton type="danger">跳過</DiscordButton>
+                </DiscordButtons>
+                <DiscordButtons>
+                  <DiscordButton type="success">詳細資訊</DiscordButton>
+                </DiscordButtons>
+              </div>
             </DiscordMessage>
           </> : <></>
         }
@@ -213,7 +233,7 @@ function Functions() {
               **遊玩時間**：1 分 8 秒<br />
               **下棋次數**：<br />
               　<DiscordMention profile="zollo" />：4 步<br />
-              　<DiscordMention profile="ac" />：4 步
+              　<DiscordMention profile="ac" />：3 步
             </DiscordMarkdown>
             </DiscordMessage>
             <DiscordMessage profile="zollo">
