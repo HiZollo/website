@@ -1,34 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HiZollo 官方網站
+這是 HiZollo 的官方網站的原始碼，使用 [Next.js](https://nextjs.org) 撰寫。
 
-## Getting Started
+## 執行
+在 clone 此專案後，使用 `yarn` 下載所有需要的套件，然後執行 `yarn dev`，網站會出現在 [http://localhost:3000](http://localhost:3000)。
 
-First, run the development server:
+## 貢獻
+如果你有發現任何問題，可以開 issue 給我們。
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+如果你想為此專案貢獻，在你加入一些新東西後，請先使用 `yarn build` 打包，確認 `typescript` 跟 `eslint` 不會叫，然後就可以開 Pull Request 給我們。
+不過注意網站架構已經大致確定，除非有需要不然我們不接受大改。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 開發＆維護
+HiZollo 網管團隊
