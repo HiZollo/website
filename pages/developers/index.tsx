@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -53,8 +53,14 @@ interface ProfileCardProps {
 
 function ProfileCard(props: ProfileCardProps) {
   const { children, avatar, name, nicknames, content } = props
+  const [shadow, setShadow] = useState(3);
   return (
-    <Card sx={{ maxWidth: 330 }}>
+    <Card
+      sx={{ maxWidth: 330 }}
+      elevation={shadow}
+      onMouseEnter={() => setShadow(24)}
+      onMouseLeave={() => setShadow(3)}
+    >
       <CardMedia
         component="img"
         height="170"
