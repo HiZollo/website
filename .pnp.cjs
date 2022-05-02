@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@discord-message-components/react", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:0.2.1"],\
             ["@emotion/react", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:11.9.0"],\
             ["@emotion/styled", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:11.8.1"],\
+            ["@mui/icons-material", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.6.2"],\
             ["@mui/lab", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.0.0-alpha.79"],\
             ["@mui/material", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.6.3"],\
             ["@types/node", "npm:17.0.21"],\
@@ -585,6 +586,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react-dom",\
             "@types/react",\
             "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@mui/icons-material", [\
+        ["npm:5.6.2", {\
+          "packageLocation": "./.yarn/cache/@mui-icons-material-npm-5.6.2-164d979b66-eef561fc68.zip/node_modules/@mui/icons-material/",\
+          "packageDependencies": [\
+            ["@mui/icons-material", "npm:5.6.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.6.2", {\
+          "packageLocation": "./.yarn/__virtual__/@mui-icons-material-virtual-c0eb628be4/0/cache/@mui-icons-material-npm-5.6.2-164d979b66-eef561fc68.zip/node_modules/@mui/icons-material/",\
+          "packageDependencies": [\
+            ["@mui/icons-material", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.6.2"],\
+            ["@babel/runtime", "npm:7.17.9"],\
+            ["@mui/material", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.6.3"],\
+            ["@types/mui__material", null],\
+            ["@types/react", "npm:18.0.8"],\
+            ["react", "npm:18.1.0"]\
+          ],\
+          "packagePeers": [\
+            "@mui/material",\
+            "@types/mui__material",\
+            "@types/react",\
             "react"\
           ],\
           "linkType": "HARD"\
@@ -3057,6 +3085,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@discord-message-components/react", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:0.2.1"],\
             ["@emotion/react", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:11.9.0"],\
             ["@emotion/styled", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:11.8.1"],\
+            ["@mui/icons-material", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.6.2"],\
             ["@mui/lab", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.0.0-alpha.79"],\
             ["@mui/material", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:5.6.3"],\
             ["@types/node", "npm:17.0.21"],\

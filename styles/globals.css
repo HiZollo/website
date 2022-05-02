@@ -53,12 +53,12 @@ header button {
 }
 
 #wordmark {
-  display: none;
   width: 200px;
 }
 
 #blank {
   flex-grow: 1;
+  flex-basis: 0;
 }
 
 main {
@@ -121,15 +121,8 @@ a:hover {
   transform: translate(-5px) !important;
 }
 
-@media (max-width: 940px) {
-  #wordmark-large {
-    display: none;
-  }
-  #wordmark {
-    display: inherit;
-  }
-
-  header {
-    gap: 20px;
+@media (max-width: 500px) {
+  main {
+    padding: 10px 10px;
   }
 }
