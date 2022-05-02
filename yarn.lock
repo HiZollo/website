@@ -2349,7 +2349,6 @@ __metadata:
     react-dom: ^18.1.0
     react-swipeable-views: ^0.14.0
     sharp: ^0.30.4
-    styled-jsx: ^5.0.2
     typescript: 4.6.2
   languageName: unknown
   linkType: soft
@@ -4097,20 +4096,6 @@ __metadata:
     babel-plugin-macros:
       optional: true
   checksum: b85eb03da76b566065b10911a24396659b45a34efa16eef87ed8ff2ce3ea7b9b6a9c0c92c3b2113f92cbca9ab12496690d72329cb9932759ea98d0386acb38a9
-  languageName: node
-  linkType: hard
-
-"styled-jsx@npm:^5.0.2":
-  version: 5.0.2
-  resolution: "styled-jsx@npm:5.0.2"
-  peerDependencies:
-    react: ">= 16.8.0 || 17.x.x || ^18.0.0-0"
-  peerDependenciesMeta:
-    "@babel/core":
-      optional: true
-    babel-plugin-macros:
-      optional: true
-  checksum: 86d55819ebeabd283a574d2f44f7d3f8fa6b8c28fa41687ece161bf1e910e04965611618921d8f5cd33dc6dae1033b926a70421ae5ea045440a9861edc3e0d87
   languageName: node
   linkType: hard
 
