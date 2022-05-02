@@ -72,7 +72,7 @@ function HeaderLinkList() {
       <HeaderMenu id="infos" text="更多資訊">
         <Link href="/commands" passHref>
           <MenuItem onClick={handleClose}>指令列表</MenuItem>
-        </Link>｀
+        </Link>
         <Link href="/changelog" passHref>
           <MenuItem onClick={handleClose}>更新日誌</MenuItem>
         </Link>
