@@ -95,8 +95,9 @@ function Functions() {
           textColor="inherit"
           aria-label="functions"
           TabIndicatorProps={{ style: { background: '#94B4FA' }}}
-          variant="fullWidth"
+          variant="scrollable"
           selectionFollowsFocus
+          centered
         >
           <Tab label="基本功能" />
           <Tab label="斜線指令" />
@@ -105,6 +106,9 @@ function Functions() {
           <Tab label="迷你遊戲" />
         </Tabs>
         <SwipeableViews
+          containerStyle={{
+            transition: 'transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s'
+          }}
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={value}
           onChangeIndex={handleChangeIndex}
