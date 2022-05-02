@@ -17,6 +17,7 @@ const Devs: NextPage = () => {
     <Stack
       direction="row"
       spacing={2}
+      justifyContent="center"
       divider={<Divider color="white" orientation="vertical" flexItem />}
     >
       <ProfileCard
