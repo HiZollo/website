@@ -27,8 +27,24 @@ import zolloAvatar from '../public/avatars/zollo.png';
 import chocomintAvatar from '../public/avatars/chocomint.png';
 import weeeeeee from '../public/avatars/weeeeeee.png';
 
-import { Grid, Box, Tabs, Tab, Button, Divider } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Tabs,
+  Tab,
+  Button,
+  Divider,
+  Card,
+  CardHeader,
+  Avatar,
+  CardContent,
+  Typography,
+  Rating
+} from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const discordOptions = {
 	...DiscordDefaultOptions,
@@ -70,6 +86,8 @@ const Home: NextPage = () => {
       <Functions />
       <Divider color="white" sx={{ mt: 0, mb: 5 }} />
       <HdCommands />
+      <Divider color="white" sx={{ my: 10 }} />
+      <Rates />
       <Divider color="white" sx={{ my: 10 }} />
       <Invites />
     </>
@@ -363,6 +381,53 @@ function HdCommands() {
       </Grid>
     </Grid>
   );
+}
+
+function Rates() {
+  const [index, changeIndex] = useState(0);
+  return (
+    <>
+      <AutoPlaySwipeableViews
+        containerStyle={{
+          transition: 'transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s'
+        }}
+        index={index}
+        onChangeIndex={(i: number) => { changeIndex(i); }}
+      >
+        <div className={style.rates}>
+          {createRateCard(acAvatar.src, "AC0xRPFS001", "這是我用過最好用的 Discord 機器人！", 5)}
+          {createRateCard(chocomintAvatar.src, "chocomint", "這是我用過最棒的 Discord 機器人！", 5)}
+          {createRateCard(weeeeeee.src, "wEEEEEE", "這台機器人很多遊戲，讓 Discord 不再只是聊天室", 5)}
+        </div>
+        <div className={style.rates}>
+          {createRateCard(chocomintAvatar.src, "chocomint ice", "音樂品質十分優秀", 5)}
+          {createRateCard(acAvatar.src, "AC", "我最喜歡跟我朋友玩五子棋消磨時間", 4)}
+          {createRateCard(zolloAvatar.src, "Zollo757347", "爛bot", 1)}
+        </div>
+        <div className={style.rates}>
+          {createRateCard(weeeeeee.src, "dQw4w9WgXcQ", "跨群功能讓我認識了很多新朋友", 4)}
+          {createRateCard(zolloAvatar.src, "Zollo", "又卡延遲又高，還會時不時自動斷線，使用體驗非常不好", 1)}
+          {createRateCard(acAvatar.src, "chocomint++", "一臺多功能的機器人，一般一個伺服器只需要這一臺就能滿足我所有需求了", 4)}
+        </div>
+      </AutoPlaySwipeableViews>
+    </>
+  );
+}
+
+function createRateCard(avatar: string, name: string, comment: string, rates: number) {
+  return (
+    <Card sx={{ width: 345, mx: 3 }}>
+      <CardHeader
+        avatar={<Avatar src={avatar} />}
+        title={name}
+      >
+      </CardHeader>
+      <CardContent>
+        <Rating sx={{ pl: 2 }} name="read-only" value={rates} readOnly />
+        <Typography pl={2}>{comment}</Typography>
+      </CardContent>
+    </Card>
+  )
 }
 
 function Invites() {

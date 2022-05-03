@@ -386,6 +386,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material-ui/types@npm:^4.0.0":
+  version: 4.1.1
+  resolution: "@material-ui/types@npm:4.1.1"
+  dependencies:
+    "@types/react": "*"
+  checksum: 987a4ae1848b25ca14d644fa59d4c5ba46b5f1900318930b48bcc63b92b12757cc4413c8e50d3e7660c39b2f44653ce831f818cb648bac3836f14b7de8193e3e
+  languageName: node
+  linkType: hard
+
 "@mui/base@npm:5.0.0-alpha.78":
   version: 5.0.0-alpha.78
   resolution: "@mui/base@npm:5.0.0-alpha.78"
@@ -834,7 +843,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-swipeable-views@npm:^0.13.1":
+"@types/react-swipeable-views-utils@npm:^0.13.3":
+  version: 0.13.3
+  resolution: "@types/react-swipeable-views-utils@npm:0.13.3"
+  dependencies:
+    "@material-ui/types": ^4.0.0
+    "@types/react": "*"
+    "@types/react-swipeable-views": "*"
+  checksum: 6ac25780701839b8a9d8b3f9e6fb72a5baeab26d294f94ff8b5cb6a2dbeb80ffa39b06812e2603f3ece17aaff8e7249cae9e14f56e68f36d6b84871bc6480938
+  languageName: node
+  linkType: hard
+
+"@types/react-swipeable-views@npm:*, @types/react-swipeable-views@npm:^0.13.1":
   version: 0.13.1
   resolution: "@types/react-swipeable-views@npm:0.13.1"
   dependencies:
@@ -2342,12 +2362,14 @@ __metadata:
     "@types/node": 17.0.21
     "@types/react": ^18.0.8
     "@types/react-swipeable-views": ^0.13.1
+    "@types/react-swipeable-views-utils": ^0.13.3
     eslint: 8.11.0
     eslint-config-next: 12.1.0
     next: ^12.1.5
     react: ^18.1.0
     react-dom: ^18.1.0
     react-swipeable-views: ^0.14.0
+    react-swipeable-views-utils: ^0.14.0
     sharp: ^0.30.4
     typescript: 4.6.2
   languageName: unknown

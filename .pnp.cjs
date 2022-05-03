@@ -42,12 +42,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.21"],\
             ["@types/react", "npm:18.0.8"],\
             ["@types/react-swipeable-views", "npm:0.13.1"],\
+            ["@types/react-swipeable-views-utils", "npm:0.13.3"],\
             ["eslint", "npm:8.11.0"],\
             ["eslint-config-next", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:12.1.0"],\
             ["next", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:12.1.5"],\
             ["react", "npm:18.1.0"],\
             ["react-dom", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:18.1.0"],\
             ["react-swipeable-views", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:0.14.0"],\
+            ["react-swipeable-views-utils", "npm:0.14.0"],\
             ["sharp", "npm:0.30.4"],\
             ["typescript", "patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"]\
           ],\
@@ -562,6 +564,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@humanwhocodes-object-schema-npm-1.2.1-eb622b5d0e-a824a1ec31.zip/node_modules/@humanwhocodes/object-schema/",\
           "packageDependencies": [\
             ["@humanwhocodes/object-schema", "npm:1.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@material-ui/types", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/@material-ui-types-npm-4.1.1-142f4d8f48-987a4ae184.zip/node_modules/@material-ui/types/",\
+          "packageDependencies": [\
+            ["@material-ui/types", "npm:4.1.1"],\
+            ["@types/react", "npm:18.0.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1258,6 +1270,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/react-swipeable-views", "npm:0.13.1"],\
             ["@types/react", "npm:18.0.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/react-swipeable-views-utils", [\
+        ["npm:0.13.3", {\
+          "packageLocation": "./.yarn/cache/@types-react-swipeable-views-utils-npm-0.13.3-24add93cf1-6ac2578070.zip/node_modules/@types/react-swipeable-views-utils/",\
+          "packageDependencies": [\
+            ["@types/react-swipeable-views-utils", "npm:0.13.3"],\
+            ["@material-ui/types", "npm:4.1.1"],\
+            ["@types/react", "npm:18.0.8"],\
+            ["@types/react-swipeable-views", "npm:0.13.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3110,12 +3134,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.21"],\
             ["@types/react", "npm:18.0.8"],\
             ["@types/react-swipeable-views", "npm:0.13.1"],\
+            ["@types/react-swipeable-views-utils", "npm:0.13.3"],\
             ["eslint", "npm:8.11.0"],\
             ["eslint-config-next", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:12.1.0"],\
             ["next", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:12.1.5"],\
             ["react", "npm:18.1.0"],\
             ["react-dom", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:18.1.0"],\
             ["react-swipeable-views", "virtual:70a7152f23e37347da342a056a6dda59debaf59ed913b0cf24b31dc233a2471d49ef7186d790319030aa89ac60f0a9caac5a35ed37d6cb1094719c63f322265e#npm:0.14.0"],\
+            ["react-swipeable-views-utils", "npm:0.14.0"],\
             ["sharp", "npm:0.30.4"],\
             ["typescript", "patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"]\
           ],\

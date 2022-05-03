@@ -56,7 +56,6 @@
 .block {
   height: 100%;
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   gap: 35px;
@@ -68,6 +67,12 @@
 
 .block-div-2 {
 
+}
+
+.rates {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .hr {
