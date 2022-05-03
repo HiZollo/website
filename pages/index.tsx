@@ -27,7 +27,7 @@ import zolloAvatar from '../public/avatars/zollo.png';
 import chocomintAvatar from '../public/avatars/chocomint.png';
 import weeeeeee from '../public/avatars/weeeeeee.png';
 
-import { Grid, Box, Tabs, Tab } from '@mui/material';
+import { Grid, Box, Tabs, Tab, Button, Divider } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
 
 const discordOptions = {
@@ -61,19 +61,17 @@ const Home: NextPage = () => {
   return (
     <>
       <Header />
-      <Grid container spacing={4}>
-        <Grid item lg={6} md={6} sm={12}>
-          <Image id={style['block1-img']} src={hizolloAvatar} alt="Junior HiZollo Avatar" />
-        </Grid>
-        <Grid item lg={6} md={6} sm={12}>
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center', justifyContent: 'center', lineHeight: '55px' }}>
-          <div style={{ fontSize: '45px', fontWeight: 'bolder' }}>Junior HiZollo</div>
-          <div style={{ fontSize: '24px', fontWeight: 'bolder' }}>功能完整的 Discord 機器人</div>
+        <div id={style.mainBlock}>
+          <div id={style['mainBlock-div-1']}>Junior HiZollo</div>
+          <div id={style['mainBlock-div-2']}>功能完整的 Discord 機器人</div>
+          <MainButton href="/invite">邀請回家</MainButton>
         </div>
-        </Grid>
-      </Grid>
-      <hr className={style.hr} />
+      <Divider color="white" />
       <Functions />
+      <Divider color="white" sx={{ mt: 0, mb: 5 }} />
+      <HdCommands />
+      <Divider color="white" sx={{ my: 10 }} />
+      <Invites />
     </>
   );
 }
@@ -88,7 +86,7 @@ function Functions() {
 
   return (
     <>
-      <Box sx={{ width: '100%', height: '600px' }}>
+      <Box sx={{ width: '100%', height: { xs: '750px', sm: '650px' } }}>
         <Tabs
           value={value}
           onChange={(event: React.SyntheticEvent, newValue: number) => { setValue(newValue); }}
@@ -330,12 +328,80 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }} style={{ borderTop: '1px solid #FFFFFF55' }}>
+        <Box sx={{ py: 4 }} style={{ borderTop: '1px solid #FFFFFF55' }}>
           {children}
         </Box>
       )}
     </div>
   );
+}
+
+function HdCommands() {
+  return (
+    <Grid container direction="row" spacing={4}>
+      <Grid item xs={12} md={6}>
+        <div className={style.block} style={{ flexDirection: "column" }}>
+          <div className={style['block-div-1']}>許多有趣彩蛋</div>
+          <div className={style['block-div-2']}>等待你來發掘</div>
+        </div>
+      </Grid>
+      <Grid item xs={12} md={6} p={0}>
+        <DiscordMessageWrapper>
+          <DiscordMessage profile="zollo">
+            ...
+          </DiscordMessage>
+          <DiscordMessage profile="hizollo">
+            { ~~(Math.random() * 1000) < 6 ? "。。。。。。。" : "......."}
+          </DiscordMessage>
+          <DiscordMessage profile="zollo">
+            吵死了 HiZollo
+          </DiscordMessage>
+          <DiscordMessage profile="hizollo">
+            QAQ
+          </DiscordMessage>
+        </DiscordMessageWrapper>
+      </Grid>
+    </Grid>
+  );
+}
+
+function Invites() {
+  return (
+    <Grid container direction="row" spacing={4} sx={{ flexDirection: { xs: "column-reverse", md: "row" } }}>
+      <Grid item xs={12} md={6} p={0}>
+        <Grid container className={style.block} sx={{ flexDirection: { md: "column", xs: "row" }}}>
+          <MainButton href="/invite">邀請 HiZollo</MainButton>
+          <MainButton href="/server">支援伺服器</MainButton>
+          <MainButton href="/tos">用戶條款</MainButton>
+        </Grid>
+      </Grid>
+      <Grid item xs={12} md={6} p={0}>
+        <div className={style.block} style={{ flexDirection: "column" }}>
+          <div className={style['block-div-1']}>心動不如趕快行動</div>
+          <div className={style['block-div-2']}>點擊按鈕加入我們</div>
+        </div>
+      </Grid>
+    </Grid>
+  );
+}
+
+interface ButtonProps {
+  children?: React.ReactNode
+  href?: string
+}
+
+function MainButton(props: ButtonProps) {
+  return (
+    <Button
+      href={props.href ?? '###'}
+      variant="contained"
+      disableElevation
+      sx={{
+        backgroundColor: '#5484FA',
+      }}
+    >
+      {props.children}
+    </Button>);
 }
 
 interface DMWProps {
