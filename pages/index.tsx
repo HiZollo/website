@@ -372,7 +372,6 @@ function Invites() {
         <Grid container className={style.block} sx={{ flexDirection: { md: "column", xs: "row" }}}>
           <MainButton href="/invite">邀請 HiZollo</MainButton>
           <MainButton href="/server">支援伺服器</MainButton>
-          <MainButton href="/tos">用戶條款</MainButton>
         </Grid>
       </Grid>
       <Grid item xs={12} md={6} p={0}>
