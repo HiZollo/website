@@ -97,7 +97,6 @@ function Functions() {
           TabIndicatorProps={{ style: { background: '#94B4FA' }}}
           variant="scrollable"
           selectionFollowsFocus
-          centered
         >
           <Tab label="基本功能" />
           <Tab label="斜線指令" />
@@ -112,6 +111,7 @@ function Functions() {
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={value}
           onChangeIndex={handleChangeIndex}
+          resistance
         >
           <TabPanel value={value} index={0} dir={theme.direction}>
             <BasicFunction />
