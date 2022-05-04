@@ -429,6 +429,7 @@ function Rates() {
   const M = useMediaQuery('(max-width: 630px)');
   const L = useMediaQuery('(max-width: 890px)');
   const contents = n_set(reviews, M ? 1 : L ? 2 : 3);
+  const interval = M ? 3000 : L ? 4000 : 6000;
   return (
     <>
       <Grid container justifyContent="center">
@@ -439,6 +440,7 @@ function Rates() {
           }}
           index={index}
           onChangeIndex={(i: number) => { changeIndex(i); }}
+          interval={interval}
         >
           {
             contents.map((v, i: number) => {
