@@ -39,7 +39,8 @@ import {
   Avatar,
   CardContent,
   Typography,
-  Rating
+  Rating,
+  useMediaQuery
 } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
@@ -73,6 +74,46 @@ const discordOptions = {
 	},
 }
 
+interface ReviewStruct {
+  avatar: string,
+  name: string,
+  content: string,
+  rate: number
+}
+
+const reviews: ReviewStruct[] = [
+  { avatar: acAvatar.src, name: "AC0xRPFS001", content: "這是我用過最好用的 Discord 機器人！", rate: 5 },
+  { avatar: chocomintAvatar.src, name: "chocomint", content: "這是我用過最棒的 Discord 機器人！", rate: 5 },
+  { avatar: weeeeeee.src, name: "wEEEEEE", content: "這台機器人很多遊戲，讓 Discord 不再只是聊天室", rate: 5 },
+  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質十分優秀", rate: 5 },
+  { avatar: acAvatar.src, name: "AC", content: "我最喜歡跟我朋友玩五子棋消磨時間", rate: 4 },
+  { avatar: zolloAvatar.src, name: "Zollo757347", content: "爛bot", rate: 1 },
+  { avatar: weeeeeee.src, name: "dQw4w9WgXcQ", content: "跨群功能讓我認識了很多新朋友", rate: 4 },
+  { avatar: zolloAvatar.src, name: "Zollo", content: "又卡延遲又高，還會時不時自動斷線，使用體驗非常不好", rate: 1 },
+  { avatar: acAvatar.src, name: "chocomint++", content: "一臺多功能的機器人，一般一個伺服器只需要這一臺就能滿足我所有需求了", rate: 4 },
+  { avatar: zolloAvatar.src, name: "Zollo", content: "又卡延遲又高，還會時不時自動斷線，使用體驗非常不好", rate: 1 },
+  { avatar: acAvatar.src, name: "chocomint++", content: "一臺多功能的機器人，一般一個伺服器只需要這一臺就能滿足我所有需求了", rate: 4 },
+  { avatar: weeeeeee.src, name: "wEEEEEE", content: "這台機器人很多遊戲，讓 Discord 不再只是聊天室", rate: 5 },
+  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質十分優秀", rate: 5 },
+  { avatar: acAvatar.src, name: "AC", content: "我最喜歡跟我朋友玩五子棋消磨時間", rate: 4 },
+  { avatar: zolloAvatar.src, name: "Zollo757347", content: "爛bot", rate: 1 },
+  { avatar: chocomintAvatar.src, name: "chocomint", content: "這是我用過最棒的 Discord 機器人！", rate: 5 },
+  { avatar: weeeeeee.src, name: "wEEEEEE", content: "這台機器人很多遊戲，讓 Discord 不再只是聊天室", rate: 5 },
+  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質十分優秀", rate: 5 },
+];
+
+function n_set(arr:ReviewStruct[], number: number) {
+  const r: Array<ReviewStruct[]> = [];
+  for(let i=0; i<arr.length; i+=number) {
+    r.push([]);
+    for(let j=i; j<i+number; ++j) {
+      r[i/number].push(arr[j]);
+    }
+  }
+
+  return r;
+}
+
 const Home: NextPage = () => {
   return (
     <>
@@ -86,7 +127,7 @@ const Home: NextPage = () => {
       <Functions />
       <Divider color="white" sx={{ mt: 0, mb: 5 }} />
       <HdCommands />
-      <Divider color="white" sx={{ my: 10 }} />
+      <Divider color="white" sx={{ mt: 10, mb: 0 }} />
       <Rates />
       <Divider color="white" sx={{ my: 10 }} />
       <Invites />
@@ -385,31 +426,31 @@ function HdCommands() {
 
 function Rates() {
   const [index, changeIndex] = useState(0);
+  const M = useMediaQuery('(max-width: 630px)');
+  const L = useMediaQuery('(max-width: 890px)');
+  const contents = n_set(reviews, M ? 1 : L ? 2 : 3);
   return (
     <>
-      <AutoPlaySwipeableViews
-        containerStyle={{
-          transition: 'transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s'
-        }}
-        index={index}
-        onChangeIndex={(i: number) => { changeIndex(i); }}
-      >
-        <div className={style.rates}>
-          {createRateCard(acAvatar.src, "AC0xRPFS001", "這是我用過最好用的 Discord 機器人！", 5)}
-          {createRateCard(chocomintAvatar.src, "chocomint", "這是我用過最棒的 Discord 機器人！", 5)}
-          {createRateCard(weeeeeee.src, "wEEEEEE", "這台機器人很多遊戲，讓 Discord 不再只是聊天室", 5)}
-        </div>
-        <div className={style.rates}>
-          {createRateCard(chocomintAvatar.src, "chocomint ice", "音樂品質十分優秀", 5)}
-          {createRateCard(acAvatar.src, "AC", "我最喜歡跟我朋友玩五子棋消磨時間", 4)}
-          {createRateCard(zolloAvatar.src, "Zollo757347", "爛bot", 1)}
-        </div>
-        <div className={style.rates}>
-          {createRateCard(weeeeeee.src, "dQw4w9WgXcQ", "跨群功能讓我認識了很多新朋友", 4)}
-          {createRateCard(zolloAvatar.src, "Zollo", "又卡延遲又高，還會時不時自動斷線，使用體驗非常不好", 1)}
-          {createRateCard(acAvatar.src, "chocomint++", "一臺多功能的機器人，一般一個伺服器只需要這一臺就能滿足我所有需求了", 4)}
-        </div>
-      </AutoPlaySwipeableViews>
+      <Grid container justifyContent="center">
+        <Box component="h1" sx={{ py: 3 }}>用戶評價</Box>
+        <AutoPlaySwipeableViews
+          containerStyle={{
+            transition: 'transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s'
+          }}
+          index={index}
+          onChangeIndex={(i: number) => { changeIndex(i); }}
+        >
+          {
+            contents.map((v, i: number) => {
+              return (
+                <div className={style.rates} key={i}>
+                  {v.map((c) => createRateCard(c.avatar, c.name, c.content, c.rate))}
+                </div>
+              );
+            })
+          }
+        </AutoPlaySwipeableViews>
+      </Grid>
     </>
   );
 }
@@ -423,8 +464,8 @@ function createRateCard(avatar: string, name: string, comment: string, rates: nu
       >
       </CardHeader>
       <CardContent>
-        <Rating sx={{ pl: 2 }} name="read-only" value={rates} readOnly />
-        <Typography pl={2}>{comment}</Typography>
+        <Rating name="read-only" value={rates} readOnly />
+        <Typography>{comment}</Typography>
       </CardContent>
     </Card>
   )
