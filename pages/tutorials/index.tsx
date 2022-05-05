@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import TutorialNav from '../../components/TutorialNav';
+import TutorialNav from '../../components/tutorialNav';
 
 const Tutorials: NextPage = () => {
   return (

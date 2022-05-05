@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { readDirSync } from 'fs';
+import { readdirSync } from 'fs';
 
 const Blog: NextPage = () => {
   return (

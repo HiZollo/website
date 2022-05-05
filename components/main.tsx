@@ -272,6 +272,6 @@ interface FooterLinkProps {
   href?: string
 }
 
-function FooterLink(props) {
+function FooterLink(props: FooterLinkProps) {
   return <Link href={props.href ?? '###'} passHref><Grid item component="a">{props.children}</Grid></Link>;
 }
