@@ -11,7 +11,7 @@ import {
   List, ListItem, ListItemText,
   Divider,
   Box, Button,
-  Collapse,
+  Collapse, Grid,
   useMediaQuery
 } from '@mui/material';
 
@@ -21,6 +21,7 @@ const Layout: NextPage<{ children: ReactElement }> = ({ children }) => {
   const largeWordmark = useMediaQuery('(min-width: 820px), (max-width: 715px) and (min-width: 450px)');
   const useWordmark = useMediaQuery('(min-width: 380px)');
   const fullLink = useMediaQuery('(min-width: 715px)');
+  const footerRow = useMediaQuery('(min-width: 520px)');
 
   return (
     <>
@@ -44,6 +45,42 @@ const Layout: NextPage<{ children: ReactElement }> = ({ children }) => {
       </main>
 
       <BlankDiv />
+
+      <footer>
+        <Grid
+          container
+          justifyContent="center"
+          textAlign={footerRow ? 'left' : 'center'}
+          direction={footerRow ? 'row' : 'column'}
+          py={5}
+          gap={{ xs: 5, sm: 10, md: 20, lg: 30 }}
+          sx={{ width: { sm: '90vw' }, height: 'auto' }}
+          >
+          <Box>
+            <Grid item className="footer-link-title">Junior HiZollo</Grid>
+            <FooterLink href="/tutorials">使用教學</FooterLink>
+            <FooterLink href="/commands">指令列表</FooterLink>
+            <FooterLink href="/changelog">更新日誌</FooterLink>
+            <FooterLink href="/tos">用戶條款</FooterLink>
+          </Box>
+
+          <Box>
+            <Grid item className="footer-link-title">了解我們</Grid>
+            <FooterLink href="/developers">開發團隊</FooterLink>
+            <FooterLink href="/blog">開發日誌</FooterLink>
+            <FooterLink href="https://github.com/hizollo">Github</FooterLink>
+          </Box>
+
+          <Box>
+            <Grid item className="footer-link-title">更多連結</Grid>
+            <FooterLink href="/invite">邀請連結</FooterLink>
+            <FooterLink href="/server">支援伺服器</FooterLink>
+            <FooterLink href="/dst">DST</FooterLink>
+            <FooterLink href="https://top.gg/bot/584677291318312963">Top.gg</FooterLink>
+          </Box>
+        </Grid>
+        <div id="copy">&copy; HiZollo 2019 - {new Date().getFullYear()}</div>
+      </footer>
     </>
   );
 }
@@ -228,4 +265,13 @@ function makeDrawerList(link:string, text: string,
       </ListItem>
     </Link>
   )
+}
+
+interface FooterLinkProps {
+  children?: React.ReactNode,
+  href?: string
+}
+
+function FooterLink(props) {
+  return <Link href={props.href ?? '###'} passHref><Grid item component="a">{props.children}</Grid></Link>;
 }

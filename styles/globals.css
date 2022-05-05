@@ -121,6 +121,53 @@ a:hover {
   transform: translate(-5px) !important;
 }
 
+footer {
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0 50px;
+  line-height: 45px;
+}
+
+footer a {
+  cursor: pointer;
+  display: block;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#copy {
+  line-height: 30px;
+  padding: 0 0 10px;
+}
+
+#tutorial-nav {
+  width: 80vw;
+  margin: 30px auto;
+  border: 1px white solid;
+  border-collapse: collapse;
+}
+
+#tutorial-nav th, #tutorial-nav td {
+  text-align: center;
+  padding: 4px 30px;
+  border: 1px white solid;
+}
+
+#tutorial-nav a {
+  white-space: nowrap
+}
+
+.footer-link-title {
+  font-size: 24px;
+}
+
 @media (max-width: 500px) {
   main {
     padding: 10px 10px;
