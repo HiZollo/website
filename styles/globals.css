@@ -148,16 +148,7 @@ footer a:hover {
 }
 
 #tutorial-nav {
-  width: 80vw;
-  margin: 30px auto;
-  border: 1px white solid;
-  border-collapse: collapse;
-}
-
-#tutorial-nav th, #tutorial-nav td {
   text-align: center;
-  padding: 4px 30px;
-  border: 1px white solid;
 }
 
 #tutorial-nav a {

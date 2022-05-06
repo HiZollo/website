@@ -13,4 +13,5 @@ const Tutorials: NextPage = () => {
     </>
   );
 }
+
 export default Tutorials;
