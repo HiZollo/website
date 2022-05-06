@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Grid, Box, Divider } from '@mui/material';
 import React from 'react';
 
@@ -68,4 +69,38 @@ function createTutorialList(title: string, props: TutorialListItem[]) {
     </Grid>
   );
 }
-export default TutorialNav;
+
+interface StaticImageData {
+  src: string,
+  height: number,
+  width: number,
+  blurDataURL?: string
+}
+
+interface TutorialImageProps {
+  src: StaticImageData | string,
+  alt: string,
+  height: number
+}
+
+function TutorialImage(props: TutorialImageProps) {
+  return (
+    <div style={{ margin: '20px 0' }}>
+      <Image src={props.src} alt={props.alt} width={400} height={props.height} />
+    </div>
+  )
+}
+
+interface TutorialWrapProps {
+  children?: React.ReactNode
+}
+
+function TutorialWrap(props: TutorialWrapProps) {
+  return (
+    <div style={{ margin: '0 auto', maxWidth: '800px' }}>
+      {props.children}
+    </div>
+  )
+}
+
+export { TutorialNav, TutorialImage, TutorialWrap };
