@@ -98,7 +98,7 @@ const Changelog: NextPage = (props) => {
     // 將上下組合起來變成完整的 tabber 並回傳
     return (
       <React.Fragment key={value}>
-        <h1>{value}</h1>
+        <h2>{value}</h2>
         <Box sx={{ width: '100%' }}>
           <Tabs
             value={nowValue}
@@ -126,6 +126,8 @@ const Changelog: NextPage = (props) => {
         title = "更新日誌"
         description = "這是 HiZollo 的更新日誌，來回顧 HiZollo 的歷史吧！"
       />
+      <h1>HiZollo 的更新日誌</h1>
+      這是 HiZollo 的更新日誌，你可以在這裡看到 HiZollo 歷來所有更新內容及更新時間。
       {tabbers}
     </>
   )
