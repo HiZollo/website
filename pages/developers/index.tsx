@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { ReactNode, useState } from 'react';
 import {
+  Box,
   Card,
   CardContent,
   CardMedia,
@@ -14,29 +15,38 @@ import zolloAvatar from '../../public/avatars/zollo.png';
 
 const Devs: NextPage = () => {
   return (
-    <Stack
-      direction="row"
-      spacing={2}
-      justifyContent="center"
-      divider={<Divider color="white" orientation="vertical" flexItem />}
-    >
-      <ProfileCard
-        avatar={{ src: acAvatar.src, alt: "AC" }}
-        name="AC0xRPFS001"
-        nicknames="AC、chocomint"
-        content="HiZollo 的創建者，是專案創始成員之一。目前擔任專案管理團隊、程式團隊以及網管團隊的領導成員。同時也是 HiZollo 開源計畫的發起者之一。"
+    <>
+      <Box
+        component="h1"
+        textAlign={{ xs: "center", md: "inherit" }}
       >
-        <Lead />、<Code />、<Web />
-      </ProfileCard>
-      <ProfileCard
-        avatar={{ src: zolloAvatar.src, alt: "Zollo" }}
-        name="Zollo757347"
-        nicknames="Zollo、小佐"
-        content="HiZollo 專案創始成員之一。目前擔任美術團隊、文案團隊的領導成員，以及程式團隊的成員。同時也是 HiZollo 開源計畫的發起者之一。"
+        HiZollo 開發團隊
+      </Box>
+      <Stack
+        direction={{xs: "column", sm: "row"}}
+        alignItems={{ xs: "center", sm: "inherit" }}
+        spacing={2}
+        mt={3}
+        divider={<Divider color="white" orientation="vertical" flexItem />}
       >
-        <Code />、<Art />、<Copy />
-      </ProfileCard>
-    </Stack>
+        <ProfileCard
+          avatar={{ src: acAvatar.src, alt: "AC" }}
+          name="AC0xRPFS001"
+          nicknames="AC、chocomint"
+          content="HiZollo 的創建者，是專案創始成員之一。目前擔任專案管理團隊、程式團隊以及網管團隊的領導成員。同時也是 HiZollo 開源計畫的發起者之一。"
+        >
+          <Lead />、<Code />、<Web />
+        </ProfileCard>
+        <ProfileCard
+          avatar={{ src: zolloAvatar.src, alt: "Zollo" }}
+          name="Zollo757347"
+          nicknames="Zollo、小佐"
+          content="HiZollo 專案創始成員之一。目前擔任美術團隊、文案團隊的領導成員，以及程式團隊的成員。同時也是 HiZollo 開源計畫的發起者之一。"
+        >
+          <Code />、<Art />、<Copy />
+        </ProfileCard>
+      </Stack>
+    </>
   );
 }
 
