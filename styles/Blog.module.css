@@ -1,0 +1,7 @@
+.blog-card a {
+  color: #94B4FA;
+}
+
+.blog-card a:hover {
+  filter: brightness(1.2);
+}
