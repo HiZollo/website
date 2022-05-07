@@ -31,7 +31,7 @@ const BlogPage: NextPage<BlogPageProps> = (props: BlogPageProps) => {
               <CardHeader
                 sx={{ paddingLeft: 3 }}
                 title={
-                  <Link href="###">
+                  <Link href={`blog/${name.substring(0, name.length-3)}`}>
                     <a>{data.split('\n')[0].slice(1) }</a>
                   </Link>
                 }
@@ -52,11 +52,11 @@ const BlogPage: NextPage<BlogPageProps> = (props: BlogPageProps) => {
 }
 
 export async function getStaticProps() {
-  const blogs = readdirSync('./public/blog').filter(file => file.endsWith('.md'));
+  const blogs = readdirSync(`${process.cwd()}/public/blog`).filter(file => file.endsWith('.md'));
   const blogList: Array<[string, string]> = [];
 
   for (const blog of blogs) {
-    const data = readFileSync(`./public/blog/${blog}`, 'utf-8');
+    const data = readFileSync(`${process.cwd()}/public/blog/${blog}`, 'utf-8');
     blogList.push([blog, data]);
   }
 

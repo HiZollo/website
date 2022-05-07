@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { name } = context.params!;
 
   try {
-    const content = readFileSync(`./public/blog/${name}.md`, 'utf-8');
+    const content = readFileSync(`${process.cwd()}/public/blog/${name}.md`, 'utf-8');
     const title = content.split('\n')[0].slice(1);
     return {
       props: { name, title, content }
