@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { readdirSync, readFileSync } from 'fs';
 import { Card, CardHeader, CardContent, Stack, Divider } from '@mui/material';
+import Header from '../../components/head'
 import style from '../../styles/Blog.module.css';
 
 interface BlogPageProps {
@@ -11,6 +12,10 @@ interface BlogPageProps {
 const BlogPage: NextPage<BlogPageProps> = (props: BlogPageProps) => {
   return (
     <>
+      <Header
+        title="開發日誌"
+        description="HiZollo 開發人員所撰寫的開發日誌，可能是最新開發進度、HiZollo 的小秘密、技術名詞解說，或是日常發牢騷"
+      />
       <h1>開發日誌</h1>
       這裡是 HiZollo 的開發日誌，當開發者很閒時可能就會寫一篇丟在這裡。不保證更新頻率。
       <Stack
