@@ -1,5 +1,5 @@
-import type { NextPage, GetServerSideProps } from 'next';
-import { readFileSync } from 'fs';
+import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import { readdirSync, readFileSync } from 'fs';
 import Header from '../../components/head'
 import ReactMarkdown from 'react-markdown';
 
@@ -23,17 +23,24 @@ const BlogContent: NextPage<BlogContentProps> = (props) => {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const blogs = readdirSync(`${process.cwd()}/public/blog`).filter(file => file.endsWith('.md'));
+
+  return {
+    paths: blogs.map(blog => {
+      return { params: { name: blog.substring(0, blog.length-3) } }
+    }),
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
   const { name } = context.params!;
 
-  try {
-    const content = readFileSync(`${process.cwd()}/public/blog/${name}.md`, 'utf-8');
-    const title = content.split('\n')[0].slice(1);
-    return {
-      props: { name, title, content }
-    }
-  } catch(e) {
-    return { notFound: true }
+  const content = readFileSync(`${process.cwd()}/public/blog/${name}.md`, 'utf-8');
+  const title = content.split('\n')[0].slice(1);
+  return {
+    props: { name, title, content }
   }
 }
 
