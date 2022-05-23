@@ -1,12 +1,10 @@
 import type { NextPage } from 'next';
 import Header from '../components/head';
-import Image from 'next/image';
 const {
   DiscordMessage,
   DiscordMessages,
   DiscordMention,
   DiscordEmbed,
-  DiscordReply,
   DiscordButtons,
   DiscordButton,
   DiscordMarkdown,
@@ -16,7 +14,7 @@ const {
 } = require('@discord-message-components/react');
 import '@discord-message-components/react/styles'
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTheme, Direction } from '@mui/material/styles';
 
 import style from '../styles/Mainpage.module.css';
@@ -25,6 +23,17 @@ import hizolloAvatar from '../public/avatars/hizollo.png';
 import acAvatar from '../public/avatars/ac.png';
 import zolloAvatar from '../public/avatars/zollo.png';
 import chocomintAvatar from '../public/avatars/chocomint.png';
+
+import rpmAvatar from '../public/mp-ratecards/avatars/rpmAvatar.png';
+import chinghAvatar from '../public/mp-ratecards/avatars/chinghAvatar.png';
+import kiloAvatar from '../public/mp-ratecards/avatars/kiloAvatar.png';
+import richardAvatar from '../public/mp-ratecards/avatars/richardAvatar.png';
+import dinoAvatar from '../public/mp-ratecards/avatars/dinoAvatar.png';
+import ratAvatar from '../public/mp-ratecards/avatars/ratAvatar.png';
+import nelsonAvatar from '../public/mp-ratecards/avatars/nelsonAvatar.png';
+import judyAvatar from '../public/mp-ratecards/avatars/judyAvatar.png';
+import penqunAvatar from '../public/mp-ratecards/avatars/penqunAvatar.png';
+
 import weeeeeee from '../public/avatars/weeeeeee.png';
 
 import {
@@ -84,22 +93,22 @@ interface ReviewStruct {
 const reviews: ReviewStruct[] = [
   { avatar: acAvatar.src, name: "AC0xRPFS001", content: "這是我用過最好用的 Discord 機器人！", rate: 5 },
   { avatar: chocomintAvatar.src, name: "chocomint", content: "這是我用過最棒的 Discord 機器人！", rate: 5 },
-  { avatar: weeeeeee.src, name: "wEEEEEE", content: "這台機器人很多遊戲，讓 Discord 不再只是聊天室", rate: 5 },
-  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質十分優秀", rate: 5 },
+  { avatar: zolloAvatar.src, name: "Zollo757347", content: "只會莫名其妙嗆人，嗆不贏還會直接下線", rate: 1 },
+  { avatar: rpmAvatar.src, name: "rpm", content: "這是一個多功能而實用具娛樂性的爛bot！", rate: 5 },
+  { avatar: chinghAvatar.src, name: "ChinGH", content: "很多指令都很有趣、很滑稽又很搞笑。蠻享受的 雖然有點氣死人", rate: 4.5 },
+  { avatar: kiloAvatar.src, name: "KILO", content: "推薦自己的伺服器用一個 HiZollo ouob", rate: 5 },
+  { avatar: richardAvatar.src, name: "Richard1223", content: "在第一次使用 HiZollo 時，我就發現這機器人可以拿來嗆朋友跟浪費朋友的時間以及挑撥離間，誠摯推薦給有上述需求的用戶使用。", rate: 5 },
+  { avatar: dinoAvatar.src, name: "恐龍", content: "功能很齊全，但是美中不足的是他嗆人的話太少了", rate: 4 },
+  { avatar: ratAvatar.src, name: "Rat God", content: "娛樂性很高的機器人，尤其是用來偷嗆人（", rate: 4 },
+  { avatar: nelsonAvatar.src, name: "Nelson🐋", content: " HiZollo 我婆啦～🤤", rate: 5 },
+  { avatar: judyAvatar.src, name: "𝓙𝓾𝓭𝔂", content: "很喜歡 HiZollo 的小功能，也很喜歡被他嗆＆嗆他（？？）", rate: 5 },
+  { avatar: penqunAvatar.src, name: "摩勳", content: "他是一個很互動性很高的機器人，而且開發者很用心，讓這個機器人很有自己的個性，能從指令反應看得出這個機器人有點嗆，但又很幽默。被他嗆得感覺好爽", rate: 5 },
   { avatar: acAvatar.src, name: "AC", content: "我最喜歡跟我朋友玩五子棋消磨時間", rate: 4 },
   { avatar: zolloAvatar.src, name: "Zollo757347", content: "爛bot", rate: 1 },
   { avatar: weeeeeee.src, name: "dQw4w9WgXcQ", content: "跨群功能讓我認識了很多新朋友", rate: 4 },
-  { avatar: zolloAvatar.src, name: "Zollo", content: "又卡延遲又高，還會時不時自動斷線，使用體驗非常不好", rate: 1 },
-  { avatar: acAvatar.src, name: "chocomint++", content: "一臺多功能的機器人，一般一個伺服器只需要這一臺就能滿足我所有需求了", rate: 4 },
-  { avatar: zolloAvatar.src, name: "Zollo", content: "又卡延遲又高，還會時不時自動斷線，使用體驗非常不好", rate: 1 },
-  { avatar: acAvatar.src, name: "chocomint++", content: "一臺多功能的機器人，一般一個伺服器只需要這一臺就能滿足我所有需求了", rate: 4 },
-  { avatar: weeeeeee.src, name: "wEEEEEE", content: "這台機器人很多遊戲，讓 Discord 不再只是聊天室", rate: 5 },
   { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質十分優秀", rate: 5 },
-  { avatar: acAvatar.src, name: "AC", content: "我最喜歡跟我朋友玩五子棋消磨時間", rate: 4 },
-  { avatar: zolloAvatar.src, name: "Zollo757347", content: "爛bot", rate: 1 },
-  { avatar: chocomintAvatar.src, name: "chocomint", content: "這是我用過最棒的 Discord 機器人！", rate: 5 },
   { avatar: weeeeeee.src, name: "wEEEEEE", content: "這台機器人很多遊戲，讓 Discord 不再只是聊天室", rate: 5 },
-  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質十分優秀", rate: 5 },
+  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質很讚", rate: 5 }
 ];
 
 function n_set(arr:ReviewStruct[], number: number) {
@@ -121,7 +130,10 @@ const Home: NextPage = () => {
         <div id={style.mainBlock}>
           <div id={style['mainBlock-div-1']}>Junior HiZollo</div>
           <div id={style['mainBlock-div-2']}>功能完整的 Discord 機器人</div>
-          <MainButton href="/invite">邀請回家</MainButton>
+          <div style={{ display: 'flex', gap: '35px' }}>
+            <MainButton href="/invite">邀請回家</MainButton>
+            <MainButton href="/tutorials">使用教學</MainButton>
+          </div>
         </div>
       <Divider color="white" />
       <Functions />
@@ -148,7 +160,7 @@ function Functions() {
       <Box sx={{ width: '100%', height: { xs: '750px', sm: '650px' } }}>
         <Tabs
           value={value}
-          onChange={(event: React.SyntheticEvent, newValue: number) => { setValue(newValue); }}
+          onChange={(_: React.SyntheticEvent, newValue: number) => { setValue(newValue); }}
           textColor="inherit"
           aria-label="functions"
           TabIndicatorProps={{ style: { background: '#94B4FA' }}}
@@ -459,14 +471,13 @@ function Rates() {
 
 function createRateCard(avatar: string, name: string, comment: string, rates: number) {
   return (
-    <Card sx={{ width: 345, mx: 3 }}>
+    <Card sx={{ width: 345, mx: 3 }} key={`${name}-rates-${comment}`}>
       <CardHeader
         avatar={<Avatar src={avatar} />}
         title={name}
-      >
-      </CardHeader>
+      />
       <CardContent>
-        <Rating name="read-only" value={rates} readOnly />
+        <Rating name="read-only" value={rates} precision={0.1} readOnly />
         <Typography>{comment}</Typography>
       </CardContent>
     </Card>
@@ -505,6 +516,10 @@ function MainButton(props: ButtonProps) {
       disableElevation
       sx={{
         backgroundColor: '#5484FA',
+        height: { xs: 40, md: 50 },
+        width: { xs: 'auto' },
+        fontSize: { xs: 14, md: 18 },
+        px: { xs: 3 }
       }}
     >
       {props.children}
