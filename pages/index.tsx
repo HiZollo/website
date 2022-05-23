@@ -33,6 +33,12 @@ import ratAvatar from '../public/mp-ratecards/avatars/ratAvatar.png';
 import nelsonAvatar from '../public/mp-ratecards/avatars/nelsonAvatar.png';
 import judyAvatar from '../public/mp-ratecards/avatars/judyAvatar.png';
 import penqunAvatar from '../public/mp-ratecards/avatars/penqunAvatar.png';
+import ajieAvatar from '../public/mp-ratecards/avatars/ajieAvatar.png';
+import helloAvatar from '../public/mp-ratecards/avatars/helloAvatar.png';
+import jimmyAvatar from '../public/mp-ratecards/avatars/jimmyAvatar.png';
+import lingAvatar from '../public/mp-ratecards/avatars/lingAvatar.png';
+import springrollAvatar from '../public/mp-ratecards/avatars/springrollAvatar.png';
+import yunaiAvatar from '../public/mp-ratecards/avatars/yunaiAvatar.png';
 
 import weeeeeee from '../public/avatars/weeeeeee.png';
 
@@ -103,12 +109,12 @@ const reviews: ReviewStruct[] = [
   { avatar: nelsonAvatar.src, name: "Nelson🐋", content: " HiZollo 我婆啦～🤤", rate: 5 },
   { avatar: judyAvatar.src, name: "𝓙𝓾𝓭𝔂", content: "很喜歡 HiZollo 的小功能，也很喜歡被他嗆＆嗆他（？？）", rate: 5 },
   { avatar: penqunAvatar.src, name: "摩勳", content: "他是一個很互動性很高的機器人，而且開發者很用心，讓這個機器人很有自己的個性，能從指令反應看得出這個機器人有點嗆，但又很幽默。被他嗆得感覺好爽", rate: 5 },
-  { avatar: acAvatar.src, name: "AC", content: "我最喜歡跟我朋友玩五子棋消磨時間", rate: 4 },
-  { avatar: zolloAvatar.src, name: "Zollo757347", content: "爛bot", rate: 1 },
-  { avatar: weeeeeee.src, name: "dQw4w9WgXcQ", content: "跨群功能讓我認識了很多新朋友", rate: 4 },
-  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質十分優秀", rate: 5 },
-  { avatar: weeeeeee.src, name: "wEEEEEE", content: "這台機器人很多遊戲，讓 Discord 不再只是聊天室", rate: 5 },
-  { avatar: chocomintAvatar.src, name: "chocomint ice", content: "音樂品質很讚", rate: 5 }
+  { avatar: ajieAvatar.src, name: "阿傑", content: "整體來說 HiZollo 很好用，但有時候在聽歌的時候會卡", rate: 4 },
+  { avatar: helloAvatar.src, name: "Hello Phone", content: "Junior HiZollo 是我用過最有趣的 Discord 機器人，沒有之一。它還有多款小遊戲，是娛樂機器人的不二之選。", rate: 5 },
+  { avatar: jimmyAvatar.src, name: "JIMMY", content: "跨群功能讓我認識了很多新朋友", rate: 4 },
+  { avatar: lingAvatar.src, name: "use_special_mental_attack", content: "功能齊全 更新多 而且可以跟朋友玩", rate: 5 },
+  { avatar: springrollAvatar.src, name: "𝓈𝓅𝓇𝒾𝓃𝑔 𝓇𝑜𝓁𝓁𝓈", content: "HiZollo 是什麼爛 bot 啊，他媽的看他那麼久，一直出 bug，難得創作者那麼佬團隊那麼神，創造了一個破爛 bot，真的是齁⋯他們一定是故意做一個爛 bot，一直對外說自己爛，這種人真壞", rate: 5 },
+  { avatar: yunaiAvatar.src, name: "ʸᵘ ⁿᵃⁱ、", content: "功能尚可 但是反應會讓大多數人很幹", rate: 3 }
 ];
 
 function n_set(arr:ReviewStruct[], number: number) {
