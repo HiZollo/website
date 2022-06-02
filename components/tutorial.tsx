@@ -97,7 +97,7 @@ interface TutorialWrapProps {
 
 function TutorialWrap(props: TutorialWrapProps) {
   return (
-    <div style={{ margin: '0 auto', maxWidth: '800px' }}>
+    <div>
       {props.children}
     </div>
   )
