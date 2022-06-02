@@ -5,7 +5,7 @@ import { TableHeader } from '../../../components/commandTableHeader';
 import { Cmd, CommandInfo } from '../../../components/commandInfo';
 import styles from '../../../styles/Commands.module.css';
 
-const DiepCommand: NextPage = () => {
+const MusicCommand: NextPage = () => {
   return (
     <>
       <Header
@@ -52,4 +52,4 @@ const DiepCommand: NextPage = () => {
   )
 }
 
-export default DiepCommand;
+export default MusicCommand;
