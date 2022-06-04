@@ -19,7 +19,8 @@ const BlogPage: NextPage<BlogPageProps> = (props: BlogPageProps) => {
       <h1>開發日誌</h1>
       這裡是 HiZollo 的開發日誌，當開發者很閒時可能就會寫一篇丟在這裡。不保證更新頻率。
       <Stack
-        direction="row"
+        direction={{ xs: "column", sm: "row"}}
+        alignItems={{ xs: "center", sm: "inherit" }}
         mt={3}
         spacing={2}
         divider={<Divider color="white" orientation="vertical" flexItem />}
