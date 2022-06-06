@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import logo from '../public/logo.png';
 
 interface HeadProps {
   title?: string,
@@ -22,12 +23,12 @@ const Header: NextPage<HeadProps> = (props: HeadProps) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://hizollo.ddns.net/pic/image.png" />
+      <meta property="og:image" content={logo.src} />
       <meta property="og:url" content="http://hizollo.ddns.net" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content="https://hizollo.ddns.net/pic/image.png" />
+      <meta name="twitter:image" content={logo.src} />
       <meta name="twitter:url" content="https://hizollo.ddns.net/" />
     </Head>
   )
