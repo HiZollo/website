@@ -348,7 +348,7 @@ function MiscellaneousTable() {
         <tbody>
           <CommandInfo
             cmd = "ping"
-            description = "傳送訊息至指定伺服器"
+            description = "取得 Ping 值"
           />
           <CommandInfo
             cmd = "refresh"

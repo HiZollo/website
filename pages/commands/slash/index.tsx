@@ -276,7 +276,7 @@ function GameTable() {
           <tbody>
             <SlashCommandInfo
               cmd = "ping"
-              description = "傳送訊息至指定伺服器"
+              description = "取得 Ping 值"
             />
             <SlashCommandInfo
               cmd = "refresh"
