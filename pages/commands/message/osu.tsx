@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Header from '../../../components/head';
 import { TableHeader } from '../../../components/commandTableHeader';
-import { Cmd, CommandInfo } from '../../../components/commandInfo';
+import { MessageCommand, CommandInfo } from '../../../components/commandInfo';
 import styles from '../../../styles/Commands.module.css';
 
 const OsuCommand: NextPage = () => {
@@ -16,7 +16,7 @@ const OsuCommand: NextPage = () => {
       <Link href="/commands/message">
         <a>回上頁</a>
       </Link><br />
-      這個指令列表能用 <Cmd cmd="osu" /> 取得並獲得更詳細的說明。
+      這個指令列表能用 <MessageCommand cmd="osu" /> 取得並獲得更詳細的說明。
       <table className={styles['helplist-table']}>
         <TableHeader />
         <tbody>

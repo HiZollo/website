@@ -3,7 +3,7 @@ import Header from '../../../components/head';
 import Link from 'next/link';
 import styles from '../../../styles/Commands.module.css';
 import { SlashTableHeader } from '../../../components/commandTableHeader';
-import { Cmd, SlashCommandInfo } from '../../../components/commandInfo';
+import { SlashCommand, SlashCommandInfo } from '../../../components/commandInfo';
 
 const SlashCommands: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const SlashCommands: NextPage = () => {
       />
       <h1>HiZollo 的斜線指令列表</h1>
       <Link href="/commands/message"><a>訊息指令</a></Link>｜<strong>斜線指令</strong><br />
-      這個指令列表能用 <Cmd cmd="help" /> 取得，且能使用 <Cmd cmd="help [指令名稱]" /> 獲得更詳細的說明。
+      這個指令列表能用 <SlashCommand cmd="help" /> 取得，且能使用 <SlashCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
       <InfoTable />
       <hr />
       <ContactTable />

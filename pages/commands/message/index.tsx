@@ -3,7 +3,7 @@ import Header from '../../../components/head';
 import Link from 'next/link';
 import styles from '../../../styles/Commands.module.css';
 import { TableHeader } from '../../../components/commandTableHeader';
-import { Cmd, CommandInfo } from '../../../components/commandInfo';
+import { MessageCommand, CommandInfo } from '../../../components/commandInfo';
 
 const MessageCommands: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const MessageCommands: NextPage = () => {
       />
       <h1>HiZollo 的訊息指令列表</h1>
       <strong>訊息指令</strong>｜<Link href="/commands/slash"><a>斜線指令</a></Link><br />
-      這個指令列表能用 <Cmd cmd="help" /> 取得，且能使用 <Cmd cmd="help [指令名稱]" /> 獲得更詳細的說明。
+      這個指令列表能用 <MessageCommand cmd="help" /> 取得，且能使用 <MessageCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
       <InfoTable />
       <hr />
       <ContactTable />

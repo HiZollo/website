@@ -1,7 +1,11 @@
 import styles from '../styles/Commands.module.css';
 
-function Cmd (props: CommandNameProps) {
+function MessageCommand (props: CommandNameProps) {
   return <code>z!{props.cmd}</code>
+}
+
+function SlashCommand (props: CommandNameProps) {
+  return <code>/{props.cmd}</code>
 }
 
 function CommandInfo (props: CommandInfoProps) {
@@ -17,7 +21,7 @@ function CommandInfo (props: CommandInfoProps) {
 
   return (
     <tr>
-      <td><Cmd cmd={props.cmd} /></td>
+      <td><MessageCommand cmd={props.cmd} /></td>
       <td dangerouslySetInnerHTML={{
         __html: outputAliases
       }}></td>
@@ -34,7 +38,7 @@ function CommandInfo (props: CommandInfoProps) {
 function SlashCommandInfo (props: SlashCommandInfoProps) {
   return (
     <tr>
-      <td><Cmd cmd={props.cmd} /></td>
+      <td><SlashCommand cmd={props.cmd} /></td>
       <td  dangerouslySetInnerHTML={{
         __html: props.description
       }}></td>
@@ -58,4 +62,4 @@ interface SlashCommandInfoProps {
   description: string;
 }
 
-export { Cmd, CommandInfo, SlashCommandInfo }
+export { MessageCommand, SlashCommand, CommandInfo, SlashCommandInfo }
