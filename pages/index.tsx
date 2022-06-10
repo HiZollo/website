@@ -43,6 +43,8 @@ import sungAvatar from "../public/mp-ratecards/avatars/sungAvatar.png";
 
 import weeeeeee from '../public/avatars/weeeeeee.png';
 
+import { RateCard } from '../components/class/RateCard';
+
 import {
   Grid,
   Box,
@@ -50,12 +52,6 @@ import {
   Tab,
   Button,
   Divider,
-  Card,
-  CardHeader,
-  Avatar,
-  CardContent,
-  Typography,
-  Rating,
   useMediaQuery
 } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
@@ -465,7 +461,14 @@ function Rates() {
             contents.map((v, i: number) => {
               return (
                 <div className={style.rates} key={i}>
-                  {v.map((c) => createRateCard(c.avatar, c.name, c.content, c.rate))}
+                  {v.map((c) => (
+                    new RateCard()
+                      .setAvatar(c.avatar)
+                      .setName(c.name)
+                      .setComment(c.content)
+                      .setRates(c.rate)
+                      .toJsx()
+                  ))}
                 </div>
               );
             })
@@ -474,21 +477,6 @@ function Rates() {
       </Grid>
     </>
   );
-}
-
-function createRateCard(avatar: string, name: string, comment: string, rates: number) {
-  return (
-    <Card sx={{ width: 345, mx: 3 }} key={`${name}-rates-${comment}`}>
-      <CardHeader
-        avatar={<Avatar src={avatar} />}
-        title={name}
-      />
-      <CardContent>
-        <Rating name="read-only" value={rates} precision={0.1} readOnly />
-        <Typography>{comment}</Typography>
-      </CardContent>
-    </Card>
-  )
 }
 
 function Invites() {
