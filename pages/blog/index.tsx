@@ -26,26 +26,27 @@ const BlogPage: NextPage<BlogPageProps> = (props: BlogPageProps) => {
         divider={<Divider color="white" orientation="vertical" flexItem />}
       >
       {
-        props.blogList.map(([ name, data ], i) => {
-          return (
+        props.blogList
+          .sort()
+          .reverse()
+          .map(([ name, data ], i) => 
             <Card key={i} sx={{ maxWidth: 330 }} className={style['blog-card']}>
               <CardHeader
                 sx={{ paddingLeft: 3 }}
                 title={
-                  <Link href={`blog/${name.substring(0, name.length-3)}`}>
+                  <Link href={`/blog/${name.substring(0, name.length-3)}`}>
                     <a>{data.split('\n')[0].slice(1) }</a>
                   </Link>
                 }
               />
               <CardContent>
                 { data.length > 50 ? `${data.substring(0, 50)}...` : data }
-                <Link href={`blog/${name.substring(0, name.length-3)}`}>
-                  <a>（繼續閱讀）</a>
+                <Link href={`/blog/${name.substring(0, name.length-3)}`}>
+                  <a style={{ whiteSpace: 'nowrap' }}>（繼續閱讀）</a>
                 </Link>
               </CardContent>
             </Card>
           )
-        })
       }
       </Stack>
     </>
