@@ -1700,6 +1700,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"discord-api-types@npm:^0.36.1":
+  version: 0.36.1
+  resolution: "discord-api-types@npm:0.36.1"
+  checksum: 6f9cae3d855a5c8fe6585f5f827795260683038d7b66ba9f1633e96005047d4c0d07bc084eb7bfbb967c5b99a0257b03cb94634fe7cd8a4975fce12bba89b306
+  languageName: node
+  linkType: hard
+
 "doctrine@npm:^2.1.0":
   version: 2.1.0
   resolution: "doctrine@npm:2.1.0"
@@ -2535,6 +2542,7 @@ __metadata:
     "@types/react-swipeable-views": ^0.13.1
     "@types/react-swipeable-views-utils": ^0.13.3
     "@types/react-syntax-highlighter": ^15.5.2
+    discord-api-types: ^0.36.1
     eslint: 8.11.0
     eslint-config-next: 12.1.0
     next: ^12.1.6

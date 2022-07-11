@@ -159,6 +159,11 @@ footer a:hover {
   font-size: 24px;
 }
 
+.d-emoji {
+  height: 24px;
+  transform: translateY(5px);
+}
+
 @media (max-width: 500px) {
   main {
     padding: 10px 10px;

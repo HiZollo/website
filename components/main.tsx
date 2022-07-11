@@ -104,10 +104,13 @@ function HeaderLinkList() {
 
   return (
     <>
-      <Link href="/tutorials">
+      <Link href="/tutorials" passHref>
         <a>使用教學</a>
       </Link>
       <HeaderMenu id="infos" text="更多資訊">
+        <Link href="/annoucements" passHref>
+          <MenuItem onClick={handleClose}>官方公告</MenuItem>
+        </Link>
         <Link href="/commands" passHref>
           <MenuItem onClick={handleClose}>指令列表</MenuItem>
         </Link>
@@ -217,6 +220,7 @@ function HeaderDrawer() {
         >
           <List>
             {makeDrawerList('/', '首頁', toggleDrawer)}
+            {makeDrawerList('/annoucements', '官方公告', toggleDrawer)}
             {makeDrawerList('/tutorials', '使用教學', toggleDrawer)}
             <ListCollapsableItem text="更多資訊">
               {makeDrawerList('/commands', '指令列表', toggleDrawer, {pl:4})}
