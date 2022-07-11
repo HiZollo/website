@@ -553,6 +553,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       ratecardInfo: reviews
-    }
+    },
+    revalidate: 60
   }
 }
