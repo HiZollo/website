@@ -18,8 +18,6 @@ export async function sendDiscordAPIRequest({
     'Content-Length': data.length,
   }: {}
 
-  console.log(path)
-
   return new Promise((resolve, reject) => {
     const req = https.request({
       protocol: 'https:',
