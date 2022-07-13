@@ -90,7 +90,7 @@ const Annoucements: NextPage<AnnoucementsProps> = ({ messages }: AnnoucementsPro
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   res.setHeader(
     'Cache-Control',
-    `s-maxage=${60 * 5}`
+    `public, s-maxage=${60 * 5}, stale-while-revalidate=${60 * 10}`
   );
 
   if (!process.env.TOKEN) return { props: { messages: [notAvailableMessage] } };
