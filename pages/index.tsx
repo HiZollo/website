@@ -27,7 +27,8 @@ import chocomintAvatar from '../public/avatars/chocomint.png';
 import weeeeeee from '../public/avatars/weeeeeee.png';
 
 import { RateCard } from '../components/class/RateCard';
-import { sendDiscordAPIRequest } from '../util/discord/sendRequest'
+import { sendDiscordAPIRequest } from '../util/discord/sendRequest';
+import { chunk } from '../util/chunkArray';
 
 import {
   Grid,
@@ -103,18 +104,6 @@ const reviewData: ReviewDataStruct[] = [
   { userId: "531794839097049109", content: "功能尚可 但是反應會讓大多數人很幹", rate: 3 },
   { userId: "866680482577383454", content: "在我有接觸的中文機器人應該算是功能前幾完整的 而且很多其他機器人沒有的小遊戲", rate: 4 }
 ];
-
-function n_set(arr:ReviewStruct[], number: number) {
-  const r: Array<ReviewStruct[]> = [];
-  for(let i=0; i<arr.length; i+=number) {
-    r.push([]);
-    for(let j=i; j<i+number; ++j) {
-      r[i/number].push(arr[j]);
-    }
-  }
-
-  return r;
-}
 
 interface HomepageProps {
   ratecardInfo: Array<ReviewStruct>
@@ -437,7 +426,9 @@ function Rates({ data }: { data: Array<ReviewStruct> }) {
   const [index, changeIndex] = useState(0);
   const M = useMediaQuery('(max-width: 630px)');
   const L = useMediaQuery('(max-width: 890px)');
-  const contents = n_set(data, M ? 1 : L ? 2 : 3);
+  const contents = 
+    M ? [...chunk(data, 1)] : 
+    L ? [...chunk(data, 2)] : [...chunk(data, 3)];
   const interval = M ? 3000 : L ? 4000 : 6000;
   return (
     <>
