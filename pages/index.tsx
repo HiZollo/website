@@ -507,8 +507,9 @@ export const getStaticProps: GetStaticProps = async () => {
   )).map(v => JSON.parse(v));
 
   const reviews = userData.map((user, index) => {
+    const extension = user.avatar.startsWith('a_') ? 'gif' : 'webp';
     return { 
-      avatar: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp` ?? null,
+      avatar: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.${extension}` ?? null,
       name: user.username ?? null,
       rate: ratecardReview.data[index].rate ?? null,
       content: ratecardReview.data[index].content ?? null
