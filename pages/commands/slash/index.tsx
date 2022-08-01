@@ -17,17 +17,15 @@ const SlashCommands: NextPage = () => {
       這個指令列表能用 <SlashCommand cmd="help" /> 取得，且能使用 <SlashCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
       <InfoTable />
       <hr />
-      <ContactTable />
-      <hr />
-      <NetworkTable />
-      <hr />
-      <ManageTable />
-      <hr />
       <FunctionTable />
       <hr />
       <EntertainTable />
       <hr />
       <GameTable />
+      <hr />
+      <NetworkTable />
+      <hr />
+      <ContactTable />
       <hr />
       <MiscellaneousTable />
       <hr />
@@ -105,35 +103,14 @@ function NetworkTable() {
             cmd = "guildrop"
             description = "傳送訊息至指定伺服器"
           />
+          <SlashCommandInfo
+            cmd = "hznetwork"
+            description = "查看 HiZolllo Network 的即時資訊"
+          />
         </tbody>
       </table>
     </>
   )
-}
-
-function ManageTable() {
-  return (
-    <>
-      <h2>管理</h2>
-      <table className={styles['slashlist-table']}>
-        <SlashTableHeader />
-        <tbody>
-          <SlashCommandInfo
-            cmd = "addrole"
-            description = "為使用者新增身份"
-          />
-          <SlashCommandInfo
-            cmd = "removerole"
-            description = "把一位使用者的身份移除"
-          />
-          <SlashCommandInfo
-            cmd = "unban"
-            description = "解除封鎖一位用戶<br />（由於無法 tag 他，必須使用 ID）"
-          />
-        </tbody>
-      </table>
-    </>
-  );
 }
 
 function FunctionTable() {
@@ -148,12 +125,20 @@ function FunctionTable() {
             description = "顯示一或多名用戶的頭像"
           />
           <SlashCommandInfo
+            cmd = "buttonrole"
+            description = "產生手動取得身分組的按鈕，如果上一則訊息有同種按鈕，按鈕會自動併入，一則訊息最多可以擁有 5 個按鈕"
+          />
+          <SlashCommandInfo
             cmd = "calc"
             description = "計算一串算式"
           />
           <SlashCommandInfo
             cmd = "choose"
             description = "多選一"
+          />
+          <SlashCommandInfo
+            cmd = "deletemsg"
+            description = "在指定時間後刪除此指令的前一則訊息"
           />
           <SlashCommandInfo
             cmd = "getmsg"
@@ -242,16 +227,20 @@ function GameTable() {
         <SlashTableHeader />
         <tbody>
             <SlashCommandInfo
+              cmd = "bullsandcows"
+              description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
+            />
+            <SlashCommandInfo
+              cmd = "finalcode"
+              description = "開啟一場終極密碼遊戲"
+            />
+            <SlashCommandInfo
               cmd = "fliptrip"
               description = "遊玩指定棋子數量的 Flip Trip"
             />
             <SlashCommandInfo
               cmd = "gomoku"
               description = "	與朋友遊玩 13x13 的五子棋"
-            />
-            <SlashCommandInfo
-              cmd = "guessab"
-              description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
             />
             <SlashCommandInfo
               cmd = "lightsup"

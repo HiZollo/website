@@ -17,19 +17,17 @@ const MessageCommands: NextPage = () => {
       這個指令列表能用 <MessageCommand cmd="help" /> 取得，且能使用 <MessageCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
       <InfoTable />
       <hr />
-      <ContactTable />
-      <hr />
-      <NetworkTable />
-      <hr />
-      <ManageTable />
-      <hr />
       <FunctionTable />
-      <hr />
-      <CommandGroupTable />
       <hr />
       <EntertainTable />
       <hr />
       <GameTable />
+      <hr />
+      <CommandGroupTable />
+      <hr />
+      <NetworkTable />
+      <hr />
+      <ContactTable />
       <hr />
       <MiscellaneousTable />
     </>
@@ -113,38 +111,16 @@ function NetworkTable() {
             description = "傳送訊息至指定伺服器"
             usage = {['Surviv.io 中文維基']}
           />
+          <CommandInfo
+            cmd = "hznetwork"
+            aliases = {['hzn']}
+            description = "檢查 HiZolllo 聯絡網狀況"
+            usage = {['', '1']}
+          />
         </tbody>
       </table>
     </>
   )
-}
-
-function ManageTable() {
-  return (
-    <>
-      <h2>管理</h2>
-      <table className={styles['helplist-table']}>
-        <TableHeader />
-        <tbody>
-          <CommandInfo
-            cmd = "addrole"
-            description = "為使用者新增身份"
-            usage = {['<span class="dc-mention">@AC0xRPFS001</span> 管理員']}
-          />
-          <CommandInfo
-            cmd = "removerole"
-            description = "把一位使用者的身份移除"
-            usage = {['<span class="dc-mention">@Rick</span> 警告中']}
-          />
-          <CommandInfo
-            cmd = "unban"
-            description = "解除封鎖一位用戶<br />（由於無法 tag 他，必須使用 ID）"
-            usage = {['584677291318312963']}
-          />
-        </tbody>
-      </table>
-    </>
-  );
 }
 
 function FunctionTable() {
@@ -161,6 +137,15 @@ function FunctionTable() {
             usage = {['', '<span class="dc-mention">@Zollo757347</span>']}
           />
           <CommandInfo
+            cmd = "buttonrole"
+            description = "產生手動取得身分組的按鈕，如果上一則訊息有同種按鈕，按鈕會自動併入，一則訊息最多可以擁有 5 個按鈕"
+            usage = {[
+              '成員',
+              '接收公告 每當伺服器有公告時會被通知',
+              '103866302847392227 一個身份組 🤔'
+            ]}
+          />
+          <CommandInfo
             cmd = "calc"
             aliases = {['c']}
             description = "計算一串算式"
@@ -170,6 +155,12 @@ function FunctionTable() {
             cmd = "choose"
             description = "多選一"
             usage = {['小明 小華 小美']}
+          />
+          <CommandInfo
+            cmd = "deletemsg"
+            aliases = {['del']}
+            description = "在指定時間後刪除此指令的前一則訊息"
+            usage = {['5', '5 true']}
           />
           <CommandInfo
             cmd = "getmsg"
@@ -305,6 +296,18 @@ function GameTable() {
         <TableHeader />
         <tbody>
           <CommandInfo
+            cmd = "bullsandcows"
+            aliases = {['bac', 'gussab', 'ga']}
+            description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
+            usage = {['', 'hard']}
+          />
+          <CommandInfo
+            cmd = "finalcode"
+            aliases = {['fc']}
+            description = "遊玩一場猜終極密碼，支援多人模式"
+            usage = {['', '<span class="dc-mention">@Deleted User dQw4w9WgXcQ</span> <span class="dc-mention">@Junior HiZollo</span> <span class="dc-mention">@No Name</span>']}
+          />
+          <CommandInfo
             cmd = "fliptrip"
             aliases = {['ft']}
             description = "遊玩指定棋子數量的 Flip Trip"
@@ -315,12 +318,6 @@ function GameTable() {
             aliases = {['gmk']}
             description = "	與朋友遊玩 13x13 的五子棋"
             usage = {['<span class="dc-mention">@ABC</span>']}
-          />
-          <CommandInfo
-            cmd = "guessab"
-            aliases = {['ga']}
-            description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
-            usage = {['', 'hard']}
           />
           <CommandInfo
             cmd = "lightsup"
