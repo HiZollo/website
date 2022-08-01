@@ -29,6 +29,7 @@ import weeeeeee from '../public/avatars/weeeeeee.png';
 import { RateCard } from '../components/class/RateCard';
 import { sendDiscordAPIRequest } from '../util/discord/sendRequest';
 import { chunk } from '../util/chunkArray';
+import ratecardReview from '../data/ratecard.json';
 
 import {
   Grid,
@@ -77,33 +78,6 @@ interface ReviewStruct {
   content: string,
   rate: number
 }
-
-interface ReviewDataStruct {
-  userId: string, 
-  content: string,
-  rate: number
-}
-
-const reviewData: ReviewDataStruct[] = [
-  { userId: "817657259877859328", content: "這是一個多功能而實用具娛樂性的爛bot！", rate: 5 },
-  { userId: "729568770808610917", content: "很多指令都很有趣、很滑稽又很搞笑。蠻享受的 雖然有點氣死人", rate: 4.5 },
-  { userId: "856832393007333387", content: "推薦自己的伺服器用一個 HiZollo ouob", rate: 5 },
-  { userId: "824216020750172171", content: "在第一次使用 HiZollo 時，我就發現這機器人可以拿來嗆朋友跟浪費朋友的時間以及挑撥離間，誠摯推薦給有上述需求的用戶使用。", rate: 5 },
-  { userId: "581653506641887265", content: "功能很齊全，但是美中不足的是他嗆人的話太少了", rate: 4 },
-  { userId: "653603066670743553", content: "娛樂性很高的機器人，尤其是用來偷嗆人（", rate: 4 },
-  { userId: "542962924897959938", content: "只會莫名其妙嗆人，嗆不贏還會直接下線", rate: 1 },
-  { userId: "720880053239414878", content: " HiZollo 我婆啦～🤤", rate: 5 },
-  { userId: "711615292157067377", content: "很喜歡 HiZollo 的小功能，也很喜歡被他嗆＆嗆他（？？）", rate: 5 },
-  { userId: "332383566443053058", content: "他是一個很互動性很高的機器人，而且開發者很用心，讓這個機器人很有自己的個性，能從指令反應看得出這個機器人有點嗆，但又很幽默。被他嗆得感覺好爽", rate: 5 },
-  { userId: "727119118641266750", content: "小遊戲很好玩，say指令超棒的", rate: 5 },
-  { userId: "622373851333918720", content: "Junior HiZollo 是我用過最有趣的 Discord 機器人，沒有之一。它還有多款小遊戲，是娛樂機器人的不二之選。", rate: 5 },
-  { userId: "844129328072884265", content: "整體來說 HiZollo 很好用，但有時候在聽歌的時候會卡", rate: 4 },
-  { userId: "726052707663872090", content: "功能齊全 更新多 而且可以跟朋友玩", rate: 5 },
-  { userId: "475958550699442176", content: "動不動就沒回應，遊戲玩一玩會直接斷線，還會一直亂嗆人", rate: 1 },
-  { userId: "880834316106612747", content: "HiZollo 是什麼爛 bot 啊，他媽的看他那麼久，一直出 bug，難得創作者那麼佬團隊那麼神，創造了一個破爛 bot，真的是齁⋯他們一定是故意做一個爛 bot，一直對外說自己爛，這種人真壞", rate: 5 },
-  { userId: "531794839097049109", content: "功能尚可 但是反應會讓大多數人很幹", rate: 3 },
-  { userId: "866680482577383454", content: "在我有接觸的中文機器人應該算是功能前幾完整的 而且很多其他機器人沒有的小遊戲", rate: 4 }
-];
 
 interface HomepageProps {
   ratecardInfo: Array<ReviewStruct>
@@ -524,7 +498,7 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
   const userData = (await Promise.all(
-    reviewData.map(user => {
+    ratecardReview.data.map(user => {
       return sendDiscordAPIRequest({
         path: `/api/v10/users/${user.userId}`,
         token: process.env.TOKEN!
@@ -536,8 +510,8 @@ export const getStaticProps: GetStaticProps = async () => {
     return { 
       avatar: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp` ?? null,
       name: user.username ?? null,
-      rate: reviewData[index].rate ?? null,
-      content: reviewData[index].content ?? null
+      rate: ratecardReview.data[index].rate ?? null,
+      content: ratecardReview.data[index].content ?? null
     }
   });
 

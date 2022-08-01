@@ -5,7 +5,7 @@ import React from 'react';
 import { Tabs, Tab, Box, Typography } from '@mui/material';
 const { DiscordMarkdown } = require('@discord-message-components/react');
 
-import changelog from '../public/changelog/changelog.json';
+import changelog from '../data/changelog.json';
 
 import style from '../styles/Changelog.module.css';
 
