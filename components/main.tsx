@@ -20,7 +20,7 @@ import { ExpandLess, ExpandMore, Menu as MenuIcon } from '@mui/icons-material';
 const Layout: NextPage<{ children: ReactElement }> = ({ children }) => {
   const largeWordmark = useMediaQuery('(min-width: 820px), (max-width: 715px) and (min-width: 450px)');
   const useWordmark = useMediaQuery('(min-width: 380px)');
-  const fullLink = useMediaQuery('(min-width: 715px)');
+  const fullLink = useMediaQuery('(min-width: 716px)');
   const footerRow = useMediaQuery('(min-width: 520px)');
 
   return (
