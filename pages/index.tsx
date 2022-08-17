@@ -1,29 +1,17 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Header from '@/components/head';
-const {
-  DiscordMessage,
-  DiscordMessages,
-  DiscordMention,
-  DiscordEmbed,
-  DiscordButtons,
-  DiscordButton,
-  DiscordMarkdown,
-  DiscordOptionsContext,
-  DiscordDefaultOptions,
-  DiscordInteraction
-} = require('@discord-message-components/react');
-import '@discord-message-components/react/styles'
 
 import { useState } from 'react';
 import { useTheme, Direction } from '@mui/material/styles';
 
 import style from '@/styles/Mainpage.module.css';
 
-import hizolloAvatar from '@/avatars/hizollo.png';
-import acAvatar from '@/avatars/ac.png';
-import zolloAvatar from '@/avatars/zollo.png';
-import chocomintAvatar from '@/avatars/chocomint.png';
-import weeeeeee from '@/avatars/weeeeeee.png';
+import { BasicFunction } from '@/components/mainpageDiscordMessages/basic';
+import { SlashFunction } from '@/components/mainpageDiscordMessages/slash';
+import { MusicFunction } from '@/components/mainpageDiscordMessages/music';
+import { NetworkFunction } from '@/components/mainpageDiscordMessages/network';
+import { GamesFunction } from '@/components/mainpageDiscordMessages/games';
+import { HiddenCommandMessages } from '@/components/mainpageDiscordMessages/hiddenCommand';
 
 import { RateCard } from '@/components/class/RateCard';
 import { sendDiscordAPIRequest } from '@/util/discord/sendRequest';
@@ -43,33 +31,6 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-const discordOptions = {
-	...DiscordDefaultOptions,
-	profiles: {
-		hizollo: {
-			author: 'Junior HiZollo',
-			avatar: hizolloAvatar.src,
-      roleColor: "#E3D547",
-      bot: true
-		},
-    ac: {
-      author: 'AC0xRPFS001',
-      avatar: acAvatar.src,
-      roleColor: "#657C89"
-    },
-    zollo: {
-      author: 'Zollo757347',
-      avatar: zolloAvatar.src,
-      roleColor: "#65C87A"
-    },
-    chocomint: {
-      author: 'chocomint',
-      avatar: chocomintAvatar.src,
-      roleColor: "#E3F0F7"
-    }
-	},
-}
 
 interface ReviewStruct {
   avatar: string,
@@ -166,179 +127,6 @@ function Functions() {
   )
 }
 
-function BasicFunction() {
-  return (
-    <DiscordMessageWrapper>
-      <DiscordMessage profile="zollo">
-        z!8ball 我是不是大佬
-      </DiscordMessage>
-      <DiscordMessage profile="hizollo">
-        <DiscordMention profile="zollo" />，我想是的
-      </DiscordMessage>
-      <DiscordMessage profile="ac">
-        z!8ball 那我呢
-      </DiscordMessage>
-      <DiscordMessage profile="hizollo">
-        <DiscordMention profile="ac" />，不
-      </DiscordMessage>
-    </DiscordMessageWrapper>
-  );
-}
-
-function SlashFunction() {
-  return (
-    <DiscordMessageWrapper>
-      <DiscordMessage profile="hizollo">
-        <div slot="interactions">
-          <DiscordInteraction profile="zollo" command={true}>fact</DiscordInteraction>
-        </div>
-        2001 年 1 月 15 日是維基百科的生日
-      </DiscordMessage>
-      <DiscordMessage profile={"hizollo"}>
-        <div slot="interactions">
-          <DiscordInteraction profile="zollo" command={true}>fact</DiscordInteraction>
-        </div>
-        同一個人在月球上起跳的高度大約是地球上的 6 倍
-      </DiscordMessage>
-      <DiscordMessage profile="hizollo">
-        <div slot="interactions">
-          <DiscordInteraction profile="ac" command={true}>confession</DiscordInteraction>
-        </div>
-        <DiscordEmbed
-          slot = "embeds"
-          authorIcon = {acAvatar.src}
-          authorName = "Love Letter"
-          borderColor = "#FF69DD"
-        >
-        <DiscordMention profile="zollo" />，你收到了來自 <DiscordMention profile="ac">AC0xRPFS001</DiscordMention> 的告白<br /><br />請選擇你的回覆……
-        </DiscordEmbed>
-        <div slot="actions">
-          <DiscordButtons>
-            <DiscordButton type="success">❤️ 接受</DiscordButton>
-            <DiscordButton type="danger">❌ 拒絕</DiscordButton>
-            <DiscordButton type="secondary">👍 發好人卡</DiscordButton>
-          </DiscordButtons>
-        </div>
-      </DiscordMessage>
-    </DiscordMessageWrapper>
-  )
-}
-
-function MusicFunction() {
-  return (
-    <DiscordMessageWrapper>
-      <DiscordMessage profile="chocomint">
-      z!p <a href="https://www.youtube.com/watch?v=TZC02UdbStM">https://www.youtube.com/watch?v=TZC02UdbStM</a>
-      </DiscordMessage>
-      <DiscordMessage profile="hizollo">
-        <DiscordEmbed
-          authorIcon = {hizolloAvatar.src}
-          authorName = "HiZollo 的音樂中心"
-          borderColor = "#94B4FA"
-        >
-          <DiscordMarkdown>
-            已加入 `聽歌`
-          </DiscordMarkdown>
-        </DiscordEmbed>
-        <DiscordEmbed
-          slot = "embeds"
-          authorIcon = {hizolloAvatar.src}
-          authorName = "HiZollo 的音樂中心"
-          borderColor = "#94B4FA"
-          thumbnail = "https://i.ytimg.com/vi_webp/TZC02UdbStM/maxresdefault.webp"
-          footerIcon = {chocomintAvatar.src}
-        >
-          目前正在播放： <a href="https://www.youtube.com/watch?v=TZC02UdbStM">群青 / YOASOBI【Covered by Kotoha】</a>
-          <div slot="footer">由 chocomint 指定的樂曲</div>
-        </DiscordEmbed>
-        <div slot="actions">
-          <DiscordButtons>
-            <DiscordButton>暫停</DiscordButton>
-            <DiscordButton disabled>繼續</DiscordButton>
-            <DiscordButton type="secondary">正常播放</DiscordButton>
-            <DiscordButton type="danger">跳過</DiscordButton>
-          </DiscordButtons>
-          <DiscordButtons>
-            <DiscordButton type="success">詳細資訊</DiscordButton>
-          </DiscordButtons>
-        </div>
-      </DiscordMessage>
-    </DiscordMessageWrapper>
-  )
-}
-
-function NetworkFunction() {
-  return (
-    <DiscordMessageWrapper>
-      <DiscordMessage author="chocomint#1489" avatar={chocomintAvatar.src} bot={true}>
-      這是哪裡？<br />我怎麼變成機器人
-      </DiscordMessage>
-      <DiscordMessage author="AC0xRPFS001#5007" avatar={acAvatar.src} bot={true}>
-      一個神秘且不受空間隔閡的跨次元空間<br />你在這裡發言的同時，會有靈魂抽取裝置將你的靈魂汲取出來，放入機器中克隆數份，並傳至其他次元<br />所以其他地方就會看到你，你也會看到其他地方的人<br />這也是為什麼你會變機器人
-      </DiscordMessage>
-      <DiscordMessage author="Zollo757347#3987" avatar={zolloAvatar.src} bot={true}>
-      樓上廢話好多喔<br />就是跨群聊天室
-      </DiscordMessage>
-      <DiscordMessage author="AC0xRPFS001#5007" avatar={acAvatar.src} bot={true}>
-      🛐
-      </DiscordMessage>
-      <DiscordMessage author="dQw4w9WgXcQ#9487" avatar={weeeeeee.src} bot={true}>
-      🛐
-      </DiscordMessage>
-      <DiscordMessage author="chocomint#1489" avatar={chocomintAvatar.src} bot={true}>
-      🛐
-      </DiscordMessage>
-    </DiscordMessageWrapper>
-  )
-}
-
-function GamesFunction() {
-  return (
-    <DiscordMessageWrapper>
-      <DiscordMessage profile="hizollo" edited>
-        <div slot="interactions">
-          <DiscordInteraction profile="ac" command={true}>tictactoe</DiscordInteraction>
-        </div>
-        <div slot="actions">
-          <DiscordButtons>
-            <DiscordButton disabled>❌</DiscordButton>
-            <DiscordButton disabled>⭕️</DiscordButton>
-            <DiscordButton disabled>3</DiscordButton>
-          </DiscordButtons>
-          <DiscordButtons>
-            <DiscordButton disabled>⭕️</DiscordButton>
-            <DiscordButton disabled>❌</DiscordButton>
-            <DiscordButton disabled>6</DiscordButton>
-          </DiscordButtons>
-          <DiscordButtons>
-            <DiscordButton disabled>⭕️</DiscordButton>
-            <DiscordButton disabled>❌</DiscordButton>
-            <DiscordButton disabled>❌</DiscordButton>
-          </DiscordButtons>
-          <DiscordButtons>
-            <DiscordButton type="danger" disabled>停止遊戲</DiscordButton>
-          </DiscordButtons>
-        </div>
-      </DiscordMessage>
-      <DiscordMessage profile="hizollo">
-      <div slot="interactions">
-        <DiscordInteraction profile="hizollo" reply edited></DiscordInteraction>
-      </div>
-      <DiscordMarkdown>
-        恭喜 <DiscordMention profile="zollo" />（符號 ❌）獲勝！<br />
-        **遊玩時間**：1 分 8 秒<br />
-        **下棋次數**：<br />
-        　<DiscordMention profile="zollo" />：4 步<br />
-        　<DiscordMention profile="ac" />：3 步
-      </DiscordMarkdown>
-      </DiscordMessage>
-      <DiscordMessage profile="zollo">
-        <DiscordMention profile="ac" /> 你好爛
-      </DiscordMessage>
-    </DiscordMessageWrapper>
-  )
-}
-
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -376,20 +164,7 @@ function HdCommands() {
         </div>
       </Grid>
       <Grid item xs={12} md={6} p={0}>
-        <DiscordMessageWrapper>
-          <DiscordMessage profile="zollo">
-            ...
-          </DiscordMessage>
-          <DiscordMessage profile="hizollo">
-            { ~~(Math.random() * 1000) < 6 ? "。。。。。。。" : "......."}
-          </DiscordMessage>
-          <DiscordMessage profile="zollo">
-            吵死了 HiZollo
-          </DiscordMessage>
-          <DiscordMessage profile="hizollo">
-            QAQ
-          </DiscordMessage>
-        </DiscordMessageWrapper>
+        <HiddenCommandMessages />
       </Grid>
     </Grid>
   );
@@ -477,20 +252,6 @@ function MainButton(props: ButtonProps) {
     >
       {props.children}
     </Button>);
-}
-
-interface DMWProps {
-  children?: React.ReactNode
-}
-
-function DiscordMessageWrapper(props: DMWProps) {
-  return (
-    <DiscordOptionsContext.Provider value={discordOptions}>
-      <DiscordMessages>
-        {props.children}
-      </DiscordMessages>
-    </DiscordOptionsContext.Provider>
-  )
 }
 
 export default Home
