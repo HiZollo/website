@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import Header from '../../../components/head';
-import { TableHeader } from '../../../components/commandTableHeader';
+import Header from '@/components/head';
+import { TableHeader } from '@/components/commandTableHeader';
 import { MessageCommand, CommandInfo } from '../../../components/commandInfo';
-import styles from '../../../styles/Commands.module.css';
+import styles from '@/styles/Commands.module.css';
 
 const OsuCommand: NextPage = () => {
   return (

@@ -1,5 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
-import Header from '../components/head';
+import Header from '@/components/head';
 const {
   DiscordMessage,
   DiscordMessages,
@@ -17,19 +17,18 @@ import '@discord-message-components/react/styles'
 import { useState } from 'react';
 import { useTheme, Direction } from '@mui/material/styles';
 
-import style from '../styles/Mainpage.module.css';
+import style from '@/styles/Mainpage.module.css';
 
-import hizolloAvatar from '../public/avatars/hizollo.png';
-import acAvatar from '../public/avatars/ac.png';
-import zolloAvatar from '../public/avatars/zollo.png';
-import chocomintAvatar from '../public/avatars/chocomint.png';
+import hizolloAvatar from '@/avatars/hizollo.png';
+import acAvatar from '@/avatars/ac.png';
+import zolloAvatar from '@/avatars/zollo.png';
+import chocomintAvatar from '@/avatars/chocomint.png';
+import weeeeeee from '@/avatars/weeeeeee.png';
 
-import weeeeeee from '../public/avatars/weeeeeee.png';
-
-import { RateCard } from '../components/class/RateCard';
-import { sendDiscordAPIRequest } from '../util/discord/sendRequest';
-import { chunk } from '../util/chunkArray';
-import ratecardReview from '../data/ratecard.json';
+import { RateCard } from '@/components/class/RateCard';
+import { sendDiscordAPIRequest } from '@/util/discord/sendRequest';
+import { chunk } from '@/util/chunkArray';
+import ratecardReview from '@/data/ratecard.json';
 
 import {
   Grid,

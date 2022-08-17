@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
-import Header from '../../../components/head';
 import Link from 'next/link';
-import styles from '../../../styles/Commands.module.css';
-import { TableHeader } from '../../../components/commandTableHeader';
-import { MessageCommand, CommandInfo } from '../../../components/commandInfo';
+import styles from '@/styles/Commands.module.css';
+import { TableHeader } from '@/components/commandTableHeader';
+import { MessageCommand, CommandInfo } from '@/components/commandInfo';
+import Header from '@/components/head';
 
 const MessageCommands: NextPage = () => {
   return (

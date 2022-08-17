@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { readdirSync, readFileSync } from 'fs';
 import { Card, CardHeader, CardContent, Stack, Divider } from '@mui/material';
-import Header from '../../components/head'
-import style from '../../styles/Blog.module.css';
+import Header from '@/components/head'
+import style from '@/styles/Blog.module.css';
 
 interface BlogPageProps {
   blogList: Array<[string, string]>

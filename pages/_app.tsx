@@ -1,5 +1,5 @@
-import '../styles/globals.css'
-import Layout from '../components/main';
+import '@/styles/globals.css'
+import Layout from '@/components/main';
 import NextNProgress from "nextjs-progressbar";
 import type { AppProps } from 'next/app';
 

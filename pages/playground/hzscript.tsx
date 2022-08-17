@@ -4,7 +4,7 @@ import { Compiler } from '@hizollo/hzscript';
 import { SyntheticEvent, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import Header from '../../components/head';
+import Header from '@/components/head';
 import {
 	Box,
   Button, 

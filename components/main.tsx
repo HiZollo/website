@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import React, { useState, ReactElement } from 'react';
 import Link from 'next/link';
-import wordmark from '../public/wordmark.png';
-import wordmarkLarge from '../public/wordmark-large.png';
 import Image from 'next/image';
+import wordmark from '@/public/wordmark.png';
+import wordmarkLarge from '@/public/wordmark-large.png';
 
 import {
   Menu, MenuItem,

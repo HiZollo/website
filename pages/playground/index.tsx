@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Header from '../../components/head';
+import Header from '@/components/head';
 import Link from 'next/link';
 
 const Playground: NextPage = () => {

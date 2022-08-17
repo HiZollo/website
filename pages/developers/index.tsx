@@ -10,8 +10,8 @@ import {
   Typography
 } from '@mui/material';
 
-import acAvatar from '../../public/avatars/ac.png';
-import zolloAvatar from '../../public/avatars/zollo.png';
+import acAvatar from '@/avatars/ac.png';
+import zolloAvatar from '@/avatars/zollo.png';
 
 const Devs: NextPage = () => {
   return (

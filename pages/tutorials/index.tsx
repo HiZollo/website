@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import Header from '../../components/head';
-import { TutorialNav } from '../../components/tutorial';
+import Header from '@/components/head';
+import { TutorialNav } from '@/components/tutorial';
 
 const Tutorials: NextPage = () => {
   return (

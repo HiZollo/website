@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 import Link from 'next/link'
-import Header from '../../components/head';
-import { TutorialNav, TutorialImage, TutorialWrap } from '../../components/tutorial';
+import Header from '@/components/head';
+import { TutorialNav, TutorialImage, TutorialWrap } from '@/components/tutorial';
 
-import commands1 from '../../public/tutorials/commands/1.png';
-import commands2 from '../../public/tutorials/commands/2.png';
-import commands3 from '../../public/tutorials/commands/3.png';
-import commands4 from '../../public/tutorials/commands/4.png';
+import commands1 from '@/public/tutorials/commands/1.png';
+import commands2 from '@/public/tutorials/commands/2.png';
+import commands3 from '@/public/tutorials/commands/3.png';
+import commands4 from '@/public/tutorials/commands/4.png';
 
 
 const Invite: NextPage = () => {

@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
-import Header from '../../../components/head';
 import Link from 'next/link';
-import styles from '../../../styles/Commands.module.css';
-import { SlashTableHeader } from '../../../components/commandTableHeader';
-import { SlashCommand, SlashCommandInfo } from '../../../components/commandInfo';
+import styles from '@/styles/Commands.module.css';
+import Header from '@/components/head';
+import { SlashTableHeader } from '@/components/commandTableHeader';
+import { SlashCommand, SlashCommandInfo } from '@/components/commandInfo';
 
 const SlashCommands: NextPage = () => {
   return (

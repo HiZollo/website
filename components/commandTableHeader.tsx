@@ -1,4 +1,4 @@
-import styles from '../styles/Commands.module.css';
+import styles from '@/styles/Commands.module.css';
 
 function TableHeader () {
   return (

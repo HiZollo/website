@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import type { ReactNode } from 'react';
-import Header from '../components/head';
+import Header from '@/components/head';
 const {
   DiscordMessage,
   DiscordMessages,
@@ -16,7 +16,7 @@ const {
 import '@discord-message-components/react/styles';
 import { notAvailableMessage } from '../util/discord/notavailableMessage';
 import type { APIMessage } from 'discord-api-types/v10';
-import { sendDiscordAPIRequest, RequestMethod } from '../util/discord/sendRequest';
+import { sendDiscordAPIRequest, RequestMethod } from '@/util/discord/sendRequest';
 
 interface AnnoucementsProps {
   messages: Array<APIMessage>

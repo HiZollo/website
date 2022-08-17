@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Link from 'next/link'
-import Header from '../../components/head';
-import { TutorialNav, TutorialImage, TutorialWrap }from '../../components/tutorial';
+import Header from '@/components/head';
+import { TutorialNav, TutorialImage, TutorialWrap }from '@/components/tutorial';
 
-import invite1 from '../../public/tutorials/invite/1.png';
-import invite2 from '../../public/tutorials/invite/2.png';
+import invite1 from '@/public/tutorials/invite/1.png';
+import invite2 from '@/public/tutorials/invite/2.png';
 
 const Invite: NextPage = () => {
   return (

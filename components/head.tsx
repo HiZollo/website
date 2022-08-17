@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import logo from '../public/logo.png';
+import logo from '@/public/logo.png';
 
 interface HeadProps {
   title?: string,

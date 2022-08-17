@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import { readdirSync, readFileSync } from 'fs';
-import Header from '../../components/head'
+import Header from '@/components/head'
 import ReactMarkdown from 'react-markdown';
 
 interface BlogContentProps {
