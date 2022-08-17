@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import Header from '@/components/head';
 
 const Tos: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Junior HiZollo｜用戶條款</title>
-      </Head>
+      <Header
+        title="用戶條款"
+        description="HiZollo 機器人使用條款，使用 HiZollo 前請務必先閱讀"
+      />
       <h1>用戶條款</h1>
       在你使用 Junior HiZollo 前，請詳閱此用戶條款，將 Junior HiZollo 邀請至你的伺服器或使用 Junior HiZollo 的指令後，即代表你同意此用戶條款的內容。
       如果對此用戶條款有任何疑問，可以詢問 HiZollo 的開發團隊。
