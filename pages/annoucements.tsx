@@ -22,6 +22,12 @@ interface AnnoucementsProps {
   messages: Array<APIMessage>
 }
 
+enum NotificationRoles {
+  '1009701262545129473' = "機器人公告",
+  '1009701267788005417' = "伺服器公告",
+  '1009701253166665729' = "開發者公告"
+}
+
 const Annoucements: NextPage<AnnoucementsProps> = ({ messages }: AnnoucementsProps) => {
   return (
     <>
@@ -34,8 +40,13 @@ const Annoucements: NextPage<AnnoucementsProps> = ({ messages }: AnnoucementsPro
       {
         messages.map((message, index) => {
           let content = message.content
-            .replace(/(@everyone)|(<@!?(\d+)>)/g, (match, everyone, _, id) => {
+            .replace(/(@everyone)|(<@!?(\d+)>|<@&(\d+)>)/g, (match, everyone, _, id, roleId) => {
               if (everyone) return '@everyone';
+              console.log(NotificationRoles)
+              if (roleId) {
+                const roleName = NotificationRoles[roleId as keyof typeof NotificationRoles];
+                return `@${roleName ?? roleId}`;
+              }
 
               const user = message.mentions.find(u => u.id === id);
               return user ? `@${user.username}` : `@${id}`;
@@ -45,7 +56,7 @@ const Annoucements: NextPage<AnnoucementsProps> = ({ messages }: AnnoucementsPro
           const parsedContent: Array<string|ReactNode> = [];
 
           const regex = new RegExp(
-            `(?:@everyone)${message.mentions.length ? '|' : ''}` +
+            `(?:@everyone)|${Object.values(NotificationRoles).map(v => `@${v}`).join('|')}${message.mentions.length ? '|' : ''}` +
             message.mentions
               .map(user => `(?:@${user.username})`)
               .join('|'), 
