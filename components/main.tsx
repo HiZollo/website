@@ -74,7 +74,7 @@ const Layout: NextPage<{ children: ReactElement }> = ({ children }) => {
           <Box>
             <Grid item className="footer-link-title">更多連結</Grid>
             <FooterLink href="/invite">邀請連結</FooterLink>
-            <FooterLink href="/server">支援伺服器</FooterLink>
+            <FooterLink href="/server">官方伺服器</FooterLink>
             <FooterLink href="/playground">線上測試區</FooterLink>
             <FooterLink href="/dst">DST 頁面</FooterLink>
             <FooterLink href="https://top.gg/bot/584677291318312963">Top.gg</FooterLink>
@@ -126,7 +126,7 @@ function HeaderLinkList() {
           <MenuItem onClick={handleClose}>邀請 HiZollo</MenuItem>
         </Link>
         <Link href="/server" passHref>
-          <MenuItem onClick={handleClose}>支援伺服器</MenuItem>
+          <MenuItem onClick={handleClose}>官方伺服器</MenuItem>
         </Link>
         <Link href="/playground" passHref>
           <MenuItem onClick={handleClose}>線上測試區</MenuItem>
