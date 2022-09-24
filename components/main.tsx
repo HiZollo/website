@@ -229,7 +229,7 @@ function HeaderDrawer() {
             </ListCollapsableItem>
             <ListCollapsableItem text="相關連結">
               {makeDrawerList('/invite', '邀請 HiZollo', toggleDrawer, {pl:4})}
-              {makeDrawerList('/server', '支援伺服器', toggleDrawer, {pl:4})}
+              {makeDrawerList('/server', '官方伺服器', toggleDrawer, {pl:4})}
               {makeDrawerList('/dst', 'DST 頁面', toggleDrawer, {pl:4})}
               {makeDrawerList('/repo', '網站原始碼', toggleDrawer, {pl:4})}
             </ListCollapsableItem>
