@@ -22,6 +22,7 @@ const MusicCommand: NextPage = () => {
         <tbody>
           <CommandInfo
             cmd = "music join"
+            aliases = {['music j']}
             description = "加入指令使用者所在的語音頻道，若加入的是舞台頻道，可以額外指定 false 參數讓機器人只有播歌時成為發言者"
             usage = {['', 'false']}
           />
@@ -45,6 +46,11 @@ const MusicCommand: NextPage = () => {
             cmd = "music remove"
             description = "移除隊列中的歌曲"
             usage = {['', '2']}
+          />
+          <CommandInfo
+            cmd = "music resend"
+            aliases = {['music rs']}
+            description = "重新傳送音樂遙控器"
           />
         </tbody>
       </table>

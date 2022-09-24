@@ -272,6 +272,11 @@ function EntertainTable() {
             usage = {['I am HiZollo']}
           />
           <CommandInfo
+            cmd = "think"
+            description = "讓機器人送出一個表情庫的思考中表情，你也可以鍵入種類讓他輸出特定的思考表情"
+            usage = {['', '10']}
+          />
+          <CommandInfo
             cmd = "throwball"
             aliases = {['throw']}
             description = "把球砸向你討厭的人"
@@ -354,11 +359,6 @@ function MiscellaneousTable() {
           <CommandInfo
             cmd = "rip"
             description = "Rest In Peace!"
-          />
-          <CommandInfo
-            cmd = "thinking"
-            description = "讓機器人送出一個表情庫的思考中表情，你也可以鍵入種類讓他輸出特定的思考表情"
-            usage = {['', '10']}
           />
           <CommandInfo
             cmd = "useless"

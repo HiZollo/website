@@ -324,6 +324,30 @@ function SubcommandTable() {
             cmd = "osu user"
             description = "取得一名玩家的 osu! 資料"
           />
+          <SlashCommandInfo
+            cmd = "music join"
+            description = "讓我加入你所在的語音頻道"
+          />
+          <SlashCommandInfo
+            cmd = "music leave"
+            description = "讓我離開語音頻道"
+          />
+          <SlashCommandInfo
+            cmd = "music play"
+            description = "讓我在語音頻道中播一首歌"
+          />
+          <SlashCommandInfo
+            cmd = "music playlist"
+            description = "顯示目前的待播清單"
+          />
+          <SlashCommandInfo
+            cmd = "music remove"
+            description = "將待播清單中的指定歌曲移除"
+          />
+          <SlashCommandInfo
+            cmd = "music resend"
+            description = "重新傳送音樂遙控器"
+          />
         </tbody>
       </table>
     </>
