@@ -5,8 +5,12 @@ const {
   DiscordButtons,
   DiscordButton,
   DiscordMarkdown,
-  DiscordInteraction
+  DiscordInteraction,
+  DiscordEmbed,
+  DiscordEmbedField
 } = require('@discord-message-components/react');
+
+import hizolloAvatar from '@/avatars/hizollo.png'
 
 export function GamesFunction() {
   return (
@@ -17,19 +21,19 @@ export function GamesFunction() {
         </div>
         <div slot="actions">
           <DiscordButtons>
-            <DiscordButton disabled>❌</DiscordButton>
-            <DiscordButton disabled>⭕️</DiscordButton>
             <DiscordButton disabled></DiscordButton>
+            <DiscordButton disabled></DiscordButton>
+            <DiscordButton disabled>❌</DiscordButton>
           </DiscordButtons>
           <DiscordButtons>
-            <DiscordButton disabled>⭕️</DiscordButton>
-            <DiscordButton disabled>❌</DiscordButton>
             <DiscordButton disabled></DiscordButton>
+            <DiscordButton disabled>❌</DiscordButton>
+            <DiscordButton disabled>⭕️</DiscordButton>
           </DiscordButtons>
           <DiscordButtons>
+            <DiscordButton disabled>❌</DiscordButton>
             <DiscordButton disabled>⭕️</DiscordButton>
-            <DiscordButton disabled>❌</DiscordButton>
-            <DiscordButton disabled>❌</DiscordButton>
+            <DiscordButton disabled>⭕️</DiscordButton>
           </DiscordButtons>
           <DiscordButtons>
             <DiscordButton type="danger" disabled>停止遊戲</DiscordButton>
@@ -40,13 +44,22 @@ export function GamesFunction() {
       <div slot="interactions">
         <DiscordInteraction profile="hizollo" reply edited></DiscordInteraction>
       </div>
-      <DiscordMarkdown>
-        恭喜 <DiscordMention profile="zollo" />（符號 ❌）獲勝！<br />
-        **遊玩時間**：1 分 8 秒<br />
-        **下棋次數**：<br />
-        　<DiscordMention profile="zollo" />：4 步<br />
-        　<DiscordMention profile="ac" />：3 步
-      </DiscordMarkdown>
+      恭喜 <DiscordMention profile="zollo" /> 贏得了這場圈圈叉叉！
+      <DiscordEmbed
+          slot = "embeds"
+          authorIcon = {hizolloAvatar.src}
+          authorName = "遊戲數據 - 圈圈叉叉"
+          borderColor = "#000000"
+        >
+          總花費時間：0:44<br />
+          總下棋次數：6
+          <DiscordEmbedField fieldTitle="AC0xRPFS001">
+          花費時間：0:30<br />下棋次數：3
+          </DiscordEmbedField>
+          <DiscordEmbedField fieldTitle="Zollo757347">
+          花費時間：0:14<br />下棋次數：3
+          </DiscordEmbedField>
+        </DiscordEmbed>
       </DiscordMessage>
       <DiscordMessage profile="zollo">
         <DiscordMention profile="ac" /> 你好爛

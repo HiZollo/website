@@ -78,7 +78,7 @@ function Functions() {
 
   return (
     <>
-      <Box sx={{ width: '100%', height: { xs: '750px', sm: '650px' } }}>
+      <Box sx={{ width: '100%', height: { xs: '900px', sm: '800px' } }}>
         <Tabs
           value={value}
           onChange={(_: React.SyntheticEvent, newValue: number) => { setValue(newValue); }}
