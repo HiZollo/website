@@ -15,6 +15,7 @@ import { HiddenCommandMessages } from '@/components/mainpageDiscordMessages/hidd
 
 import { RateCard } from '@/components/class/RateCard';
 import { sendDiscordAPIRequest } from '@/util/discord/sendRequest';
+import { resolveDiscordAvatarURL } from '@/util/discord/resolveAvatarURL';
 import { chunk } from '@/util/chunkArray';
 import ratecardReview from '@/data/ratecard.json';
 
@@ -267,13 +268,7 @@ export const getStaticProps: GetStaticProps = async () => {
   )).map(v => JSON.parse(v));
 
   const reviews = userData.map((user, index) => {
-    let avatarUrl: string = '';
-    if (user.avatar) {
-      const extension = user.avatar.startsWith('a_') ? 'gif' : 'webp';
-      avatarUrl = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.${extension}`
-    } else {
-      avatarUrl = `https://cdn.discordapp.com/embed/avatars/${user.discriminator % 5}.png`
-    }
+    const avatarUrl = resolveDiscordAvatarURL(user);
     
     return { 
       avatar: avatarUrl,
