@@ -7,7 +7,8 @@ const {
   DiscordMarkdown,
   DiscordInteraction,
   DiscordEmbed,
-  DiscordEmbedField
+  DiscordEmbedField,
+  DiscordEmbedFields
 } = require('@discord-message-components/react');
 
 import hizolloAvatar from '@/avatars/hizollo.png'
@@ -53,12 +54,14 @@ export function GamesFunction() {
         >
           總花費時間：0:44<br />
           總下棋次數：6
-          <DiscordEmbedField fieldTitle="AC0xRPFS001">
+          <DiscordEmbedFields>
+          <DiscordEmbedField fieldTitle="AC0xRPFS001" inline>
           花費時間：0:30<br />下棋次數：3
           </DiscordEmbedField>
-          <DiscordEmbedField fieldTitle="Zollo757347">
+          <DiscordEmbedField fieldTitle="Zollo757347" inline>
           花費時間：0:14<br />下棋次數：3
           </DiscordEmbedField>
+          </DiscordEmbedFields>
         </DiscordEmbed>
       </DiscordMessage>
       <DiscordMessage profile="zollo">

@@ -169,3 +169,7 @@ footer a:hover {
     padding: 10px 10px;
   }
 }
+
+.discord-embed-field-title {
+  color: white !important;
+}
