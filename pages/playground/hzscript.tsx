@@ -73,7 +73,7 @@ function Output({ result }: OutputProps) {
   useEffect(() => {
     const n = document.getElementById("result-2");
     if(value == 2 && !result.errorCount) try {
-      eval(result.build);
+      eval(result.build.full);
     } catch(e) {
       n!.innerText = (e as Error).toString();
     }
@@ -112,7 +112,7 @@ function Output({ result }: OutputProps) {
             language="javascript"
             wrapLongLines
           >
-            {result.build}
+            {result.build.full}
           </SyntaxHighlighter>
         }
       </TabPanel>

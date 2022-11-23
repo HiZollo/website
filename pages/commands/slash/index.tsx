@@ -6,32 +6,30 @@ import { SlashTableHeader } from '@/components/commandTableHeader';
 import { SlashCommand, SlashCommandInfo } from '@/components/commandInfo';
 
 const SlashCommands: NextPage = () => {
-  return (
-    <>
-      <Header
-        title = "斜線指令列表"
-        description = "這是 HiZollo 的斜線指令列表，你可以在這裡找到 HiZollo 全部的斜線指令名稱以及說明"
-      />
-      <h1>HiZollo 的斜線指令列表</h1>
-      <Link href="/commands/message"><a>訊息指令</a></Link>｜<strong>斜線指令</strong><br />
-      這個指令列表能用 <SlashCommand cmd="help" /> 取得，且能使用 <SlashCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
-      <InfoTable />
-      <hr />
-      <FunctionTable />
-      <hr />
-      <EntertainTable />
-      <hr />
-      <GameTable />
-      <hr />
-      <NetworkTable />
-      <hr />
-      <ContactTable />
-      <hr />
-      <MiscellaneousTable />
-      <hr />
-      <SubcommandTable />
-    </>
-  );
+  return <>
+    <Header
+      title = "斜線指令列表"
+      description = "這是 HiZollo 的斜線指令列表，你可以在這裡找到 HiZollo 全部的斜線指令名稱以及說明"
+    />
+    <h1>HiZollo 的斜線指令列表</h1>
+    <Link href="/commands/message">訊息指令</Link>｜<strong>斜線指令</strong><br />
+    這個指令列表能用 <SlashCommand cmd="help" /> 取得，且能使用 <SlashCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
+    <InfoTable />
+    <hr />
+    <FunctionTable />
+    <hr />
+    <EntertainTable />
+    <hr />
+    <GameTable />
+    <hr />
+    <NetworkTable />
+    <hr />
+    <ContactTable />
+    <hr />
+    <MiscellaneousTable />
+    <hr />
+    <SubcommandTable />
+  </>;
 }
 
 function InfoTable () {

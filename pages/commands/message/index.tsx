@@ -6,32 +6,30 @@ import { MessageCommand, CommandInfo } from '@/components/commandInfo';
 import Header from '@/components/head';
 
 const MessageCommands: NextPage = () => {
-  return (
-    <>
-      <Header
-        title = "訊息指令列表"
-        description = "這是 HiZollo 的訊息指令列表，你可以在這裡找到 HiZollo 全部的訊息指令名稱以及相關說明"
-      />
-      <h1>HiZollo 的訊息指令列表</h1>
-      <strong>訊息指令</strong>｜<Link href="/commands/slash"><a>斜線指令</a></Link><br />
-      這個指令列表能用 <MessageCommand cmd="help" /> 取得，且能使用 <MessageCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
-      <InfoTable />
-      <hr />
-      <FunctionTable />
-      <hr />
-      <EntertainTable />
-      <hr />
-      <GameTable />
-      <hr />
-      <CommandGroupTable />
-      <hr />
-      <NetworkTable />
-      <hr />
-      <ContactTable />
-      <hr />
-      <MiscellaneousTable />
-    </>
-  );
+  return <>
+    <Header
+      title = "訊息指令列表"
+      description = "這是 HiZollo 的訊息指令列表，你可以在這裡找到 HiZollo 全部的訊息指令名稱以及相關說明"
+    />
+    <h1>HiZollo 的訊息指令列表</h1>
+    <strong>訊息指令</strong>｜<Link href="/commands/slash">斜線指令</Link><br />
+    這個指令列表能用 <MessageCommand cmd="help" /> 取得，且能使用 <MessageCommand cmd="help [指令名稱]" /> 獲得更詳細的說明。
+    <InfoTable />
+    <hr />
+    <FunctionTable />
+    <hr />
+    <EntertainTable />
+    <hr />
+    <GameTable />
+    <hr />
+    <CommandGroupTable />
+    <hr />
+    <NetworkTable />
+    <hr />
+    <ContactTable />
+    <hr />
+    <MiscellaneousTable />
+  </>;
 }
 
 function InfoTable () {

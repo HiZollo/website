@@ -29,73 +29,71 @@ enum NotificationRoles {
 }
 
 const Annoucements: NextPage<AnnoucementsProps> = ({ messages }: AnnoucementsProps) => {
-  return (
-    <>
-      <Header
-        title="最新公告"
-        description="你可以在這裡可以同步看到 HiZollo 官方在支援伺服器中發佈的公告"
-      />
-      <h1>最近官方公告</h1>
-      <DiscordMessages>
-      {
-        messages.map((message, index) => {
-          let content = message.content
-            .replace(/(@everyone)|(<@!?(\d+)>|<@&(\d+)>)/g, (match, everyone, _, id, roleId) => {
-              if (everyone) return '@everyone';
-              console.log(NotificationRoles)
-              if (roleId) {
-                const roleName = NotificationRoles[roleId as keyof typeof NotificationRoles];
-                return `@${roleName ?? roleId}`;
-              }
-
-              const user = message.mentions.find(u => u.id === id);
-              return user ? `@${user.username}` : `@${id}`;
-            })
-            .replace(/<#(\d+)>/g, '\\<#$1\\>')
-
-          const parsedContent: Array<string|ReactNode> = [];
-
-          const regex = new RegExp(
-            `(?:@everyone)|${Object.values(NotificationRoles).map(v => `@${v}`).join('|')}${message.mentions.length ? '|' : ''}` +
-            message.mentions
-              .map(user => `(?:@${user.username})`)
-              .join('|'), 
-            'g'
-          )
-          const mentions = content.match(regex);
-          if (!mentions) parsedContent.push(content);
-          else {
-            const splittedContent = content.split(regex);
-            for (const mention of mentions) {
-              parsedContent.push(splittedContent.shift() ?? '')
-              parsedContent.push(<DiscordMention>{mention.slice(1)}</DiscordMention>)
+  return <>
+    <Header
+      title="最新公告"
+      description="你可以在這裡可以同步看到 HiZollo 官方在支援伺服器中發佈的公告"
+    />
+    <h1>最近官方公告</h1>
+    <DiscordMessages>
+    {
+      messages.map((message, index) => {
+        let content = message.content
+          .replace(/(@everyone)|(<@!?(\d+)>|<@&(\d+)>)/g, (match, everyone, _, id, roleId) => {
+            if (everyone) return '@everyone';
+            console.log(NotificationRoles)
+            if (roleId) {
+              const roleName = NotificationRoles[roleId as keyof typeof NotificationRoles];
+              return `@${roleName ?? roleId}`;
             }
-            parsedContent.push(splittedContent.shift())
+
+            const user = message.mentions.find(u => u.id === id);
+            return user ? `@${user.username}` : `@${id}`;
+          })
+          .replace(/<#(\d+)>/g, '\\<#$1\\>')
+
+        const parsedContent: Array<string|ReactNode> = [];
+
+        const regex = new RegExp(
+          `(?:@everyone)|${Object.values(NotificationRoles).map(v => `@${v}`).join('|')}${message.mentions.length ? '|' : ''}` +
+          message.mentions
+            .map(user => `(?:@${user.username})`)
+            .join('|'), 
+          'g'
+        )
+        const mentions = content.match(regex);
+        if (!mentions) parsedContent.push(content);
+        else {
+          const splittedContent = content.split(regex);
+          for (const mention of mentions) {
+            parsedContent.push(splittedContent.shift() ?? '')
+            parsedContent.push(<DiscordMention>{mention.slice(1)}</DiscordMention>)
           }
-          return (
-            <DiscordMessage 
-              author={message.author.username}
-              bot={message.author.bot}
-              avatar={
-                message.author.id !== '0'
-                  ? `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.webp`
-                  : `https://cdn.discordapp.com/embed/avatars/${message.author.discriminator as unknown as number % 5}.png`
+          parsedContent.push(splittedContent.shift())
+        }
+        return (
+          <DiscordMessage 
+            author={message.author.username}
+            bot={message.author.bot}
+            avatar={
+              message.author.id !== '0'
+                ? `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.webp`
+                : `https://cdn.discordapp.com/embed/avatars/${message.author.discriminator as unknown as number % 5}.png`
+            }
+            timestamp={message.timestamp}
+            key={index}
+          >
+            <DiscordMarkdown>
+              {
+                parsedContent
               }
-              timestamp={message.timestamp}
-              key={index}
-            >
-              <DiscordMarkdown>
-                {
-                  parsedContent
-                }
-              </DiscordMarkdown>
-            </DiscordMessage>
-          )
-        })
-      }
-      </DiscordMessages>
-    </>
-  )
+            </DiscordMarkdown>
+          </DiscordMessage>
+        )
+      })
+    }
+    </DiscordMessages>
+  </>;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {

@@ -23,67 +23,65 @@ const Layout: NextPage<{ children: ReactElement }> = ({ children }) => {
   const fullLink = useMediaQuery('(min-width: 716px)');
   const footerRow = useMediaQuery('(min-width: 520px)');
 
-  return (
-    <>
-      <header>
-        { (largeWordmark && useWordmark) && <div id="wordmark-large">
-          <Link href="/">
-            <a><Image src={wordmarkLarge} alt="Junior HiZollo" /></a>
-          </Link>
-        </div> }
-        { (!largeWordmark && useWordmark) && <div id="wordmark">
-          <Link href="/">
-            <a><Image src={wordmark} alt="Junior HiZollo" /></a>
-          </Link>
-        </div> }
-        <div id="blank" />
-        { fullLink ? <HeaderLinkList /> : <HeaderDrawer /> }
-      </header>
+  return <>
+    <header>
+      { (largeWordmark && useWordmark) && <div id="wordmark-large">
+        <Link href="/">
+          <Image src={wordmarkLarge} alt="Junior HiZollo" width={300} />
+        </Link>
+      </div> }
+      { (!largeWordmark && useWordmark) && <div id="wordmark">
+        <Link href="/">
+          <Image src={wordmark} alt="Junior HiZollo" width={200} />
+        </Link>
+      </div> }
+      <div id="blank" />
+      { fullLink ? <HeaderLinkList /> : <HeaderDrawer /> }
+    </header>
 
-      <main>
-        { children }
-      </main>
+    <main>
+      { children }
+    </main>
 
-      <BlankDiv />
+    <BlankDiv />
 
-      <footer>
-        <Grid
-          container
-          justifyContent="center"
-          textAlign={footerRow ? 'left' : 'center'}
-          direction={footerRow ? 'row' : 'column'}
-          py={5}
-          gap={{ xs: 5, sm: 10, md: 20, lg: 30 }}
-          sx={{ width: { sm: '90vw' }, height: 'auto' }}
-          >
-          <Box>
-            <Grid item className="footer-link-title">Junior HiZollo</Grid>
-            <FooterLink href="/tutorials">使用教學</FooterLink>
-            <FooterLink href="/commands">指令列表</FooterLink>
-            <FooterLink href="/changelog">更新日誌</FooterLink>
-            <FooterLink href="/tos">用戶條款</FooterLink>
-          </Box>
+    <footer>
+      <Grid
+        container
+        justifyContent="center"
+        textAlign={footerRow ? 'left' : 'center'}
+        direction={footerRow ? 'row' : 'column'}
+        py={5}
+        gap={{ xs: 5, sm: 10, md: 20, lg: 30 }}
+        sx={{ width: { sm: '90vw' }, height: 'auto' }}
+        >
+        <Box>
+          <Grid item className="footer-link-title">Junior HiZollo</Grid>
+          <FooterLink href="/tutorials">使用教學</FooterLink>
+          <FooterLink href="/commands">指令列表</FooterLink>
+          <FooterLink href="/changelog">更新日誌</FooterLink>
+          <FooterLink href="/tos">用戶條款</FooterLink>
+        </Box>
 
-          <Box>
-            <Grid item className="footer-link-title">了解我們</Grid>
-            <FooterLink href="/developers">開發團隊</FooterLink>
-            <FooterLink href="/blog">開發日誌</FooterLink>
-            <FooterLink href="https://github.com/hizollo">Github</FooterLink>
-          </Box>
+        <Box>
+          <Grid item className="footer-link-title">了解我們</Grid>
+          <FooterLink href="/developers">開發團隊</FooterLink>
+          <FooterLink href="/blog">開發日誌</FooterLink>
+          <FooterLink href="https://github.com/hizollo">Github</FooterLink>
+        </Box>
 
-          <Box>
-            <Grid item className="footer-link-title">更多連結</Grid>
-            <FooterLink href="/invite">邀請連結</FooterLink>
-            <FooterLink href="/server">官方伺服器</FooterLink>
-            <FooterLink href="/playground">線上測試區</FooterLink>
-            <FooterLink href="/dst">DST 頁面</FooterLink>
-            <FooterLink href="https://top.gg/bot/584677291318312963">Top.gg</FooterLink>
-          </Box>
-        </Grid>
-        <div id="copy">&copy; HiZollo 2019 - {new Date().getFullYear()}</div>
-      </footer>
-    </>
-  );
+        <Box>
+          <Grid item className="footer-link-title">更多連結</Grid>
+          <FooterLink href="/invite">邀請連結</FooterLink>
+          <FooterLink href="/server">官方伺服器</FooterLink>
+          <FooterLink href="/playground">線上測試區</FooterLink>
+          <FooterLink href="/dst">DST 頁面</FooterLink>
+          <FooterLink href="https://top.gg/bot/584677291318312963">Top.gg</FooterLink>
+        </Box>
+      </Grid>
+      <div id="copy">&copy; HiZollo 2019 - {new Date().getFullYear()}</div>
+    </footer>
+  </>;
 }
 
 export default Layout;
@@ -102,47 +100,45 @@ function HeaderLinkList() {
     setAnchorEl(null);
   };
 
-  return (
-    <>
-      <Link href="/tutorials" passHref>
-        <a>使用教學</a>
+  return <>
+    <Link href="/tutorials" passHref>
+      使用教學
+    </Link>
+    <HeaderMenu id="infos" text="更多資訊">
+      <Link href="/annoucements" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>官方公告</MenuItem>
       </Link>
-      <HeaderMenu id="infos" text="更多資訊">
-        <Link href="/annoucements" passHref>
-          <MenuItem onClick={handleClose}>官方公告</MenuItem>
-        </Link>
-        <Link href="/commands" passHref>
-          <MenuItem onClick={handleClose}>指令列表</MenuItem>
-        </Link>
-        <Link href="/changelog" passHref>
-          <MenuItem onClick={handleClose}>更新日誌</MenuItem>
-        </Link>
-        <Link href="/developers" passHref>
-          <MenuItem onClick={handleClose}>開發團隊</MenuItem>
-        </Link>
-      </HeaderMenu>
-      <HeaderMenu id="links" text="相關連結">
-        <Link href="/invite" passHref>
-          <MenuItem onClick={handleClose}>邀請 HiZollo</MenuItem>
-        </Link>
-        <Link href="/server" passHref>
-          <MenuItem onClick={handleClose}>官方伺服器</MenuItem>
-        </Link>
-        <Link href="/playground" passHref>
-          <MenuItem onClick={handleClose}>線上測試區</MenuItem>
-        </Link>
-        <Link href="/dst" passHref>
-          <MenuItem onClick={handleClose}>DST 頁面</MenuItem>
-        </Link>
-        <Link href="/repo" passHref>
-          <MenuItem onClick={handleClose}>網站原始碼</MenuItem>
-        </Link>
-      </HeaderMenu>
-      <Link href="/tos">
-        <a>用戶條款</a>
+      <Link href="/commands" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>指令列表</MenuItem>
       </Link>
-    </>
-  );
+      <Link href="/changelog" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>更新日誌</MenuItem>
+      </Link>
+      <Link href="/developers" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>開發團隊</MenuItem>
+      </Link>
+    </HeaderMenu>
+    <HeaderMenu id="links" text="相關連結">
+      <Link href="/invite" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>邀請 HiZollo</MenuItem>
+      </Link>
+      <Link href="/server" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>官方伺服器</MenuItem>
+      </Link>
+      <Link href="/playground" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>線上測試區</MenuItem>
+      </Link>
+      <Link href="/dst" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>DST 頁面</MenuItem>
+      </Link>
+      <Link href="/repo" passHref legacyBehavior>
+        <MenuItem onClick={handleClose}>網站原始碼</MenuItem>
+      </Link>
+    </HeaderMenu>
+    <Link href="/tos">
+      用戶條款
+    </Link>
+  </>;
 }
 
 interface HeaderMenuProps {
@@ -267,12 +263,12 @@ function ListCollapsableItem(props: LCIProps) {
 function makeDrawerList(link:string, text: string,
   toggleDrawer: (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => void, sx: object = {}) {
   return (
-    <Link href={link} passHref>
+    <Link href={link} passHref legacyBehavior>
       <ListItem button onClick={toggleDrawer(false)} sx={sx}>
         <ListItemText primary={text} />
       </ListItem>
     </Link>
-  )
+  );
 }
 
 interface FooterLinkProps {
@@ -281,5 +277,5 @@ interface FooterLinkProps {
 }
 
 function FooterLink(props: FooterLinkProps) {
-  return <Link href={props.href ?? '###'} passHref><Grid item component="a">{props.children}</Grid></Link>;
+  return <Link href={props.href ?? '###'} passHref legacyBehavior><Grid item component="a">{props.children}</Grid></Link>;
 }
