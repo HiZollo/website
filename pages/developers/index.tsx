@@ -11,8 +11,13 @@ import {
 } from '@mui/material';
 import data from '@/data/devdata.json';
 
-import { sendDiscordAPIRequest } from '@/util/discord/sendRequest'
-import { resolveDiscordAvatarURL } from '@/util/discord/resolveAvatarURL'
+import { sendDiscordAPIRequest } from '@/util/discord/sendRequest';
+import { getFullGuildMemberList } from '@/util/discord/getFullGuildMemberList';
+import { resolveDiscordAvatarURL } from '@/util/discord/resolveAvatarURL';
+import { APIGuildMember } from 'discord-api-types/v10';
+
+import { DevProfileCard } from '@/components/profileCard/dev';
+import { ContrubutorProfileCard } from '@/components/profileCard/contributor';
 
 import acAvatar from '@/avatars/ac.png';
 import zolloAvatar from '@/avatars/zollo.png';
@@ -21,115 +26,82 @@ interface id2Value {
   [key: string]: string
 }
 
-interface DevsProps {
+interface DataHolder {
   name: id2Value,
   avatar: id2Value
 }
 
-const Devs: NextPage<DevsProps> = (props: DevsProps) => {
+interface DevsProps {
+  devs: DataHolder,
+  contributors: DataHolder & { ids: string[], nickname: id2Value }
+}
+
+const Devs: NextPage<DevsProps> = ({ devs, contributors }: DevsProps) => {
   return (
     <>
-      <Box
-        component="h1"
-        textAlign={{ xs: "center", md: "inherit" }}
-      >
+      <CardCategoryTitle>
         HiZollo 開發團隊
-      </Box>
-      <Stack
-        direction={{xs: "column", sm: "row"}}
-        alignItems={{ xs: "center", sm: "inherit" }}
-        spacing={2}
-        mt={3}
-        divider={<Divider color="white" orientation="vertical" flexItem />}
-      >
+      </CardCategoryTitle>
+      <Typography component="div" textAlign={{ xs: "center", md: "inherit" }}>
+        這裡列出的是 HiZollo 開發團隊的成員。
+      </Typography>
+      <CardStack>
         {data.members.map(member => 
-          <ProfileCard
-            key={props.name[member.id]}
-            avatar={props.avatar[member.id]}
-            name={props.name[member.id]}
+          <DevProfileCard
+            key={devs.name[member.id]}
+            avatar={devs.avatar[member.id]}
+            name={devs.name[member.id]}
             nicknames={member.nicknames.join("、")}
             content={member.bio}
             team={member.team}
           />
         )}
-      </Stack>
+      </CardStack>
+      <CardCategoryTitle>
+        HiZollo 貢獻者
+      </CardCategoryTitle>
+      <Typography component="div" textAlign={{ xs: "center", md: "inherit" }}>
+        <p>這裡列出的是在 HiZollo 官方伺服器中，有為 HiZollo 做出貢獻的人。</p>
+        <p>他們不是開發團隊的人，但他們對 HiZollo 的發展也有著不可忽略的貢獻。</p>
+      </Typography>
+      <CardStack>
+        {contributors.ids.map(id => 
+          <ContrubutorProfileCard
+            key={id}
+            avatar={contributors.avatar[id]}
+            name={contributors.name[id]}
+            nickname={contributors.nickname[id]}
+          />
+        )}
+      </CardStack>
     </>
   );
 }
 
-interface ProfileCardProps {
-  avatar: string,
-  name: string,
-  nicknames: string,
-  content: string,
-  team: number
+interface LayoutProps {
+  children: ReactNode
 }
 
-function ProfileCard(props: ProfileCardProps) {
-  const { avatar, name, nicknames, content, team } = props;
-  const [shadow, setShadow] = useState(3);
-
-  const teamFlag = { lead: 1, code: 2, copy: 4, web: 8, art: 16 };
-  const teams: { [key: string]: unknown } = {}
-  for (const [flag, bit] of Object.entries(teamFlag)) {
-    teams[flag] = ((team & bit) == bit);
-  }
-  
-  const badges = []
-  if (teams.lead) { badges.push(<Lead />); badges.push("、"); }
-  if (teams.code) { badges.push(<Code />); badges.push("、"); }
-  if (teams.copy) { badges.push(<Copy />); badges.push("、"); }
-  if (teams.web) { badges.push(<Web />); badges.push("、"); }
-  if (teams.art) { badges.push(<Art />); badges.push("、");}
-  badges.pop();
-
+function CardCategoryTitle({ children }: LayoutProps) {
   return (
-    <Card
-      sx={{ maxWidth: 330 }}
-      elevation={shadow}
-      onMouseEnter={() => setShadow(24)}
-      onMouseLeave={() => setShadow(3)}
-    >
-      <CardMedia
-        component="img"
-        height="170"
-        image={avatar}
-        alt={name}
-      />
-      <CardContent>
-        <Typography sx={{ mb: '0px'}} gutterBottom variant="h5" component="div">
-          {name}
-        </Typography>
-        <Typography gutterBottom variant="h6" component="div" color="text.secondary">
-          {nicknames}
-        </Typography>
-        <Typography sx={{ my: '20px' }} variant="body1" component="div">
-          {content}
-        </Typography>
-        <Typography variant="body2" color="text.primary">
-          所屬團隊：{badges}
-        </Typography>
-      </CardContent>
-    </Card>
-  )
+    <Box
+      component="h1"
+      textAlign={{ xs: "center", md: "left" }}
+    >{children}</Box>
+  );
 }
 
-function Lead({ text = "專案領導團隊" }) {
-  return <span style={{ color: 'rgb(101, 124, 137)', whiteSpace: 'nowrap' }}>{text}</span>;
+function CardStack({ children }: LayoutProps) {
+   return (
+      <Stack
+        direction="row"
+        mt={3}
+        justifyContent={{ xs: "center", md: "inherit" }}
+        sx={{ flexWrap: 'wrap', gap: '20px' }}
+      >{children}</Stack>
+    );
 }
-function Code({ text = "程式團隊" }) {
-  return <span style={{ color: 'rgb(46, 204, 113)', whiteSpace: 'nowrap' }}>{text}</span>;
-}
-function Copy({ text = "文案團隊" }) {
-  return <span style={{ color: 'rgb(230, 126, 34)', whiteSpace: 'nowrap' }}>{text}</span>;
-}
-function Art({ text = "美術團隊" }) {
-  return <span style={{ color: 'rgb(233, 30, 99)', whiteSpace: 'nowrap' }}>{text}</span>;
-}
-function Web({ text = "網管團隊" }) {
-  return <span style={{ color: 'rgb(52, 152, 219)', whiteSpace: 'nowrap' }}>{text}</span>;
-}
-
+  
 export const getStaticProps: GetStaticProps = async () => {
   const info = (await Promise.all(
     data.members.map(member => {
@@ -140,19 +112,39 @@ export const getStaticProps: GetStaticProps = async () => {
     }))
   ).map(d => JSON.parse(d));
 
-  const r: { name: id2Value, avatar: id2Value } = { name: {}, avatar: {} }
+  const devs: DataHolder = { name: {}, avatar: {} }
 
   for (let i = 0; i < data.members.length; ++i) {
     const now_id = data.members[i].id;
-    r.name[now_id] = info[i].username;
-    r.avatar[now_id] = resolveDiscordAvatarURL(info[i], { extension: 'png', size: 4096 });
+    devs.name[now_id] = info[i].username;
+    devs.avatar[now_id] = resolveDiscordAvatarURL(info[i], { extension: 'png', size: 4096 });
+  }
+
+  const member_list = await getFullGuildMemberList('572733182412193792');
+
+  const contributor_list = member_list.filter(member => member.roles.includes("1044239646231642183"))
+
+  const contributors: DataHolder & { ids: string[], nickname: id2Value } = {
+    name: {}, avatar: {}, nickname: {}, ids: []
+  };
+
+  for (let i = 0; i < contributor_list.length; ++i) {
+    const now_id = contributor_list[i].user!.id;
+    contributors.ids.push(now_id);
+    contributors.name[now_id] = contributor_list[i].user!.username;
+    contributors.avatar[now_id] = resolveDiscordAvatarURL(
+      contributor_list[i].user!,
+      { extension: 'png', size: 4096 }
+    );
+    contributors.nickname[now_id] = contributor_list[i].nick ?? '';
   }
 
   return {
-    props: r,
+    props: {
+      devs, contributors
+    },
     revalidate: 600
   }
 }
-
 
 export default Devs;
