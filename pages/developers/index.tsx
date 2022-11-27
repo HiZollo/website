@@ -16,6 +16,7 @@ import { getFullGuildMemberList } from '@/util/discord/getFullGuildMemberList';
 import { resolveDiscordAvatarURL } from '@/util/discord/resolveAvatarURL';
 import { APIGuildMember } from 'discord-api-types/v10';
 
+import Head from '@/components/head';
 import { DevProfileCard } from '@/components/profileCard/dev';
 import { ContrubutorProfileCard } from '@/components/profileCard/contributor';
 
@@ -39,6 +40,10 @@ interface DevsProps {
 const Devs: NextPage<DevsProps> = ({ devs, contributors }: DevsProps) => {
   return (
     <>
+      <Head
+        title="開發團隊"
+        description="這裡列出的是 HiZollo 開發團隊的成員，以及一些對 HiZollo 的發展有貢獻的人。"
+      />
       <CardCategoryTitle>
         HiZollo 開發團隊
       </CardCategoryTitle>
