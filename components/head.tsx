@@ -20,16 +20,22 @@ const Header: NextPage<HeadProps> = (props: HeadProps) => {
       <meta name="author" content="HiZollo Dev Team" />
       <meta name="description" content={description} />
       <meta name="keywords" content="Junior,HiZollo,Discord,機器人,聊天,音樂,管理,娛樂" />
+      <meta property="og:site_name" content="HiZollo 官方網站" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={logo.src} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="400" />
       <meta property="og:url" content="http://hizollo.ddns.net" />
+      <meta property="og:locale" content="zh_TW" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={logo.src} />
       <meta name="twitter:url" content="https://hizollo.ddns.net/" />
+      <link rel="canonical" href="https://hizollo.ddns.net" />
     </Head>
   )
 }
