@@ -3,7 +3,6 @@ import Header from '@/components/head';
 
 import React from 'react';
 import { Tabs, Tab, Box, Typography } from '@mui/material';
-const { DiscordMarkdown } = require('@discord-message-components/react');
 
 import changelog from '@/data/changelog.json';
 
