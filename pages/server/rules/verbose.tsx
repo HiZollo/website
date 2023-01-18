@@ -10,6 +10,9 @@ const VerboseRules: NextPage = () => {
         description="HiZollo 官方伺服器的完整規則，為了確保你的權益，希望加入伺服器的用戶都能讀過一次，但不強迫就是了，因為他真的很長......"
       />
       <h1>HiZollo 官方伺服器 伺服器規則</h1> 
+      這是 HiZollo 官方伺服器的完整規則。為了確保你的權益，我們希望你可以至少看過一次。<br />
+      另外有 <a href="https://docs.google.com/document/d/1BZh_mC8oGbBfdx3ANYhX0xTdXfsV1jNK-dFS8DQHpn4/edit?usp=sharing">Google 文件</a>版本，你也可以看這個版本。<br />
+      若兩個版本間有出入，以此處為準，但伺服器管理團隊保留解釋的權力。
 
       <h1>第一章 伺服器總則</h1>
       <h2>第一節 總則</h2>
