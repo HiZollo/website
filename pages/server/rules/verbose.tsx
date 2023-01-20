@@ -122,10 +122,10 @@ const VerboseRules: NextPage = () => {
       <ol>
         <li>本伺服器身份組分為以下四類：</li>
         <ol>
-          <li>身份身份組</li>
-          <li>表揚身份組</li>
-          <li>活動身份組</li>
           <li>通知身份組</li>
+          <li>活動身份組</li>
+          <li>表揚身份組</li>
+          <li>身份身份組</li>
         </ol>
         <li>除通知身份組外，其餘身份組皆不能任意授與及收回。</li>
       </ol>
@@ -220,8 +220,8 @@ const VerboseRules: NextPage = () => {
         <ol>
           <li>撰寫及測試 HiZollo 相關程式。</li>
           <li>撰寫 HiZollo 相關文案。</li>
-          <li>維護 HiZollo 官方網站和機器人列表的頁面。</li>
           <li>設計 HiZollo 相關圖片。</li>
+          <li>維護 HiZollo 官方網站和機器人列表的頁面。</li>
         </ol>
         <li>HiZollo 開發團隊成員，依其分配工作性質的不同，分別隔外配與程式團隊、文案團隊、美術團隊、及網管團隊身份身份組。</li>
       </ol>
