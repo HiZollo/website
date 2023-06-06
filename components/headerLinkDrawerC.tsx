@@ -9,7 +9,7 @@ interface _ {
   isIos: boolean
 }
 
-export default function ({ toggle, open, isIos }: _) {
+export default function headerLinkDrawerC({ toggle, open, isIos }: _) {
   return (
     <SwipeableDrawer
       disableBackdropTransition={!isIos}
