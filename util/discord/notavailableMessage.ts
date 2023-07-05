@@ -6,6 +6,7 @@ export const notAvailableMessage: APIMessage = {
 	content: '讀取訊息失敗，請重新整理\n如果此現象一直發生，請聯絡開發團隊',
 	channel_id: '0',
 	author: {
+    global_name: 'Error', 
 		username: 'Error',
 		id: '0',
 		discriminator: '4444',
