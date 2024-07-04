@@ -17,7 +17,7 @@ export default function HeaderLinkList() {
       使用教學
     </Link>
     <HeaderMenu id="infos" text="更多資訊">
-      <Link href="/annoucements" passHref legacyBehavior>
+      <Link href="/announcements" passHref legacyBehavior>
         <MenuItem onClick={handleClose}>官方公告</MenuItem>
       </Link>
       <Link href="/commands" passHref legacyBehavior>

@@ -26,7 +26,7 @@ export default function headerLinkDrawerC({ toggle, open, isIos }: _) {
       >
         <List>
           {makeDrawerList('/', '首頁', toggle)}
-          {makeDrawerList('/annoucements', '官方公告', toggle)}
+          {makeDrawerList('/announcements', '官方公告', toggle)}
           {makeDrawerList('/tutorials', '使用教學', toggle)}
           <ListCollapsableItem text="更多資訊">
             {makeDrawerList('/commands', '指令列表', toggle, {pl:4})}
