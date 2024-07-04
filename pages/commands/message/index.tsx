@@ -20,7 +20,9 @@ const MessageCommands: NextPage = () => {
     <hr />
     <EntertainTable />
     <hr />
-    <GameTable />
+    <SingleGameTable />
+    <hr />
+    <MultiGameTable />
     <hr />
     <CommandGroupTable />
     <hr />
@@ -49,10 +51,6 @@ function InfoTable () {
             description = "查看機器人資訊"
           />
           <CommandInfo
-            cmd = "dev"
-            description = "檢視開發團隊清單"
-          />
-          <CommandInfo
             cmd = "help"
             description = "開啟指令清單"
             usage = {['', 'announcement']}
@@ -65,6 +63,11 @@ function InfoTable () {
           <CommandInfo
             cmd = "name"
             description = "機器人叫什麼名字呢"
+          />
+          <CommandInfo
+            cmd = "team"
+            aliases = {['developers', 'dev']}
+            description = "顯示 HiZollo 的團隊成員清單"
           />
         </tbody>
       </table>
@@ -83,6 +86,11 @@ function ContactTable() {
             cmd = "bug"
             description = "回報錯誤"
             usage = {['avatar指令跑不出來']}
+          />
+          <CommandInfo
+            cmd = "sponsor"
+            aliases = {['donate']}
+            description = "顯示贊助資訊"
           />
           <CommandInfo
             cmd = "suggest"
@@ -242,7 +250,7 @@ function EntertainTable() {
             cmd = "confession"
             aliases = {['cf']}
             description = "向伺服器中的一位用戶告白"
-            usage = {['<span class="dc-mention">Rick Astley</span>']}
+            usage = {['<span class="dc-mention">@Rick Astley</span>']}
           />
           <CommandInfo
             cmd = "dice"
@@ -280,35 +288,30 @@ function EntertainTable() {
             description = "把球砸向你討厭的人"
             usage = {['<span class="dc-mention">@AC0xRPFS001</span>']}
           />
-          <CommandInfo
-            cmd = "youtube"
-            aliases = {['yt']}
-            description = "跟朋友一起在 Discord 中觀看 Youtube 的影片"
-          />
         </tbody>
       </table>
     </>
   );
 }
 
-function GameTable() {
+function SingleGameTable() {
   return (
     <>
-      <h2>遊戲</h2>
+      <h2>單人遊戲</h2>
       <table className={styles['helplist-table']}>
         <TableHeader />
         <tbody>
           <CommandInfo
-            cmd = "bullsandcows"
-            aliases = {['bac', 'gussab', 'ga']}
-            description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
-            usage = {['', 'hard']}
+            cmd = "2048"
+            aliases = {['tofe']}
+            description = "開啟一場 2048 遊戲"
+            usage={['', 'true']}
           />
           <CommandInfo
-            cmd = "finalcode"
-            aliases = {['fc']}
-            description = "遊玩一場猜終極密碼，支援多人模式"
-            usage = {['', '<span class="dc-mention">@Deleted User dQw4w9WgXcQ</span> <span class="dc-mention">@Junior HiZollo</span> <span class="dc-mention">@No Name</span>']}
+            cmd = "bullsandcows"
+            aliases = {['bac', 'gussab', 'ga']}
+            description = "遊玩一場猜 AB 遊戲"
+            usage = {['', 'true']}
           />
           <CommandInfo
             cmd = "fliptrip"
@@ -317,15 +320,39 @@ function GameTable() {
             usage = {['4']}
           />
           <CommandInfo
+            cmd = "lightsup"
+            aliases = {['lu']}
+            description = "遊玩一場點燈遊戲"
+          />
+        </tbody>
+      </table>
+    </>
+  );
+}
+
+function MultiGameTable() {
+  return (
+    <>
+      <h2>多人遊戲</h2>
+      <table className={styles['helplist-table']}>
+        <TableHeader />
+        <tbody>
+          <CommandInfo
+            cmd = "bigtwo"
+            description = "開啟一場四人的大老二遊戲"
+            usage = {['<span class="dc-mention">@Ling</span> <span class="dc-mention">@Koishi</span> <span class="dc-mention">@Aya</span>']}
+          />
+          <CommandInfo
+            cmd = "finalcode"
+            aliases = {['fc']}
+            description = "遊玩一場猜終極密碼，支援多人模式"
+            usage = {['', '<span class="dc-mention">@Deleted User dQw4w9WgXcQ</span> <span class="dc-mention">@Junior HiZollo</span> <span class="dc-mention">@No Name</span>']}
+          />
+          <CommandInfo
             cmd = "gomoku"
             aliases = {['gmk']}
             description = "	與朋友遊玩 13x13 的五子棋"
             usage = {['<span class="dc-mention">@ABC</span>']}
-          />
-          <CommandInfo
-            cmd = "lightsup"
-            aliases = {['lu']}
-            description = "遊玩一場點燈遊戲"
           />
           <CommandInfo
             cmd = "tictactoe"
@@ -346,6 +373,11 @@ function MiscellaneousTable() {
       <table className={styles['helplist-table']}>
         <TableHeader />
         <tbody>
+          <CommandInfo
+            cmd = "chef"
+            description = "廚一個人"
+            usage = {['<span class="dc-mention">@Zollo757347</span>']}
+          />
           <CommandInfo
             cmd = "ping"
             description = "取得 Ping 值"

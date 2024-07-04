@@ -20,7 +20,9 @@ const SlashCommands: NextPage = () => {
     <hr />
     <EntertainTable />
     <hr />
-    <GameTable />
+    <SingleGameTable />
+    <hr />
+    <MultiGameTable />
     <hr />
     <NetworkTable />
     <hr />
@@ -48,10 +50,6 @@ function InfoTable () {
             description = "查看機器人資訊"
           />
           <SlashCommandInfo
-            cmd = "dev"
-            description = "檢視開發團隊清單"
-          />
-          <SlashCommandInfo
             cmd = "help"
             description = "開啟指令清單"
           />
@@ -62,6 +60,10 @@ function InfoTable () {
           <SlashCommandInfo
             cmd = "name"
             description = "機器人叫什麼名字呢"
+          />
+          <SlashCommandInfo
+            cmd = "team"
+            description = "檢視開發團隊清單"
           />
         </tbody>
       </table>
@@ -79,6 +81,10 @@ function ContactTable() {
           <SlashCommandInfo
             cmd = "bug"
             description = "回報錯誤"
+          />
+          <SlashCommandInfo
+            cmd = "sponsor"
+            description = "顯示贊助資訊"
           />
           <SlashCommandInfo
             cmd = "suggest"
@@ -207,47 +213,64 @@ function EntertainTable() {
             cmd = "throwball"
             description = "把球砸向你討厭的人"
           />
-          <SlashCommandInfo
-            cmd = "youtube"
-            description = "跟朋友一起在 Discord 中觀看 Youtube 的影片"
-          />
         </tbody>
       </table>
     </>
   );
 }
 
-function GameTable() {
+function SingleGameTable() {
+  return (
+    <>
+      <h2>單人</h2>
+      <table className={styles['slashlist-table']}>
+        <SlashTableHeader />
+        <tbody>
+          <SlashCommandInfo
+            cmd = "2048"
+            description = "遊玩一場 2048 遊戲"
+          />
+          <SlashCommandInfo
+            cmd = "bullsandcows"
+            description = "遊玩一場猜 AB 遊戲"
+          />
+          <SlashCommandInfo
+            cmd = "fliptrip"
+            description = "遊玩指定棋子數量的 Flip Trip"
+          />
+          <SlashCommandInfo
+            cmd = "lightsup"
+            description = "遊玩一場點燈遊戲"
+          />
+          </tbody>
+      </table>
+    </>
+  ) 
+}
+
+function MultiGameTable() {
   return (
     <>
       <h2>遊戲</h2>
       <table className={styles['slashlist-table']}>
         <SlashTableHeader />
         <tbody>
-            <SlashCommandInfo
-              cmd = "bullsandcows"
-              description = "遊玩一場猜 AB 遊戲，可加上 hard 指定為困難模式"
-            />
-            <SlashCommandInfo
-              cmd = "finalcode"
-              description = "開啟一場終極密碼遊戲"
-            />
-            <SlashCommandInfo
-              cmd = "fliptrip"
-              description = "遊玩指定棋子數量的 Flip Trip"
-            />
-            <SlashCommandInfo
-              cmd = "gomoku"
-              description = "	與朋友遊玩 13x13 的五子棋"
-            />
-            <SlashCommandInfo
-              cmd = "lightsup"
-              description = "遊玩一場點燈遊戲"
-            />
-            <SlashCommandInfo
-              cmd = "tictactoe"
-              description = "跟 HiZollo 或是另一位用戶遊玩井字遊戲"
-            />
+          <SlashCommandInfo
+            cmd = "bigtwo"
+            description = "開啟一場四人的大老二遊戲"
+          />
+          <SlashCommandInfo
+            cmd = "finalcode"
+            description = "開啟一場終極密碼遊戲"
+          />
+          <SlashCommandInfo
+            cmd = "gomoku"
+            description = "	與朋友遊玩 13x13 的五子棋"
+          />
+          <SlashCommandInfo
+            cmd = "tictactoe"
+            description = "跟 HiZollo 或是另一位用戶遊玩井字遊戲"
+          />
           </tbody>
         </table>
       </>
@@ -261,6 +284,10 @@ function GameTable() {
         <table className={styles['slashlist-table']}>
           <SlashTableHeader />
           <tbody>
+            <SlashCommandInfo
+              cmd = "chef"
+              description = "廚一個人"
+            />
             <SlashCommandInfo
               cmd = "ping"
               description = "取得 Ping 值"
